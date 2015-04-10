@@ -1,0 +1,79 @@
+﻿@model PagedList.IPagedList<BasePostViewModel>
+@using System.Linq
+@using MagazineProject.Common
+@using PagedList.Mvc;
+
+@{
+    ViewBag.Title = "";
+}
+
+<div id="searchResults">
+    <div class="row">
+        @for (int i = 0; i < Model.Count; i++)
+        {
+            <div class="col-md-4">
+                <div class="thumbnail">
+                    <img src="@Url.Action("ThumbnailPostCoverImage", "Images", new {area = "", id = @Model[i].Id})" class="img-responsive" />
+                    <div class="caption">
+                        <h3>
+                            @Model[i].PostTitle.Chop(23)
+                        </h3>
+                        <p align="center">
+                            <a href="/Posts/Details/@Model[i].Id" class="btn btn-primary btn-block">More Details</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+
+    <div class="row text-center">
+        <ul class="pagination">
+            <li>
+                @*@if (ViewContext.Controller.ValueProvider.GetValue("action").RawValue.ToString() == GlobalConstants.GetAllPostsAction)
+                {
+                    @Html.PagedListPager(Model, page => Url.Action("GetAllPosts", "Posts", new { page = page }),
+                PagedListRenderOptions.EnableUnobtrusiveAjaxReplacing(new AjaxOptions()
+                {
+                    HttpMethod = "GET",
+                    UpdateTargetId = "posts",
+                }))
+                }*@
+                @if (ViewContext.Controller.ValueProvider.GetValue("action").RawValue.ToString() == GlobalConstants.GetPostsByCategoryAction)
+                {
+                    @Html.PagedListPager(Model, page => Url.Action("GetPostsByCategory", "Posts", new { page, id = ViewBag.CategoryId }),
+                PagedListRenderOptions.EnableUnobtrusiveAjaxReplacing(new AjaxOptions()
+                {
+                    HttpMethod = "GET",
+                    UpdateTargetId = "posts",
+                }))
+                }
+                @if (ViewContext.RouteData.Values["controller"].ToString() == GlobalConstants.UserPostsController)
+                {
+                    @Html.PagedListPager(Model, page => Url.Action("Index", "UserPosts", new { area = "Users", page = page }),
+                    PagedListRenderOptions.EnableUnobtrusiveAjaxReplacing(new AjaxOptions()
+                {
+                    HttpMethod = "GET",
+                    UpdateTargetId = "posts",
+                }))
+                }
+                @if (ViewContext.Controller.ValueProvider.GetValue("action").RawValue.ToString() == "Index" &&
+                ViewContext.RouteData.Values["controller"].ToString() == "Home")
+                {
+                    @Html.PagedListPager(Model, page => Url.Action("Index", "Home", new { page = page }),
+                PagedListRenderOptions.EnableUnobtrusiveAjaxReplacing(new AjaxOptions()
+                {
+                    HttpMethod = "GET",
+                    UpdateTargetId = "posts",
+                }))
+                }
+            </li>
+        </ul>
+    </div>
+</div>
+
+
+
+
+
+

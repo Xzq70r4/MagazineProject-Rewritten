@@ -1,0 +1,7 @@
+﻿@model System.Collections.Generic.ICollection<CategoryViewModel>
+
+@foreach (var category in Model)
+{
+    <li>@Html.ActionLink(@category.Name, "GetPostsByCategory", "Posts", new { id = category.Id, name = category.Name }, null)</li>
+}
+

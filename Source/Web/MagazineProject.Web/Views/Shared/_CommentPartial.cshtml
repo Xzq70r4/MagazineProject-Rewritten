@@ -1,0 +1,34 @@
+﻿@model PagedList.IPagedList<BaseCommentViewModel>
+@using MagazineProject.Common
+@using PagedList.Mvc;
+
+@foreach (var comment in @Model)
+{
+    @Html.DisplayFor(m => comment)
+}
+
+<div class="row text-center">
+    <ul class="pagination">
+        <li>
+            @if (ViewContext.RouteData.Values["controller"].ToString() == GlobalConstants.UserCommentsController)
+            {
+                @Html.PagedListPager(Model, page => Url.Action("Index", "UserComments", new { page = page }),
+                PagedListRenderOptions.EnableUnobtrusiveAjaxReplacing(new AjaxOptions()
+                {
+                    HttpMethod = "GET",
+                    UpdateTargetId = "comments",
+                }))
+            }
+            else
+            {
+                @Html.PagedListPager(Model, page => Url.Action("GetPostComments", "Comments", new { page = page }),
+                PagedListRenderOptions.EnableUnobtrusiveAjaxReplacing(new AjaxOptions()
+                {
+                    HttpMethod = "GET",
+                    UpdateTargetId = "comments",
+                }))
+            }
+        </li>
+    </ul>
+</div>
+

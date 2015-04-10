@@ -1,0 +1,9 @@
+﻿@model PagedList.IPagedList<PostViewModel>
+
+<div id="posts">
+    @Html.Partial("_PostsPartial", Model)
+</div>
+
+@section Scripts{
+    @Scripts.Render("~/bundles/jqueryAjax")
+}

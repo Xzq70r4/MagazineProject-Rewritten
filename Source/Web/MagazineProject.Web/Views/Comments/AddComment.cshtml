@@ -1,0 +1,35 @@
+﻿@using MagazineProject.Web.Infrastructure.HtmlHelpers
+@using Recaptcha.Web.Mvc
+@model AddCommentViewModel
+
+@Html.Raw(TempData["Message"])
+
+<h1>Add Comment</h1>
+<br />
+@using (Html.BeginForm("AddComment", "Comments", FormMethod.Post, new {postId = Model.PostId, @class = "form-horizontal",  enctype = "multipart/form-data"  }))
+{
+    @Html.AntiForgeryToken()
+    
+    <div class="form-group">
+        @Html.EditorFor(model => model.Content)
+    </div>
+    <br/>
+    
+    @Html.ValidationSummary("", new { @class = "text-danger" })
+    
+    <div class="form-group text-center">
+        @Html.Submit("Submit")
+    </div>
+}
+
+@section Scripts {
+   @Scripts.Render("~/bundles/jqueryval")
+    <script>
+        $('form input[type=submit]').click(function () {
+            tinyMCE.triggerSave();
+        });
+        $.validator.setDefaults({
+            ignore: ""
+        });
+    </script>
+}

@@ -1,0 +1,106 @@
+﻿@using MagazineProject.Web.Infrastructure.HtmlHelpers
+@model PagedList.IPagedList<BasePostViewModel>
+@{
+    ViewBag.Title = "Home Page";
+}
+
+@Html.Raw(TempData["Message"])
+
+<br/>
+<br/>
+<div class="well">
+    @Html.Action("GetFivePostForSlider", "Posts")
+    <br/>
+
+    <div class="row">
+        @using (Ajax.BeginForm("Index", "Home", new AjaxOptions { HttpMethod = "GET", InsertionMode = InsertionMode.Replace, UpdateTargetId = "searchResults" }))
+        {
+            <div class="col-md-12">
+                <div class="input-group">
+                    <input name="searchTerm" type="text" class="form-control" placeholder="Search" data-search-autocomplete="@Url.Action("Autocomplete", "Home")"/>
+                    <span class="input-group-btn">
+                        @Html.Submit("Search")
+                    </span>
+                </div>
+            </div>
+        }
+    </div>
+    <br/>
+
+    <div id="posts">
+        @Html.Partial("_PostsPartial", Model)
+        @*@Html.Action("GetAllPosts", "Posts")*@
+    </div>
+    @Html.Action("GetFourPostsWithVideo", "Posts")
+</div>
+<br/>
+
+@section Scripts{
+    @Scripts.Render("~/bundles/jqueryAjax")
+    @Scripts.Render("~/bundles/jqueryval")
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

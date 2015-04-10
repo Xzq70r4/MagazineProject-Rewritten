@@ -1,0 +1,16 @@
+﻿@model System.Collections.Generic.IList<PostViewModel>
+@using System.Linq
+
+
+<ul class="list-unstyled video-list-thumbs row">
+    @for (int i = 0; i < Model.Count; i++)
+    {
+        <li class="col-lg-3 col-sm-4 col-xs-6">
+            <a href="/Posts/Details/@Model[i].Id" title="">
+                <img src="@Url.Action("ThumbnailPostCoverImage", "Images", new {id = @Model[i].Id})" class="img-responsive" />
+                <h2 class="text-center">@Model[i].PostTitle.Chop(20)</h2>
+                <span class="glyphicon glyphicon-play-circle"></span>
+            </a>
+        </li>
+    }
+</ul>
