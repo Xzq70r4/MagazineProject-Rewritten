@@ -29,6 +29,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MagazineProject.Web", "Web\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MagazineProject.Data.Models", "Data\MagazineProject.Data.Models\MagazineProject.Data.Models.csproj", "{9CD6A550-E844-4ABE-A6DA-7CC1C2010C80}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MagazineProject.Services.Users", "Services\MagazineProject.Services.Users\MagazineProject.Services.Users.csproj", "{CEA08158-CB26-4804-9886-FE7E7B2F94DD}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -71,6 +73,10 @@ Global
 		{9CD6A550-E844-4ABE-A6DA-7CC1C2010C80}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9CD6A550-E844-4ABE-A6DA-7CC1C2010C80}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9CD6A550-E844-4ABE-A6DA-7CC1C2010C80}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CEA08158-CB26-4804-9886-FE7E7B2F94DD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CEA08158-CB26-4804-9886-FE7E7B2F94DD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CEA08158-CB26-4804-9886-FE7E7B2F94DD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CEA08158-CB26-4804-9886-FE7E7B2F94DD}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -85,5 +91,6 @@ Global
 		{8E6E1FE5-E9EF-4793-98FC-747EBA5890D9} = {47E3024C-B10A-41B8-82F7-B2782B437DBE}
 		{65FA2795-6871-4A3A-ADC4-180DE4B8708C} = {47E3024C-B10A-41B8-82F7-B2782B437DBE}
 		{9CD6A550-E844-4ABE-A6DA-7CC1C2010C80} = {E3AAF0DD-D658-4E33-86BE-2F491B8DCFA5}
+		{CEA08158-CB26-4804-9886-FE7E7B2F94DD} = {2DEBEF92-CCFF-4E65-9ED3-B4E7E328911F}
 	EndGlobalSection
 EndGlobal

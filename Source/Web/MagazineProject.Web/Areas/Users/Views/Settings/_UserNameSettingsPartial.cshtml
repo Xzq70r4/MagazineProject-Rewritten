@@ -1,0 +1,9 @@
+﻿<div class="row">
+    <div class="col-md-2">
+        @Html.LabelFor(m => @User.Identity.Name, new { @class = "text-primary" })
+    </div>
+    <div class="col-md-5">
+        @Html.TextBoxFor(m => @User.Identity.Name, new { disabled = "disabled", @class = "form-control" })
+    </div>
+</div>
+<br />

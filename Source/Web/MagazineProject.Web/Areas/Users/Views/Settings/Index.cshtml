@@ -1,0 +1,60 @@
+﻿@using MagazineProject.Web.Infrastructure.HtmlHelpers
+@model UserProfileSettingsViewModel
+
+@{
+    ViewBag.Title = "title";
+}
+
+@Html.Raw(TempData["Message"])
+
+<br />
+<br />
+@using (Html.BeginForm("Index", "Settings", FormMethod.Post, new { @class = "form-horizontal", enctype = "multipart/form-data" }))
+{
+    @Html.AntiForgeryToken()
+
+    <fieldset>
+        <div class="well">
+            
+            <legend>
+                <h2>Settings</h2>
+            </legend>
+            <br/>
+            <div class="row center-block">
+                @Html.Partial("_UserNameSettingsPartial")
+                @Html.Partial("_UserPasswordSettingsPartial")
+                @Html.EditorFor(m => m.Email)
+                @Html.EditorFor(m => m.FirstName)
+                @Html.EditorFor(m => m.LastName)
+                @Html.EditorFor(m => m.UploadedImage)
+                @Html.EditorFor(m => m.InfoContent)
+            </div>
+            <br/>
+            @Html.ValidationSummary("", new { @class = "text-danger" })
+
+            <div class="row">
+                <div class="col-xs-4 text-right">
+                    @Html.ActionLink("Cancel", "Index", "Profile", new { area = "Users" }, new { @class = "btn btn-default", type = "reset" })
+                </div>
+                <div class="col-md-7 text-left">
+                    @Html.Submit("Save")
+                </div>
+            </div>
+        </div>
+    </fieldset>
+}
+
+@section Scripts{
+    @Scripts.Render("~/bundles/jqueryval"),
+    @Scripts.Render("~/bundles/uploadImage")
+    <script>
+        $('form input[type=submit]').click(function () {
+            tinyMCE.triggerSave();
+        });
+        $.validator.setDefaults({
+            ignore: ""
+        });
+    </script>
+}
+
+

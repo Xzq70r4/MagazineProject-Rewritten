@@ -1,0 +1,31 @@
+﻿@model UserCommentViewModel
+
+<article class="row">
+    <div class="col-md-2 col-sm-2 hidden-xs">
+        <figure class="thumbnail">
+            <img src="@Url.Action("UserImage", "Images", new { area = string.Empty, id = @Model.AuthorId})" class="img-responsive" />
+        </figure>
+    </div>
+    <div class="col-md-10 col-sm-10">
+        <div class="panel panel-default arrow left">
+            <div class="panel-body">
+                <header class="text-left">
+                    <div>
+                        <i class="fa fa-user"></i> @Model.AuthorName
+                        <a href="/Posts/Details/@Model.PostId" class="btn btn-default btn-sm pull-right"><i class="fa fa-link"></i> See Post</a>
+                    </div>
+                    <time class="comment-date">
+                        <i class="fa fa-clock-o"></i>
+                        @Model.TimeCreated
+                    </time>
+                </header>
+                <br />
+                <div class="comment-post word-break">
+                    <p>
+                        @Html.Raw(@Model.Content)
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</article>

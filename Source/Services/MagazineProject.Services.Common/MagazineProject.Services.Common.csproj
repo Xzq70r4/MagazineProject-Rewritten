@@ -58,6 +58,7 @@
     <Compile Include="IImagesService.cs" />
     <Compile Include="IPostsService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="User\IProfilesService.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\Data\MagazineProject.Data.Common\MagazineProject.Data.Common.csproj">
@@ -75,6 +76,10 @@
     <ProjectReference Include="..\..\Web\MagazineProject.Web.Infrastructure\MagazineProject.Web.Infrastructure.csproj">
       <Project>{43b3c66e-4111-449e-9669-e241a5c4004e}</Project>
       <Name>MagazineProject.Web.Infrastructure</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Web\MagazineProject.Web.Models\MagazineProject.Web.Models.csproj">
+      <Project>{8e6e1fe5-e9ef-4793-98fc-747eba5890d9}</Project>
+      <Name>MagazineProject.Web.Models</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

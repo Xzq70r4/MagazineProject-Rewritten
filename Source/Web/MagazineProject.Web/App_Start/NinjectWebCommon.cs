@@ -20,6 +20,8 @@ namespace MagazineProject.Web.App_Start
     using MagazineProject.Services;
     using MagazineProject.Services.Common;
     using MagazineProject.Services.Common.Data;
+    using MagazineProject.Services.Common.User;
+    using MagazineProject.Services.Users;
     using MagazineProject.Web.Infrastructure.Caching;
     using MagazineProject.Web.Infrastructure.Populators;
 
@@ -90,6 +92,8 @@ namespace MagazineProject.Web.App_Start
             kernel.Bind<IPostsService>().To<PostsService>();
             kernel.Bind<ICommentsService>().To<CommentsService>();
             kernel.Bind<IImagesService>().To<ImagesService>();
+            kernel.Bind<IProfilesService>().To<ProfilesService>();
+
         }
     }
 }
