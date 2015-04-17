@@ -1,0 +1,84 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{520E788B-A1D0-42F7-B8AA-7050FE38904A}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>MagazineProject.Services.Administration</RootNamespace>
+    <AssemblyName>MagazineProject.Services.Administration</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AdministationPostsService.cs" />
+    <Compile Include="AdministrationCommentsService.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\Data\MagazineProject.Data.Common\MagazineProject.Data.Common.csproj">
+      <Project>{12c1e4dc-de93-442d-8ffa-229c091beec3}</Project>
+      <Name>MagazineProject.Data.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Data\MagazineProject.Data.Models\MagazineProject.Data.Models.csproj">
+      <Project>{9cd6a550-e844-4abe-a6da-7cc1c2010c80}</Project>
+      <Name>MagazineProject.Data.Models</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Data\MagazineProject.Data\MagazineProject.Data.csproj">
+      <Project>{b7279802-2e06-44c2-ad65-3fd6d1998c9b}</Project>
+      <Name>MagazineProject.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Web\MagazineProject.Web.Infrastructure\MagazineProject.Web.Infrastructure.csproj">
+      <Project>{43b3c66e-4111-449e-9669-e241a5c4004e}</Project>
+      <Name>MagazineProject.Web.Infrastructure</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Web\MagazineProject.Web.Models\MagazineProject.Web.Models.csproj">
+      <Project>{8e6e1fe5-e9ef-4793-98fc-747eba5890d9}</Project>
+      <Name>MagazineProject.Web.Models</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MagazineProject.Services.Common\MagazineProject.Services.Common.csproj">
+      <Project>{406a3a14-6a50-4536-9212-ad62afea97d8}</Project>
+      <Name>MagazineProject.Services.Common</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

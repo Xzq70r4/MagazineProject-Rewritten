@@ -34,7 +34,7 @@
         {
             var userId = this.User.Identity.GetUserId();
 
-            var user =this.profiles
+            var user = this.profiles
                 .GetProfileById(userId)
                 .Project()
                 .To<UserProfileSettingsViewModel>()

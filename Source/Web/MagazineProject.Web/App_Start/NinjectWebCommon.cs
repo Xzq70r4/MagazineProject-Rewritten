@@ -18,10 +18,15 @@ namespace MagazineProject.Web.App_Start
     using MagazineProject.Data;
     using MagazineProject.Data.UnitOfWork;
     using MagazineProject.Services;
+    using MagazineProject.Services.Administration;
     using MagazineProject.Services.Common;
     using MagazineProject.Services.Common.Data;
+    using MagazineProject.Services.Common.Moderator;
     using MagazineProject.Services.Common.User;
+    using MagazineProject.Services.Common.Writer;
+    using MagazineProject.Services.Moderator;
     using MagazineProject.Services.Users;
+    using MagazineProject.Services.Writer;
     using MagazineProject.Web.Infrastructure.Caching;
     using MagazineProject.Web.Infrastructure.Populators;
 
@@ -93,6 +98,9 @@ namespace MagazineProject.Web.App_Start
             kernel.Bind<ICommentsService>().To<CommentsService>();
             kernel.Bind<IImagesService>().To<ImagesService>();
             kernel.Bind<IProfilesService>().To<ProfilesService>();
+            kernel.Bind<IWriterPostsService>().To<WriterPostsService>();
+            kernel.Bind<IAdministrationPostsService>().To<AdministationPostsService>();
+            kernel.Bind<IAdministrationCommentsService>().To<AdministrationCommentsService>();
 
         }
     }

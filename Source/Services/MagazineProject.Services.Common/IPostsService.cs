@@ -1,12 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using MagazineProject.Data.Models;
-
-namespace MagazineProject.Services.Common.Data
+﻿namespace MagazineProject.Services.Common.Data
 {
+    using System.Linq;
+
+    using MagazineProject.Data.Models;
+
     public interface IPostsService
     {
         IQueryable<Post> Autocomplate(string term);
@@ -20,6 +17,5 @@ namespace MagazineProject.Services.Common.Data
         IQueryable<Post> GetPostsWithVideo(int takeNumber);
 
         IQueryable<Post> GetNumberOfPosts(int takeNumber);
-
     }
 }

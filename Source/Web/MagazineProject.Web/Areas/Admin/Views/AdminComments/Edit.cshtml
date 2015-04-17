@@ -1,0 +1,26 @@
+﻿@using MagazineProject.Web.Infrastructure.HtmlHelpers
+@model MagazineProject.Web.Models.Area.Admin.InputViewModels.Comment.AdminEditCommentViewModel
+
+@Html.Raw(TempData["Message"])
+
+@using (Html.BeginForm("Edit", "AdminComments", FormMethod.Post, new { @class = "form", enctype = "multipart/form-data" }))
+{
+    @Html.AntiForgeryToken()
+
+    <fieldset>
+        <div class="well">
+            <legend>
+                <h2>Edit Comment</h2>
+            </legend>
+            @Html.Partial("_AdministrationCommentPartial", Model)
+            <div class="row">
+                <div class="col-xs-4 text-right">
+                    @Html.ActionLink("Cancel", "GetCommentsForGrid", "AdminComments", new { area = "Admin" }, new { @class = "btn btn-default", type = "reset" })
+                </div>
+                <div class="col-md-7 text-left">
+                    @Html.Submit("Save")
+                </div>
+            </div>
+        </div>
+    </fieldset>
+}

@@ -1,0 +1,36 @@
+﻿@using MagazineProject.Web.Infrastructure.HtmlHelpers
+@model MagazineProject.Web.Models.Area.Admin.InputViewModels.Post.AdminEditPostViewModel
+
+@{
+    ViewBag.Title = "Edit Post";
+}
+
+@Html.Raw(TempData["Message"])
+
+
+@using (Html.BeginForm("Edit", "AdminPosts", FormMethod.Post, new { @class = "form", enctype = "multipart/form-data" }))
+{
+    @Html.AntiForgeryToken()
+
+    <fieldset>
+        <div class="well">
+            <legend>
+                <h2>Edit Post</h2>
+            </legend>
+            @Html.EditorFor(m => m.UploadedImage)
+            @Html.Partial("_AdministrationPostPartial", Model)
+        </div>
+        <div class="row">
+            <div class="col-xs-4 text-right">
+                @Html.ActionLink("Cancel", "GetPostsForGrid", "AdminPosts", new { area = "Admin" }, new { @class = "btn btn-default", type = "reset" })
+            </div>
+            <div class="col-md-7 text-left">
+                @Html.Submit("Save")
+            </div>
+        </div>
+    </fieldset>
+}
+@section scripts {
+    @Scripts.Render("~/bundles/jqueryval"),
+    @Scripts.Render("~/bundles/uploadImage")
+}

@@ -31,6 +31,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MagazineProject.Data.Models
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MagazineProject.Services.Users", "Services\MagazineProject.Services.Users\MagazineProject.Services.Users.csproj", "{CEA08158-CB26-4804-9886-FE7E7B2F94DD}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MagazineProject.Services.Writer", "Services\MagazineProject.Services.Writer\MagazineProject.Services.Writer.csproj", "{1C128128-0ABF-4A43-9093-18B3C239AC34}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MagazineProject.Services.Administration", "Services\MagazineProject.Services.Administration\MagazineProject.Services.Administration.csproj", "{520E788B-A1D0-42F7-B8AA-7050FE38904A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -77,6 +81,14 @@ Global
 		{CEA08158-CB26-4804-9886-FE7E7B2F94DD}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CEA08158-CB26-4804-9886-FE7E7B2F94DD}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CEA08158-CB26-4804-9886-FE7E7B2F94DD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1C128128-0ABF-4A43-9093-18B3C239AC34}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1C128128-0ABF-4A43-9093-18B3C239AC34}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1C128128-0ABF-4A43-9093-18B3C239AC34}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1C128128-0ABF-4A43-9093-18B3C239AC34}.Release|Any CPU.Build.0 = Release|Any CPU
+		{520E788B-A1D0-42F7-B8AA-7050FE38904A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{520E788B-A1D0-42F7-B8AA-7050FE38904A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{520E788B-A1D0-42F7-B8AA-7050FE38904A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{520E788B-A1D0-42F7-B8AA-7050FE38904A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -92,5 +104,7 @@ Global
 		{65FA2795-6871-4A3A-ADC4-180DE4B8708C} = {47E3024C-B10A-41B8-82F7-B2782B437DBE}
 		{9CD6A550-E844-4ABE-A6DA-7CC1C2010C80} = {E3AAF0DD-D658-4E33-86BE-2F491B8DCFA5}
 		{CEA08158-CB26-4804-9886-FE7E7B2F94DD} = {2DEBEF92-CCFF-4E65-9ED3-B4E7E328911F}
+		{1C128128-0ABF-4A43-9093-18B3C239AC34} = {2DEBEF92-CCFF-4E65-9ED3-B4E7E328911F}
+		{520E788B-A1D0-42F7-B8AA-7050FE38904A} = {2DEBEF92-CCFF-4E65-9ED3-B4E7E328911F}
 	EndGlobalSection
 EndGlobal

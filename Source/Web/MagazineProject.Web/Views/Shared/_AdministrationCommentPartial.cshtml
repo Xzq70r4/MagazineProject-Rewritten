@@ -1,0 +1,9 @@
+﻿@model MagazineProject.Web.Models.InputModels.Base.Comment.BaseAdministrationCommentsViewModel
+
+<div class="form-group">
+    @Html.EditorFor(model => model.Status)
+    @Html.EditorFor(model => model.Content)
+</div>
+<br />
+
+@Html.ValidationSummary("", new { @class = "text-danger" })

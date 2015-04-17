@@ -9,6 +9,5 @@
         string LastName { get; set; }
 
         string InfoContent { get; set; }
-
     }
 }

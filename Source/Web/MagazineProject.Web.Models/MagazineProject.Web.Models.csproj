@@ -109,16 +109,31 @@
     <Compile Include="Account\ResetPasswordViewModel.cs" />
     <Compile Include="Account\SendCodeViewModel.cs" />
     <Compile Include="Account\VerifyCodeViewModel.cs" />
+    <Compile Include="Area\Admin\InputViewModels\Comment\AdminEditCommentViewModel.cs" />
+    <Compile Include="Area\Admin\InputViewModels\Post\AdminAddPostViewModel.cs" />
+    <Compile Include="Area\Admin\InputViewModels\Post\AdminEditPostViewModel.cs" />
+    <Compile Include="Area\Moderator\InputViewModels\Post\ModeratorAddPostViewModel.cs" />
+    <Compile Include="Area\Moderator\InputViewModels\Post\ModeratorEditPostViewModel.cs" />
+    <Compile Include="Area\Moderator\InputViewModels\Comment\ModeratorEditCommentViewModel.cs" />
     <Compile Include="Area\Users\InputViewModels\Settings\UserProfileSettingsViewModel.cs" />
     <Compile Include="Area\Users\Interface\IProfile.cs" />
     <Compile Include="Area\Users\UserComments\UserCommentViewModel.cs" />
     <Compile Include="Area\Users\UserPosts\UserPostViewModel.cs" />
     <Compile Include="Area\Users\UserProfiles\UserProfileViewModel.cs" />
+    <Compile Include="Area\Writer\InputViewModels\WriterAddPostViewModel.cs" />
+    <Compile Include="Area\Writer\InputViewModels\WriterEditPostViewModel.cs" />
+    <Compile Include="Area\Grid\GridCommentViewModel.cs" />
+    <Compile Include="InputModels\Base\Post\BaseAdministrationEditPostViewModel.cs" />
+    <Compile Include="InputModels\Base\Comment\BaseAdministrationCommentsViewModel.cs" />
+    <Compile Include="Area\Grid\GridPostViewModel.cs" />
     <Compile Include="Base\BaseCommentViewModel.cs" />
     <Compile Include="Base\BasePostViewModel.cs" />
     <Compile Include="Categories\CategoryViewModel.cs" />
     <Compile Include="Comments\CommentViewModel.cs" />
     <Compile Include="Home\PostViewModel.cs" />
+    <Compile Include="InputModels\Base\Post\BaseAdministrationAddPostViewModel.cs" />
+    <Compile Include="InputModels\Base\Post\BaseAdministrationPostsViewModels.cs" />
+    <Compile Include="InputModels\Base\Post\BaseAutorizationPostViewModel.cs" />
     <Compile Include="InputModels\Comments\AddCommentViewModel.cs" />
     <Compile Include="Manage\AddPhoneNumberViewModel.cs" />
     <Compile Include="Manage\ChangePasswordViewModel.cs" />
@@ -128,7 +143,6 @@
     <Compile Include="Manage\ManageLoginsViewModel.cs" />
     <Compile Include="Manage\SetPasswordViewModel.cs" />
     <Compile Include="Manage\VerifyPhoneNumberViewModel.cs" />
-    <Compile Include="Posts\AddPostViewModel.cs" />
     <Compile Include="Posts\PostCoverViewModel.cs" />
     <Compile Include="Posts\PostDetailsViewModel.cs" />
     <Compile Include="Posts\PostImageViewModel.cs" />
@@ -160,9 +174,7 @@
     <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="InputModels\Base\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\..\packages\AutoMapper.3.3.1\tools\AutoMapper.targets" Condition="Exists('..\..\packages\AutoMapper.3.3.1\tools\AutoMapper.targets')" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

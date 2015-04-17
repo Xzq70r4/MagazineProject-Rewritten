@@ -1,11 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace MagazineProject.Services.Users
+﻿namespace MagazineProject.Services.Users
 {
+    using System.Linq;
     using System.Web.Helpers;
 
     using MagazineProject.Data.Models;

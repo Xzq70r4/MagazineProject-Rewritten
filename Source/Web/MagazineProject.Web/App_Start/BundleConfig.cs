@@ -40,7 +40,8 @@
                 "~/Scripts/jquery.validate*",
                 "~/Scripts/jquery-ui-{version}.js",
                 "~/Scripts/search.js",
-                "~/Scripts/extensions.js"));
+                "~/Scripts/extensions.js",
+                "~/Scripts/tinymce/tinymce-client-val.js"));
 
             bundles.Add(new ScriptBundle("~/bundles/uploadImage").Include(
            "~/Scripts/fileinput.js"));

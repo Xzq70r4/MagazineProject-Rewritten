@@ -17,7 +17,6 @@
         public const string SliderPostCoverImagePath = "/Migrations/Imgs/slider_cover.jpg";
         public const string ThumbnailPostCoverImagePath = "/Migrations/Imgs/thumbnail_cover.jpg";
 
-
         //Controllers
         public const string SettingsController = "Settings";
         public const string CommentsController = "Comments";

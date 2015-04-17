@@ -14,6 +14,8 @@
         public Post()
         {
             this.comments = new HashSet<Comment>();
+            //Default Valie for Status
+            this.Status = Status.WaitingApproval;
         }
 
         [Key]
@@ -31,7 +33,7 @@
 
         public string UrlVideo { get; set; }
 
-        [DefaultValue(Status.WaitingApproval)]
+        //TODO: Check[DefaultValue(Status.WaitingApproval)]
         public Status Status { get; set; }
 
         [Required]
@@ -44,9 +46,6 @@
 
         public virtual Category Category { get; set; }
 
-        ////TODO: Check this
-        ////[Required]
-        //public virtual PostCoverImage CoverImage { get; set; }
         public virtual SliderPostCoverImage SliderCoverImage { get; set; }
 
         public virtual ThumbnailPostCoverImage ThumbnailCoverImage { get; set; }

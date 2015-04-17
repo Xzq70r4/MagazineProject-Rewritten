@@ -1,0 +1,34 @@
+﻿@using MagazineProject.Web.Infrastructure.HtmlHelpers
+@model MagazineProject.Web.Models.Area.Moderator.InputViewModels.Post.ModeratorAddPostViewModel
+
+@{
+    ViewBag.Title = "Add Post";
+}
+@Html.Raw(TempData["Message"])
+
+@using (Html.BeginForm("Add", "ModeratorPosts", FormMethod.Post, new { @class = "form", enctype = "multipart/form-data" }))
+{
+    @Html.AntiForgeryToken()
+
+    <fieldset>
+        <div class="well">
+            <legend>
+                <h2>Add Post</h2>
+            </legend>
+            @Html.EditorFor(m => m.UploadedImage)
+            @Html.Partial("_AdministrationPostPartial", Model)
+        </div>
+        <div class="row">
+            <div class="col-xs-4 text-right">
+                @Html.ActionLink("Cancel", "GetPostsForGrid", "ModeratorPosts", new { area = "Moderator" }, new { @class = "btn btn-default", type = "reset" })
+            </div>
+            <div class="col-md-7 text-left">
+                @Html.Submit("Save")
+            </div>
+        </div>
+    </fieldset>
+}
+@section scripts {
+    @Scripts.Render("~/bundles/jqueryval"),
+    @Scripts.Render("~/bundles/uploadImage")
+}

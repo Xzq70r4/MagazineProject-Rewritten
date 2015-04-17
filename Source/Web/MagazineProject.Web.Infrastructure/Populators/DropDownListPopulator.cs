@@ -1,5 +1,6 @@
 ﻿namespace MagazineProject.Web.Infrastructure.Populators
 {
+    using System;
     using System.Collections.Generic;
     using System.Linq;
     using System.Web.Mvc;
@@ -20,7 +21,7 @@
 
         public IEnumerable<SelectListItem> GetCategories()
         {
-            var categories = this.cache.Get<IEnumerable<SelectListItem>>("categories",
+            var categories = this.cache.Get<IEnumerable<SelectListItem>>("Categories",
                 () =>
                 {
                     return this.data.Categories

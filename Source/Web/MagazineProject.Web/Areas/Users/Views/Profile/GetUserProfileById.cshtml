@@ -60,7 +60,5 @@
     <div>
         @Html.ActionLink("See" + @Model.UserName.ToString() + "`s Posts", "Index", "UserPosts", new { id = Model.Id }, new { @class = "btn btn-primary btn-block", area = "Users" })
         @Html.ActionLink("See" + @Model.UserName.ToString() + "`s Comments", "Index", "UserComments", new { id = Model.Id }, new { @class = "btn btn-primary btn-block", area = "Users" })
-        @*<a href="/Users/UserPosts" class="btn btn-primary btn-block">See @Model.UserName`s Posts</a>
-        <a href="/Users/UserComments" class="btn btn-primary btn-block">See @Model.UserName`s Comments</a>*@
     </div>
 </div>

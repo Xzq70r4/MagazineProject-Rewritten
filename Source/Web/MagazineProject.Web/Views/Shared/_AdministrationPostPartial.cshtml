@@ -1,0 +1,10 @@
+﻿@model MagazineProject.Web.Models.InputModels.Base.Post.BaseAdministrationPostsViewModels
+@Html.EditorFor(m => m.CategoryId, new { ListItem = Model.Categories })
+@Html.EditorFor(m => m.Status)
+@Html.EditorFor(m => m.Title)
+@Html.EditorFor(m => m.Content)
+<br />
+@Html.ValidationSummary("", new { @class = "text-danger" })
+
+
+

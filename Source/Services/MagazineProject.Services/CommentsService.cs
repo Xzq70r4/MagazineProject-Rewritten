@@ -5,7 +5,6 @@
     using MagazineProject.Data.Models;
     using MagazineProject.Data.UnitOfWork;
     using MagazineProject.Services.Common;
-    using MagazineProject.Services.Common.Data;
     using MagazineProject.Web.Infrastructure.Sanitizer;
 
     /// <summary>
@@ -27,7 +26,7 @@
         /// <param name="sanitize">
         /// The sanitize.
         /// </param>
-        public CommentsService(IUnitOfWorkData data, ISanitizer sanitize)
+        public CommentsService(IUnitOfWorkData data, ISanitizer sanitizer)
             : base(data)
         {
             this.sanitizer = sanitizer;
@@ -50,6 +49,7 @@
             var commet = new Comment
             {
                 Content = this.sanitizer.Sanitize(content),
+                //Content = content,
                 PostId = postId,
                 AuthorId = userId
             };

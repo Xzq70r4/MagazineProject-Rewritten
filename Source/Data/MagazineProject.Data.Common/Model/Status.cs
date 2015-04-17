@@ -4,6 +4,7 @@
     {
         Inactive,
         WaitingApproval,
+        EditedWaitingAppoval,
         Published,
         Rejected
     }

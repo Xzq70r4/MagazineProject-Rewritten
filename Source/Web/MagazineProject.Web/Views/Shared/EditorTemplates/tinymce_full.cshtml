@@ -9,7 +9,8 @@
                 "advlist autolink lists link charmap print preview hr pagebreak",
                 "searchreplace wordcount visualblocks visualchars ",
                 "insertdatetime nonbreaking save contextmenu directionality",
-                "emoticons template paste textcolor colorpicker textpattern"
+                "emoticons template paste textcolor colorpicker textpattern",
+                "autoresize layer"
             ],
             toolbar1: "insertfile undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist outdent indent | link ",
             toolbar2: "forecolor emoticons",
@@ -28,6 +29,12 @@
                 form.submit();
             }
         }
+        $('form input[type=submit]').click(function () {
+            tinyMCE.triggerSave();
+        });
+        $.validator.setDefaults({
+            ignore: ""
+        });
     </script>
 
 

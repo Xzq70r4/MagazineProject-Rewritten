@@ -1,12 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using MagazineProject.Data.Models;
-
-namespace MagazineProject.Services.Common.Data
+﻿namespace MagazineProject.Services.Common.Data
 {
+    using System.Linq;
+
+    using MagazineProject.Data.Models;
+
     public interface ICategoriesService
     {
         IQueryable<Category> GetCategories();
