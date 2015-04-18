@@ -84,6 +84,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Administaration\IAdminCategoriesService.cs" />
     <Compile Include="Administaration\IAdministrationCommentsService.cs" />
     <Compile Include="BaseAdministrationPostsService.cs" />
     <Compile Include="BaseAutorizePostsService.cs" />

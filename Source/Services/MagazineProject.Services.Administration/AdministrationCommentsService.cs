@@ -24,6 +24,7 @@
             var comments = this.Data
                 .Comments
                 .All()
+                .Where(c => c.Post.Category.IsHidden == false)
                 .OrderByDescending(p => p.CreatedOn);
 
             return comments;
@@ -33,7 +34,8 @@
             var comment = this.Data
                 .Comments
                 .All()
-                .Where(c => c.Id == commentId);
+                .Where(c => c.Id == commentId &&
+                            c.Post.Category.IsHidden == false);
 
             return comment;
         }

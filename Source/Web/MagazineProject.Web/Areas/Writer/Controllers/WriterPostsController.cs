@@ -25,6 +25,19 @@
             this.writerPosts = writerPosts;
         }
 
+        public ActionResult Index()
+        {
+            var userId = this.User.Identity.GetUserId();
+
+            var posts = this.writerPosts
+                .GetPostsForGrid(userId)
+                .Project()
+                .To<GridPostViewModel>()
+                .ToList();
+
+            return this.View(posts);
+        }
+
         [HttpGet]
         public ActionResult Add()
         {
@@ -48,7 +61,7 @@
 
                 TempData["Message"] = "<div class='alert alert-success'><a href='#' class='close' data-dismiss='alert'>&times;</a><strong>Success!</strong> Successfully Added Post.</div> ";
 
-                return this.RedirectToAction("GetPostsForGrid", "WriterPosts", new { area = "Writer" });
+                return this.RedirectToAction("Index", "WriterPosts", new { area = "Writer" });
             }
 
             TempData["Message"] = "<div class='alert alert-danger'><a href='#' class='close' data-dismiss='alert'>&times;</a><strong>Fail!</strong> Not Successfully Added Post.</div>";
@@ -95,7 +108,7 @@
 
                 TempData["Message"] = "<div class='alert alert-success'><a href='#' class='close' data-dismiss='alert'>&times;</a><strong>Success!</strong> Successfully Edited Post.</div> ";
 
-                return this.RedirectToAction("GetPostsForGrid", "WriterPosts", new { area = "Writer" });
+                return this.RedirectToAction("Index", "WriterPosts", new { area = "Writer" });
             }
 
             TempData["Message"] = "<div class='alert alert-danger'><a href='#' class='close' data-dismiss='alert'>&times;</a><strong>Fail!</strong> Not Successfully Edited Post.</div>";
@@ -103,19 +116,6 @@
             viewModel.Categories = this.populator.GetCategories();
 
             return this.View(viewModel);
-        }
-
-        public ActionResult GetPostsForGrid()
-        {
-            var userId = this.User.Identity.GetUserId();
-
-            var posts = this.writerPosts
-                .GetPostsForGrid(userId)
-                .Project()
-                .To<GridPostViewModel>()
-                .ToList();
-
-            return this.View(posts);
         }
     }
 }

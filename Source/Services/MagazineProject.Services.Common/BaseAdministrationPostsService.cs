@@ -1,16 +1,12 @@
 ﻿namespace MagazineProject.Services.Common
 {
     using System.Linq;
-    using System.Runtime.CompilerServices;
     using System.Web.Helpers;
 
     using AutoMapper;
 
     using MagazineProject.Data.Models;
     using MagazineProject.Data.UnitOfWork;
-    using MagazineProject.Web.Models.Area.Moderator.InputViewModels;
-    using MagazineProject.Web.Models.Area.Moderator.InputViewModels.Post;
-    using MagazineProject.Web.Models.InputModels.Base;
     using MagazineProject.Web.Models.InputModels.Base.Post;
 
     public class BaseAdministrationPostsService : BaseAutorizePostsService
@@ -25,19 +21,22 @@
             var posts = this.Data
                 .Posts
                 .All()
+                .Where(p => p.Category.IsHidden == false)
                 .OrderByDescending(p => p.CreatedOn);
 
             return posts;
         }
+
         public IQueryable<Post> GetPostById(int postId)
         {
             var post = this.Data
                 .Posts
                 .All()
-                .Where(p => p.Id == postId);
+                .Where(p => p.Id == postId && p.Category.IsHidden == false);
 
             return post;
         }
+
         public void AddDbPost(BaseAdministrationPostsViewModels viewModel, string userId)
         {
             var dbPost = Mapper.Map<Post>(viewModel);

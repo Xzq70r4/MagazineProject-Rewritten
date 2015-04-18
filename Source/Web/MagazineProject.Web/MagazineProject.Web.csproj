@@ -234,6 +234,7 @@
     <Compile Include="Areas\Admin\Controllers\AdminCommentsController.cs" />
     <Compile Include="Areas\Admin\Controllers\AdminController.cs" />
     <Compile Include="Areas\Admin\Controllers\AdminPostsController.cs" />
+    <Compile Include="Areas\Admin\Controllers\AdminCategoriesController.cs" />
     <Compile Include="Areas\Moderator\Controllers\ModeratorCommentsController.cs" />
     <Compile Include="Areas\Moderator\Controllers\ModeratorController.cs" />
     <Compile Include="Areas\Moderator\Controllers\ModeratorPostsController.cs" />
@@ -336,21 +337,24 @@
     <Content Include="Areas\Users\Views\_ViewStart.cshtml" />
     <Content Include="Areas\Writer\Views\WriterPosts\Add.cshtml" />
     <Content Include="Areas\Writer\Views\WriterPosts\Edit.cshtml" />
-    <Content Include="Areas\Writer\Views\WriterPosts\GetPostsForGrid.cshtml" />
+    <Content Include="Areas\Writer\Views\WriterPosts\Index.cshtml" />
     <Content Include="Areas\Writer\Views\_ViewStart.cshtml" />
     <Content Include="Grid.mvc.readme" />
     <Content Include="Areas\Moderator\Views\_ViewStart.cshtml" />
     <Content Include="Areas\Moderator\Views\ModeratorPosts\Add.cshtml" />
     <Content Include="Areas\Moderator\Views\ModeratorPosts\Edit.cshtml" />
-    <Content Include="Areas\Moderator\Views\ModeratorPosts\GetPostsForGrid.cshtml" />
+    <Content Include="Areas\Moderator\Views\ModeratorPosts\Index.cshtml" />
     <Content Include="Areas\Moderator\Views\ModeratorComments\Edit.cshtml" />
-    <Content Include="Areas\Moderator\Views\ModeratorComments\GetCommentsForGrid.cshtml" />
+    <Content Include="Areas\Moderator\Views\ModeratorComments\Index.cshtml" />
     <Content Include="Areas\Admin\Views\_ViewStart.cshtml" />
+    <Content Include="Areas\Admin\Views\AdminCategories\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\AdminCategories\Add.cshtml" />
+    <Content Include="Areas\Admin\Views\AdminCategories\Edit.cshtml" />
     <None Include="Areas\Admin\Views\AdminComments\Edit.cshtml" />
-    <None Include="Areas\Admin\Views\AdminComments\GetCommentsForGrid.cshtml" />
+    <None Include="Areas\Admin\Views\AdminComments\Index.cshtml" />
     <None Include="Areas\Admin\Views\AdminPosts\Add.cshtml" />
     <None Include="Areas\Admin\Views\AdminPosts\Edit.cshtml" />
-    <None Include="Areas\Admin\Views\AdminPosts\GetPostsForGrid.cshtml" />
+    <None Include="Areas\Admin\Views\AdminPosts\Index.cshtml" />
     <None Include="Scripts\jquery-2.1.3.intellisense.js" />
     <Content Include="Icon.png" />
     <Content Include="Scripts\bootstrap.js" />
@@ -600,9 +604,11 @@
     <Content Include="Views\Shared\_AdministrationPostPartial.cshtml" />
     <Content Include="Views\Shared\_AdministrationCommentPartial.cshtml" />
     <Content Include="Views\Shared\EditorTemplates\RequiredUploadImage.cshtml" />
+    <Content Include="Views\Shared\EditorTemplates\Boolean.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Areas\Admin\Views\Category\" />
     <Folder Include="Areas\Admin\Views\Shared\" />
     <Folder Include="Areas\Moderator\Views\Shared\" />
   </ItemGroup>

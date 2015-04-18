@@ -15,7 +15,7 @@
             @Html.Partial("_AdministrationCommentPartial", Model)
             <div class="row">
                 <div class="col-xs-4 text-right">
-                    @Html.ActionLink("Cancel", "GetCommentsForGrid", "AdminComments", new { area = "Admin" }, new { @class = "btn btn-default", type = "reset" })
+                    @Html.ActionLink("Cancel", "Index", "AdminComments", new { area = "Admin" }, new { @class = "btn btn-default", type = "reset" })
                 </div>
                 <div class="col-md-7 text-left">
                     @Html.Submit("Save")

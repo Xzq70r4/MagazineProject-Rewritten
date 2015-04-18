@@ -1,0 +1,27 @@
+﻿@model System.Linq.IQueryable<MagazineProject.Web.Models.Area.Grid.GridCategoryViewModel>
+
+@using GridMvc.Html
+@section Styles{
+    @Styles.Render("~/Content/grid")
+}
+
+@Html.Raw(TempData["Message"])
+
+<div>
+    @(Html.Grid(Model).Columns(columns =>
+          {
+              columns.Add(c => c.Name).Titled("Name").Filterable(true);
+
+              columns.Add(c => c.IsHidden).Titled("Hidden").Filterable(true);
+
+              columns.Add().Titled("Edit").Sanitized(false).Encoded(false).RenderValueAs(o => Html.ActionLink("Edit", "Edit", new { id = o.Id }).ToHtmlString()).SetWidth(10);
+
+              columns.Add().Titled("Delete").Sanitized(false).Encoded(false).RenderValueAs(o => Html.ActionLink("Delete", "Delete", new { id = o.Id }).ToHtmlString()).SetWidth(10);
+
+          }).WithPaging(10).Sortable(true))
+</div>
+
+@section scripts
+{
+    @Scripts.Render("~/bundles/jquery")
+}

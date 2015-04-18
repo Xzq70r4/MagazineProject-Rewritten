@@ -37,7 +37,7 @@
             return this.File(image.Content, "image/" + image.FileExtension);
         }
 
-        //check post image 
+        //TODO:check post image 
         public ActionResult UserImage(string id)
         {
             var image = this.images.GetUserImageById(id);

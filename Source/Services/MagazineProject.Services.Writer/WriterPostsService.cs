@@ -25,7 +25,8 @@
             var post = this.Data
                 .Posts
                 .All()
-                .Where(p => p.AuthorId == userId)
+                .Where(p => p.AuthorId == userId && 
+                            p.Category.IsHidden == false)
                 .OrderByDescending(p => p.CreatedOn);
 
             return post;
@@ -35,7 +36,8 @@
             var post = this.Data
                 .Posts
                 .All()
-                .Where(p => p.Id == postId);
+                .Where(p => p.Id == postId &&
+                            p.Category.IsHidden == false);
 
             return post;
         }

@@ -101,6 +101,7 @@ namespace MagazineProject.Web.App_Start
             kernel.Bind<IWriterPostsService>().To<WriterPostsService>();
             kernel.Bind<IAdministrationPostsService>().To<AdministationPostsService>();
             kernel.Bind<IAdministrationCommentsService>().To<AdministrationCommentsService>();
+            kernel.Bind<IAdminCategoriesService>().To<AdminCategoriesService>();
 
         }
     }

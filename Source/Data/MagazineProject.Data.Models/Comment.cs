@@ -2,13 +2,17 @@
 {
     using System.ComponentModel;
     using System.ComponentModel.DataAnnotations;
-    using System.ComponentModel.DataAnnotations.Schema;
 
     using MagazineProject.Data.Common;
     using MagazineProject.Data.Common.Model;
 
     public class Comment : AuditInfo
     {
+        public Comment()
+        {
+            //default value
+            Status = Status.Published;
+        }
         [Key]
         public int Id { get; set; }
 

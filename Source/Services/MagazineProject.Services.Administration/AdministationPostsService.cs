@@ -6,9 +6,6 @@
     using MagazineProject.Data.UnitOfWork;
     using MagazineProject.Services.Common;
     using MagazineProject.Services.Common.Moderator;
-    using MagazineProject.Web.Models.Area.Moderator.InputViewModels;
-    using MagazineProject.Web.Models.Area.Moderator.InputViewModels.Post;
-    using MagazineProject.Web.Models.InputModels.Base;
     using MagazineProject.Web.Models.InputModels.Base.Post;
 
     public class AdministationPostsService : BaseAdministrationPostsService, IAdministrationPostsService

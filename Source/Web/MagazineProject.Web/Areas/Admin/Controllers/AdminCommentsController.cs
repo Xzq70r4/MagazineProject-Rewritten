@@ -18,6 +18,15 @@
         {
             this.adminComments = adminComments;
         }
+        public ActionResult Index()
+        {
+            var comments = adminComments
+                .GetCommentsForGrid()
+                .Project()
+                .To<GridCommentViewModel>();
+
+            return this.View(comments);
+        }
 
         [HttpGet]
         public ActionResult Edit(int id)
@@ -49,22 +58,12 @@
 
                 TempData["Message"] = "<div class='alert alert-success'><a href='#' class='close' data-dismiss='alert'>&times;</a><strong>Success!</strong> Successfully Edited Comment.</div> ";
 
-                return this.RedirectToAction("GetCommentsForGrid", "AdminComments", new { area = "Admin" });
+                return this.RedirectToAction("Index", "AdminComments", new { area = "Admin" });
             }
 
             TempData["Message"] = "<div class='alert alert-danger'><a href='#' class='close' data-dismiss='alert'>&times;</a><strong>Fail!</strong> Not Successfully Edited Comment.</div>";
 
             return this.View(viewModel);
-        }
-
-        public ActionResult GetCommentsForGrid()
-        {
-            var comments = adminComments
-                .GetCommentsForGrid()
-                .Project()
-                .To<GridCommentViewModel>();
-
-            return this.View(comments);
         }
     }
 }

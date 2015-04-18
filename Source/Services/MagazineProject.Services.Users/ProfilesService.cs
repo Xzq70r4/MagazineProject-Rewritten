@@ -3,6 +3,7 @@
     using System.Linq;
     using System.Web.Helpers;
 
+    using MagazineProject.Data.Common.Model;
     using MagazineProject.Data.Models;
     using MagazineProject.Data.UnitOfWork;
     using MagazineProject.Services.Common;
@@ -14,7 +15,7 @@
     {
         private readonly ISanitizer sanitizer;
 
-        public ProfilesService(IUnitOfWorkData data, ISanitizer sanitize)
+        public ProfilesService(IUnitOfWorkData data, ISanitizer sanitizer)
             : base(data)
         {
             this.sanitizer = sanitizer;
@@ -30,8 +31,14 @@
 
         public void UpdateProfile(User model, UserProfileSettingsViewModel viewModel)
         {
-            model.InfoContent = viewModel.InfoContent == null ?
-               viewModel.InfoContent : this.sanitizer.Sanitize(viewModel.InfoContent);
+            if (viewModel.InfoContent == null)
+            {
+                model.InfoContent = viewModel.InfoContent;
+            }
+            else
+            {
+                model.InfoContent = this.sanitizer.Sanitize(viewModel.InfoContent);
+            }
             model.Email = viewModel.Email;
             model.FirstName = viewModel.FirstName;
             model.LastName = viewModel.LastName;
@@ -45,7 +52,8 @@
             var userComments = this.Data
                 .Comments
                 .All()
-                .Where(c => c.AuthorId == userId);
+                .Where(c => c.AuthorId == userId &&
+                            c.Status == Status.Published);
 
             return userComments;
         }
@@ -55,7 +63,8 @@
             var userPosts = this.Data
                 .Posts
                 .All()
-                .Where(p => p.AuthorId == userId);
+                .Where(p => p.AuthorId == userId &&
+                            p.Status == Status.Published);
 
             return userPosts;
         }
