@@ -144,7 +144,6 @@ namespace MagazineProject.Data.Migrations
         {
             //TODO: Requeest only for writer
             var users = context.Users.Take(10).ToList();
-
             //var users = context.Users.Take(80).ToList();
             //for (int i = 0; i < 500; i++)
             for (int i = 0; i < 30; i++)
@@ -217,10 +216,10 @@ namespace MagazineProject.Data.Migrations
         {
             var videos = new[]
             {
-                "http://vimeo.com/81175332",
-                "https://www.youtube.com/watch?v=OMOVFvcNfvE",
-                "https://www.youtube.com/watch?v=8xroGBuT54I",
-                "http://vimeo.com/channels/staffpicks/118380572"
+                "https://www.youtube.com/embed/OMOVFvcNfvE",
+                "https://www.youtube.com/embed/wTKb9qw0zds",
+                "https://www.youtube.com/embed/8xroGBuT54I",
+                "https://www.youtube.com/embed/JuyB7NO0EYY"
             };
 
             var videoUrl = videos[this.random.RandomNumber(0, videos.Length - 1)];

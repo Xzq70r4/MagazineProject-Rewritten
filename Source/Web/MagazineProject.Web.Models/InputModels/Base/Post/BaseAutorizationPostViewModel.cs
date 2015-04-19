@@ -2,6 +2,7 @@
 {
     using System.Collections.Generic;
     using System.ComponentModel.DataAnnotations;
+    using System.Text.RegularExpressions;
     using System.Web.Mvc;
 
     using MagazineProject.Data.Models;
@@ -28,7 +29,10 @@
 
         public IEnumerable<SelectListItem> Categories { get; set; }
 
-
+        [RegularExpression("^(?:https?\\:\\/\\/)?(?:www\\.)?(?:youtu\\.be\\/|youtube\\.com\\/(?:embed\\/|v\\/|watch\\?v\\=))([\\w-]{10,12})(?:$|\\&|\\?\\#).*")]
+        [UIHint("SingleLineText")]
+        [Display(Name = "YouTube Embed Url")]
+        public string UrlVideo { get; set; }
         //[Required]
         //[Display(Name = "Cover Image")]
         //[UIHint("UploadImage")]

@@ -31,6 +31,7 @@
         [MaxLength(25000)]
         public string Content { get; set; }
 
+        [RegularExpression("^(?:https?\\:\\/\\/)?(?:www\\.)?(?:youtu\\.be\\/|youtube\\.com\\/(?:embed\\/|v\\/|watch\\?v\\=))([\\w-]{10,12})(?:$|\\&|\\?\\#).*")]
         public string UrlVideo { get; set; }
 
         //TODO: Check[DefaultValue(Status.WaitingApproval)]

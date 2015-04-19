@@ -20,7 +20,7 @@
 
 <div class="well">
     <h4>Category: @Model.CategoryName</h4>
-    
+
     <div class="row">
         <div class="col-md-10 col-lg-10 col-sm-10 col-xs-12 pull-right">
             <h1 class="text-center word-break">@Model.Title</h1>
@@ -34,6 +34,13 @@
     </div>
 </div>
 <br/>
+<div class="row">
+    <div class="col-md-12 ">
+        <div class="embed-responsive embed-responsive-16by9 ">
+            <iframe src="@Model.UrlVideo"></iframe>
+        </div>
+    </div>
+</div>
 <br/>
 @if (User.Identity.IsAuthenticated)
 {
@@ -41,7 +48,7 @@
     <div class="row">
         <div class="col-md-12 text-right">
             <i class="fa fa-plus-circle"></i>
-            @Html.ActionLink("Add Comment", "AddComment", "Comments", new {id = Model.Id}, new {area = string.Empty})
+            @Html.ActionLink("Add Comment", "AddComment", "Comments", new { id = Model.Id }, new { area = string.Empty })
         </div>
     </div>
     <hr />

@@ -8,28 +8,24 @@
     }
 }
 
-
 @{
     var triStateValues = new List<SelectListItem>
-{
-    //new SelectListItem
-    //    {
-    //        Text = "Not Set", Value = String.Empty, Selected = !value.HasValue
-    //    },
-    new SelectListItem
-        {
-            Text = "True",
-            Value = "true", 
-            Selected = value.HasValue && value.Value
-        }, 
-    new SelectListItem
-        {
-            Text = "False",
-            Value = "false",
-            Selected = value.HasValue && !value.Value
-        },
-};
+    {
+        new SelectListItem
+            {
+                Text = "True",
+                Value = "true", 
+                Selected = value.HasValue && value.Value
+            }, 
+        new SelectListItem
+            {
+                Text = "False",
+                Value = "false",
+                Selected = value.HasValue && !value.Value
+            },
+    };
 }
+
 <div class="row">
     <div class="col-md-2">
         @Html.LabelFor(m => m, new { @class = "text-primary" })

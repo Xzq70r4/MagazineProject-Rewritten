@@ -79,7 +79,8 @@
                 Content = post.Content,
                 CategoryId = post.CategoryId,
                 Categories = this.populator.GetCategories(),
-                Status = post.Status
+                Status = post.Status,
+                UrlVideo = post.UrlVideo
             };
 
             return View(editPostViewModel);

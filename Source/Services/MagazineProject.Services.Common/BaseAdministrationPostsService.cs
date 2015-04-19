@@ -56,6 +56,7 @@
             base.UpdatedThumbnailPostCoverImage(savedPost, viewModel, thumbnailImage);
 
             savedPost.Status = viewModel.Status;
+            savedPost.UrlVideo = viewModel.UrlVideo;
 
             this.Data.Posts.Update(savedPost);
             this.Data.SaveChanges();
@@ -66,6 +67,8 @@
             post.Title = viewModel.Title;
             post.Content = viewModel.Content;
             post.CategoryId = viewModel.CategoryId;
+            post.Status = viewModel.Status;
+            post.UrlVideo = viewModel.UrlVideo;
 
             var image = WebImage.GetImageFromRequest();
             if (image != null)
@@ -76,8 +79,6 @@
                 base.UpdatedSliderPostCoverImage(post, viewModel, sliderImage);
                 base.UpdatedThumbnailPostCoverImage(post, viewModel, thumbnailImage);
             }
-
-            post.Status = viewModel.Status;
 
             Data.Posts.Update(post);
             Data.SaveChanges();

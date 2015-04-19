@@ -2,25 +2,28 @@
 @model MagazineProject.Web.Models.Area.Admin.InputViewModels.Category.AdminCategoryAddViewModel
 @Html.Raw(TempData["Message"])
 
-@using (Html.BeginForm("Add", "AdminPosts", FormMethod.Post, new { @class = "form", enctype = "multipart/form-data" }))
+@using (Html.BeginForm("Add", "AdminCategories", FormMethod.Post, new { @class = "form", enctype = "multipart/form-data" }))
 {
     @Html.AntiForgeryToken()
 
     <fieldset>
         <div class="well">
             <legend>
-                <h2>Add Post</h2>
+                <h2>Add Category</h2>
             </legend>
             @Html.EditorFor(m => m.Name)
             @Html.EditorFor(m => m.IsHidden)
         </div>
         <div class="row">
             <div class="col-xs-4 text-right">
-                @Html.ActionLink("Cancel", "Index", "AdminPosts", new { area = "Admin" }, new { @class = "btn btn-default", type = "reset" })
+                @Html.ActionLink("Cancel", "Index", "AdminCategories", new { area = "Admin" }, new { @class = "btn btn-default", type = "reset" })
             </div>
             <div class="col-md-7 text-left">
                 @Html.Submit("Save")
             </div>
         </div>
     </fieldset>
+}
+@section scripts {
+    @Scripts.Render("~/bundles/jqueryval")
 }

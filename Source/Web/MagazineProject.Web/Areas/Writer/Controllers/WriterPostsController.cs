@@ -85,7 +85,8 @@
                 Title = post.Title,
                 Content = post.Content,
                 CategoryId = post.CategoryId,
-                Categories = this.populator.GetCategories()
+                Categories = this.populator.GetCategories(),
+                UrlVideo = post.UrlVideo
             };
 
 

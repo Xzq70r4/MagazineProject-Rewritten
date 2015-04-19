@@ -4,7 +4,6 @@
 
     using AutoMapper;
 
-    using MagazineProject.Data.Common.Model;
     using MagazineProject.Data.Models;
     using MagazineProject.Web.Infrastructure.Mapping;
 
@@ -16,13 +15,15 @@
 
         public string Content { get; set; }
 
-        public Status Status { get; set; }
+        //public Status Status { get; set; }
 
         public string AuthorName { get; set; }
 
         public string CategoryName { get; set; }
 
         public DateTime TimeCreated { get; set; }
+
+        public string UrlVideo { get; set; }
 
         public void CreateMappings(IConfiguration configuration)
         {
