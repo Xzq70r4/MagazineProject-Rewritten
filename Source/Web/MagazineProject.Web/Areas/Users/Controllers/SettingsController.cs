@@ -54,7 +54,7 @@
                     .GetProfileById(userId)
                     .FirstOrDefault();
 
-                this.profiles.UpdateProfile(user, settings);
+                this.profiles.Edit(user, settings);
 
                 TempData["Message"] = "<div class='alert alert-success'><a href='#' class='close' data-dismiss='alert'>&times;</a><strong>Success!</strong> Successfully Save.</div> ";
 

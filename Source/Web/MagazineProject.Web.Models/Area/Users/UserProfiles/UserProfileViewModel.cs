@@ -7,7 +7,7 @@
 
     using MagazineProject.Data.Models;
     using MagazineProject.Web.Infrastructure.Mapping;
-    using MagazineProject.Web.Models.Area.Users.Interface;
+    using MagazineProject.Web.Models.InputModels.Base.User.Interface;
 
     public class UserProfileViewModel : IMapFrom<User>, IHaveCustomMappings, IProfile
     {

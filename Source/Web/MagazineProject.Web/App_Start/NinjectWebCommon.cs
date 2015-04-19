@@ -20,6 +20,7 @@ namespace MagazineProject.Web.App_Start
     using MagazineProject.Services;
     using MagazineProject.Services.Administration;
     using MagazineProject.Services.Common;
+    using MagazineProject.Services.Common.Administaration;
     using MagazineProject.Services.Common.Data;
     using MagazineProject.Services.Common.Moderator;
     using MagazineProject.Services.Common.User;
@@ -102,6 +103,7 @@ namespace MagazineProject.Web.App_Start
             kernel.Bind<IAdministrationPostsService>().To<AdministationPostsService>();
             kernel.Bind<IAdministrationCommentsService>().To<AdministrationCommentsService>();
             kernel.Bind<IAdminCategoriesService>().To<AdminCategoriesService>();
+            kernel.Bind<IAdminUsersService>().To<AdminUsersService>();
 
         }
     }

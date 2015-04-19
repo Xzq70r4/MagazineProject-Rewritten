@@ -11,40 +11,21 @@
     using MagazineProject.Web.Infrastructure.Sanitizer;
     using MagazineProject.Web.Models.Area.Users.InputViewModels.Settings;
 
-    public class ProfilesService : BaseService, IProfilesService
+    public class ProfilesService : BaseUsersService, IProfilesService
     {
-        private readonly ISanitizer sanitizer;
-
         public ProfilesService(IUnitOfWorkData data, ISanitizer sanitizer)
-            : base(data)
+            : base(data, sanitizer)
         {
-            this.sanitizer = sanitizer;
         }
 
         public IQueryable<User> GetProfileById(string userId)
         {
-            return this.Data
-                .Users
-                .All()
-                .Where(u => u.Id == userId);
+            return base.GetProfileById(userId);
         }
 
-        public void UpdateProfile(User model, UserProfileSettingsViewModel viewModel)
+        public void Edit(User model, UserProfileSettingsViewModel viewModel)
         {
-            if (viewModel.InfoContent == null)
-            {
-                model.InfoContent = viewModel.InfoContent;
-            }
-            else
-            {
-                model.InfoContent = this.sanitizer.Sanitize(viewModel.InfoContent);
-            }
-            model.Email = viewModel.Email;
-            model.FirstName = viewModel.FirstName;
-            model.LastName = viewModel.LastName;
-            this.UpdateUserImage(model);
-
-            this.Data.SaveChanges();
+            base.Edit(model, viewModel);
         }
 
         public IQueryable<Comment> GetProfileComments(string userId)
@@ -67,19 +48,6 @@
                             p.Status == Status.Published);
 
             return userPosts;
-        }
-
-        private void UpdateUserImage(User model)
-        {
-            var photo = WebImage.GetImageFromRequest();
-            if (photo != null)
-            {
-                photo.Resize(width: 300, height: 200, preserveAspectRatio: false, preventEnlarge: false);
-                byte[] data = photo.GetBytes();
-
-                model.UserImage.Content = data;
-                model.UserImage.FileExtension = photo.ImageFormat;
-            }
         }
     }
 }

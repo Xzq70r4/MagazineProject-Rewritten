@@ -9,7 +9,7 @@
     {
         IQueryable<User> GetProfileById(string userId);
 
-        void UpdateProfile(User model, UserProfileSettingsViewModel viewModel);
+        void Edit(User model, UserProfileSettingsViewModel viewModel);
 
         IQueryable<Comment> GetProfileComments(string userId);
 

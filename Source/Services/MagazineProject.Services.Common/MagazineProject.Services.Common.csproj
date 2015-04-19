@@ -86,9 +86,11 @@
   <ItemGroup>
     <Compile Include="Administaration\IAdminCategoriesService.cs" />
     <Compile Include="Administaration\IAdministrationCommentsService.cs" />
+    <Compile Include="Administaration\IAdminUsersService.cs" />
     <Compile Include="BaseAdministrationPostsService.cs" />
     <Compile Include="BaseAutorizePostsService.cs" />
     <Compile Include="BaseService.cs" />
+    <Compile Include="BaseUsersService.cs" />
     <Compile Include="ICategoriesService.cs" />
     <Compile Include="ICommentsService.cs" />
     <Compile Include="IImagesService.cs" />

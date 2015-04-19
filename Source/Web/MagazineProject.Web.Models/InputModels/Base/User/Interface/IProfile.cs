@@ -1,4 +1,4 @@
-﻿namespace MagazineProject.Web.Models.Area.Users.Interface
+﻿namespace MagazineProject.Web.Models.InputModels.Base.User.Interface
 {
     public interface IProfile
     {

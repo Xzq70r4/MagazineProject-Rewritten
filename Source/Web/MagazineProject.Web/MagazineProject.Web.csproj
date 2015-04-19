@@ -235,6 +235,7 @@
     <Compile Include="Areas\Admin\Controllers\AdminController.cs" />
     <Compile Include="Areas\Admin\Controllers\AdminPostsController.cs" />
     <Compile Include="Areas\Admin\Controllers\AdminCategoriesController.cs" />
+    <Compile Include="Areas\Admin\Controllers\AdminUserController.cs" />
     <Compile Include="Areas\Moderator\Controllers\ModeratorCommentsController.cs" />
     <Compile Include="Areas\Moderator\Controllers\ModeratorController.cs" />
     <Compile Include="Areas\Moderator\Controllers\ModeratorPostsController.cs" />
@@ -355,6 +356,8 @@
     <None Include="Areas\Admin\Views\AdminPosts\Add.cshtml" />
     <None Include="Areas\Admin\Views\AdminPosts\Edit.cshtml" />
     <None Include="Areas\Admin\Views\AdminPosts\Index.cshtml" />
+    <None Include="Areas\Admin\Views\AdminUser\Edit.cshtml" />
+    <None Include="Areas\Admin\Views\AdminUser\Index.cshtml" />
     <None Include="Scripts\jquery-2.1.3.intellisense.js" />
     <Content Include="Icon.png" />
     <Content Include="Scripts\bootstrap.js" />
@@ -605,10 +608,11 @@
     <Content Include="Views\Shared\_AdministrationCommentPartial.cshtml" />
     <Content Include="Views\Shared\EditorTemplates\RequiredUploadImage.cshtml" />
     <Content Include="Views\Shared\EditorTemplates\Boolean.cshtml" />
+    <Content Include="Views\Shared\_UserEditParatial.cshtml" />
+    <Content Include="Views\Shared\_ProfilePartial.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Areas\Admin\Views\Category\" />
     <Folder Include="Areas\Admin\Views\Shared\" />
     <Folder Include="Areas\Moderator\Views\Shared\" />
   </ItemGroup>

@@ -1,0 +1,29 @@
+﻿@model MagazineProject.Web.Models.Area.Admin.InputViewModels.User.AdminUserEditViewModel
+
+@Html.Raw(TempData["Message"])
+
+<br />
+<br />
+@using (Html.BeginForm("Edit", "AdminUser", FormMethod.Post, new { id = Model.Id, @class = "form-horizontal", enctype = "multipart/form-data" }))
+{
+    @Html.AntiForgeryToken()
+
+    <fieldset>
+        <div class="well">
+
+            <legend>
+                <h2>Edit @Model.UserName</h2>
+            </legend>
+            <br />
+            <div class="row center-block">
+                @Html.EditorFor(m => m.UserName)
+                @Html.Partial("_UserEditParatial", @Model)
+            </div>
+        </div>
+    </fieldset>
+}
+
+@section Scripts{
+    @Scripts.Render("~/bundles/jqueryval"),
+    @Scripts.Render("~/bundles/uploadImage")
+}

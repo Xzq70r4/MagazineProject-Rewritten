@@ -10,7 +10,7 @@
 <div class="row">
     <div class="col-md-12 ">
         <div class="panel panel-default">
-            
+
             <div class="panel-heading">
                 <h2 class=" text-primary">
                     @Model.UserName
@@ -20,43 +20,7 @@
                 </h2>
             </div>
 
-            <div class="panel-body">
-                <div class="row">
-                    <div class="col-md-3 col-lg-3 col-sm-6 col-xs-12" align="center">
-                        <img src="@Url.Action("UserImage", "Images", new { area = "", id = @Model.Id })" class="img-responsive"/>
-                    </div>
-                    <div class=" col-md-9 col-lg-9 col-sm-12 col-xs-12">
-
-                        <ul class="list-group">
-                            <li class="list-group-item">
-                                First Name: <strong>@(Model.FirstName != null ? Model.FirstName : "No Info")</strong>
-                            </li>
-                            <li class="list-group-item">
-                                Last Name: <strong>@Model.LastName</strong>
-                            </li>
-
-                            <li class="list-group-item">
-                                Email: <strong>@Model.Email</strong>
-                            </li>
-                            <li class="list-group-item">
-                                Registered: <strong>@Model.TimeCreated</strong>
-                            </li>
-                            <li class="list-group-item">
-                                <legend class="center-block profile-legend"><h4>Info Presentation</h4></legend>
-                                <div class="row">
-                                    <div class="col-md-9 col-lg-9 col-sm-12 col-xs-12 pull-right word-break">
-                                        <br/>
-                                        <article>
-                                            @Html.Raw(@Model.InfoContent)
-                                        </article>
-                                    </div>
-                                </div>
-                            </li>
-                        </ul>
-
-                    </div>
-                </div>
-            </div>
+            @Html.Partial("_ProfilePartial")
 
         </div>
     </div>
@@ -64,8 +28,8 @@
 
 <div class="row">
     <div>
-        <a href="/Users/UserPosts" class="btn btn-primary btn-block">See @Model.UserName`s Posts</a>
-        <a href="/Users/UserComments" class="btn btn-primary btn-block">See @Model.UserName`s Comments</a>
+        @Html.ActionLink("See" + @Model.UserName.ToString() + "`s Posts", "Index", "UserPosts", new { id = Model.Id }, new { @class = "btn btn-primary btn-block", area = "Users" })
+        @Html.ActionLink("See" + @Model.UserName.ToString() + "`s Comments", "Index", "UserComments", new { id = Model.Id }, new { @class = "btn btn-primary btn-block", area = "Users" })
     </div>
 </div>
 

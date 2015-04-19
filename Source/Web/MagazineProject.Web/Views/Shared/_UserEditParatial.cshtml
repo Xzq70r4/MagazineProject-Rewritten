@@ -1,0 +1,20 @@
+﻿@model MagazineProject.Web.Models.InputModels.Base.User.BaseUserEditViewModel
+@using MagazineProject.Web.Infrastructure.HtmlHelpers
+
+@Html.EditorFor(m => m.Email)
+@Html.EditorFor(m => m.FirstName)
+@Html.EditorFor(m => m.LastName)
+@Html.EditorFor(m => m.UploadedImage)
+@Html.EditorFor(m => m.InfoContent)
+
+<br />
+@Html.ValidationSummary("", new { @class = "text-danger" })
+
+<div class="row">
+    <div class="col-xs-4 text-right">
+        @Html.ActionLink("Cancel", "Index", "Profile", new { area = "Users" }, new { @class = "btn btn-default", type = "reset" })
+    </div>
+    <div class="col-md-7 text-left">
+        @Html.Submit("Save")
+    </div>
+</div>

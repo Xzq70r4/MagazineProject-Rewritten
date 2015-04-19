@@ -1,0 +1,28 @@
+﻿@model System.Linq.IQueryable<MagazineProject.Web.Models.Area.Grid.GridUserViewModel>
+
+@using GridMvc.Html
+
+@section Styles{
+    @Styles.Render("~/Content/grid")
+}
+
+@Html.Raw(TempData["Message"])
+
+<div>
+    @(Html.Grid(Model).Columns(columns =>
+          {
+              columns.Add(u => u.UserName).Titled("Nickname").Filterable(true);
+              
+              columns.Add(u => u.Email).Titled("Email").Filterable(true);
+              
+              columns.Add(u => u.TimeCreated).Titled("Created on").Filterable(true);
+
+              columns.Add().Titled("Actions").Sanitized(false).Encoded(false).RenderValueAs(o => Html.ActionLink("Edit", "Edit", new { id = o.Id }).ToHtmlString());
+          }).WithPaging(10).Sortable(true))
+</div>
+
+@section scripts
+{
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/gridmvc")
+}
