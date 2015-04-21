@@ -5,16 +5,17 @@
 
     using AutoMapper.QueryableExtensions;
 
+    using MagazineProject.Common;
     using MagazineProject.Services.Common.Administaration;
-    using MagazineProject.Web.Controllers.Base;
+    using MagazineProject.Web.Infrastructure.Populators;
     using MagazineProject.Web.Models.Area.Admin.InputViewModels.User;
     using MagazineProject.Web.Models.Area.Grid;
 
-    public class AdminUserController : BaseController
+    public class AdminUserController : AdminController
     {
         private readonly IAdminUsersService users;
 
-        public AdminUserController(IAdminUsersService users)
+        public AdminUserController(IDropDownListPopulator populator,IAdminUsersService users)
         {
             this.users = users;
         }
@@ -53,12 +54,13 @@
 
                 this.users.Edit(user, settings);
 
-                TempData["Message"] = "<div class='alert alert-success'><a href='#' class='close' data-dismiss='alert'>&times;</a><strong>Success!</strong> Successfully Save.</div> ";
+                this.TempData["Message"] = string.Format(GlobalConstants.SuccessMessage, " Save.");
+
 
                 return this.RedirectToAction("Index", new { controller = "AdminUser", area = "Admin" });
             }
 
-            TempData["Message"] = "<div class='alert alert-danger'><a href='#' class='close' data-dismiss='alert'>&times;</a><strong>Fail!</strong> Not Successfully Save.</div>";
+            this.TempData["Message"] = string.Format(GlobalConstants.FailMessage, " Save.");
 
             return this.View(settings);
         }

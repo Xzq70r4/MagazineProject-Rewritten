@@ -5,6 +5,7 @@
 
     using AutoMapper.QueryableExtensions;
 
+    using MagazineProject.Common;
     using MagazineProject.Services.Common.Moderator;
     using MagazineProject.Web.Infrastructure.Populators;
     using MagazineProject.Web.Models.Area.Grid;
@@ -54,12 +55,12 @@
 
                 this.moderatorPosts.AddDbPost(viewModel, userId);
 
-                TempData["Message"] = "<div class='alert alert-success'><a href='#' class='close' data-dismiss='alert'>&times;</a><strong>Success!</strong> Successfully Added Post.</div> ";
+                this.TempData["Message"] = string.Format(GlobalConstants.SuccessMessage, " Added Post.");
 
                 return this.RedirectToAction("Index", "ModeratorPosts", new { area = "Moderator" });
             }
 
-            TempData["Message"] = "<div class='alert alert-danger'><a href='#' class='close' data-dismiss='alert'>&times;</a><strong>Fail!</strong> Not Successfully Added Post.</div>";
+            this.TempData["Message"] = string.Format(GlobalConstants.FailMessage, " Added Post.");
 
             viewModel.Categories = this.populator.GetCategories();
 
@@ -98,12 +99,12 @@
 
                 this.moderatorPosts.Edit(post, viewModel);
 
-                TempData["Message"] = "<div class='alert alert-success'><a href='#' class='close' data-dismiss='alert'>&times;</a><strong>Success!</strong> Successfully Edited Post.</div> ";
+                this.TempData["Message"] = string.Format(GlobalConstants.SuccessMessage, " Edited Post.");
 
                 return this.RedirectToAction("Index", "ModeratorPosts", new { area = "Moderator" });
             }
 
-            TempData["Message"] = "<div class='alert alert-danger'><a href='#' class='close' data-dismiss='alert'>&times;</a><strong>Fail!</strong> Not Successfully Edited Post.</div>";
+            this.TempData["Message"] = string.Format(GlobalConstants.FailMessage, " Edited Post.");
 
             viewModel.Categories = this.populator.GetCategories();
 

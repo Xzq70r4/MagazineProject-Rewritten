@@ -1,0 +1,68 @@
+﻿@using MagazineProject.Web.Infrastructure.HtmlHelpers
+@{
+    ViewBag.Title = "ManageUserRoles";
+}
+@Html.Raw(TempData["Message"])
+
+<h2>Manage User Roles</h2>
+
+<hr />
+
+<h2>Role Add to User</h2>
+
+@using (Html.BeginForm("RoleAddToUser", "AdminRoleManager"))
+{
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+
+    @Html.Partial("_IntputUserAndRolePartial")
+    <div>
+        @Html.Submit("Save").Value("Save")
+    </div>
+}
+
+<hr />
+<h3>Get Roles for a User</h3>
+@using (Html.BeginForm("GetRoles", "AdminRoleManager"))
+{
+    @Html.AntiForgeryToken()
+
+    <div class="row form-group">
+        <div class="col-md-2 col-xs-12">
+            @Html.Label("User Name", null, new { @class = "text-primary" })
+        </div>
+        <div class="col-md-3 col-xs-12">
+            @Html.TextBox("UserName", null, new { @class = "form-control " })
+        </div>
+        <div class="col-md-2 col-xs-12">
+            @Html.Submit("Get Roles for this User").Value("Get Roles for this User")
+        </div>
+    </div>
+}
+
+@if (ViewBag.RolesForThisUser != null)
+{
+    <div class="user-roles">
+        <h3>Roles for this user </h3>
+        <ol>
+            @foreach (string userRoles in ViewBag.RolesForThisUser)
+            {
+                <li>@userRoles</li>
+            }
+        </ol>
+    </div>
+}
+
+<hr />
+<h3>Delete A User from a Role</h3>
+
+@using (Html.BeginForm("DeleteRoleForUser", "AdminRoleManager"))
+{
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+
+    @Html.Partial("_IntputUserAndRolePartial")
+    <div>
+        @Html.Submit("Delete this user from Role").Value("Delete this user from Role")
+    </div>
+}

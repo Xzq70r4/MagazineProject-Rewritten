@@ -5,6 +5,7 @@
 
     using AutoMapper.QueryableExtensions;
 
+    using MagazineProject.Common;
     using MagazineProject.Services.Common.Moderator;
     using MagazineProject.Web.Models.Area.Grid;
     using MagazineProject.Web.Models.Area.Moderator.InputViewModels.Comment;
@@ -55,12 +56,12 @@
 
                 this.moderatorComments.Edit(comment, viewModel);
 
-                TempData["Message"] = "<div class='alert alert-success'><a href='#' class='close' data-dismiss='alert'>&times;</a><strong>Success!</strong> Successfully Edited Comment.</div> ";
+                this.TempData["Message"] = string.Format(GlobalConstants.SuccessMessage, " Edited Comment.");
 
                 return this.RedirectToAction("Index", "ModeratorComments", new { area = "Moderator" });
             }
 
-            TempData["Message"] = "<div class='alert alert-danger'><a href='#' class='close' data-dismiss='alert'>&times;</a><strong>Fail!</strong> Not Successfully Edited Comment.</div>";
+            this.TempData["Message"] = string.Format(GlobalConstants.FailMessage, " Edited Comment.");
 
             return this.View(viewModel);
         }

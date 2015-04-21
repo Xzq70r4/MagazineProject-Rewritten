@@ -5,11 +5,12 @@
 
     using AutoMapper.QueryableExtensions;
 
+    using MagazineProject.Common;
     using MagazineProject.Services.Common.Moderator;
     using MagazineProject.Web.Models.Area.Admin.InputViewModels.Category;
     using MagazineProject.Web.Models.Area.Grid;
 
-    public class AdminCategoriesController : Controller
+    public class AdminCategoriesController : AdminController
     {
         private readonly IAdminCategoriesService categories;
 
@@ -44,12 +45,14 @@
 
                 this.categories.AddDbCategory(viewModel);
 
-                TempData["Message"] = "<div class='alert alert-success'><a href='#' class='close' data-dismiss='alert'>&times;</a><strong>Success!</strong> Successfully Added Categories.</div> ";
+                this.TempData["Message"] = string.Format(GlobalConstants.SuccessMessage, " Added Category.");
+
 
                 return this.RedirectToAction("Index", "AdminCategories", new { area = "Admin" });
             }
 
-            TempData["Message"] = "<div class='alert alert-danger'><a href='#' class='close' data-dismiss='alert'>&times;</a><strong>Fail!</strong> Not Successfully Added Post.</div>";
+            this.TempData["Message"] = string.Format(GlobalConstants.FailMessage, " Added Category.");
+
 
             return this.View(viewModel);
         }
@@ -82,13 +85,15 @@
 
                 this.categories.Edit(viewModel, category);
 
-                TempData["Message"] = "<div class='alert alert-success'><a href='#' class='close' data-dismiss='alert'>&times;</a><strong>Success!</strong> Successfully Edited Category.</div> ";
+                this.TempData["Message"] = string.Format(GlobalConstants.SuccessMessage, " Edited Category.");
+
 
                 return this.RedirectToAction("Index", "AdminCategories", new { area = "Admin" });
 
             }
 
-            TempData["Message"] = "<div class='alert alert-danger'><a href='#' class='close' data-dismiss='alert'>&times;</a><strong>Fail!</strong> Not Successfully Edited Category.</div>";
+            this.TempData["Message"] = string.Format(GlobalConstants.FailMessage, " Edited Category.");
+
 
             return this.View(viewModel);
         }

@@ -33,11 +33,5 @@
         [UIHint("SingleLineText")]
         [Display(Name = "YouTube Embed Url")]
         public string UrlVideo { get; set; }
-        //[Required]
-        //[Display(Name = "Cover Image")]
-        //[UIHint("UploadImage")]
-        //[FileTypes("jpg,jpeg,png")]
-        //[FileSize(4194304)]
-        //public virtual HttpPostedFileBase UploadedImage { get; set; }
     }
 }

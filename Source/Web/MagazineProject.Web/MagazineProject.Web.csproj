@@ -235,6 +235,7 @@
     <Compile Include="Areas\Admin\Controllers\AdminController.cs" />
     <Compile Include="Areas\Admin\Controllers\AdminPostsController.cs" />
     <Compile Include="Areas\Admin\Controllers\AdminCategoriesController.cs" />
+    <Compile Include="Areas\Admin\Controllers\AdminRoleManagerController.cs" />
     <Compile Include="Areas\Admin\Controllers\AdminUserController.cs" />
     <Compile Include="Areas\Moderator\Controllers\ModeratorCommentsController.cs" />
     <Compile Include="Areas\Moderator\Controllers\ModeratorController.cs" />
@@ -356,6 +357,8 @@
     <None Include="Areas\Admin\Views\AdminPosts\Add.cshtml" />
     <None Include="Areas\Admin\Views\AdminPosts\Edit.cshtml" />
     <None Include="Areas\Admin\Views\AdminPosts\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\AdminRoleManager\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\AdminRoleManager\_IntputUserAndRolePartial.cshtml" />
     <None Include="Areas\Admin\Views\AdminUser\Edit.cshtml" />
     <None Include="Areas\Admin\Views\AdminUser\Index.cshtml" />
     <None Include="Scripts\jquery-2.1.3.intellisense.js" />
@@ -610,6 +613,7 @@
     <Content Include="Views\Shared\EditorTemplates\Boolean.cshtml" />
     <Content Include="Views\Shared\_UserEditParatial.cshtml" />
     <Content Include="Views\Shared\_ProfilePartial.cshtml" />
+    <Content Include="Views\Shared\EditorTemplates\View.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

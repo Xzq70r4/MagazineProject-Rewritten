@@ -5,6 +5,7 @@
 
     using AutoMapper.QueryableExtensions;
 
+    using MagazineProject.Common;
     using MagazineProject.Services.Common;
     using MagazineProject.Services.Common.Data;
     using MagazineProject.Web.Controllers.Base;
@@ -45,12 +46,12 @@
                 this.comments.AddComment(userId, id, input.Content);
 
 
-                TempData["Message"] = "<div class='alert alert-success'><a href='#' class='close' data-dismiss='alert'>&times;</a><strong>Success!</strong> Successfully Add Comment.</div> ";
+                this.TempData["Message"] = string.Format(GlobalConstants.SuccessMessage, " Added Comment.");
 
                 return this.RedirectToAction("Details", "Posts", new { id = id});
             }
 
-            TempData["Message"] = "<div class='alert alert-danger'><a href='#' class='close' data-dismiss='alert'>&times;</a><strong>Fail!</strong> Not Successfully Save.</div>";
+            this.TempData["Message"] = string.Format(GlobalConstants.FailMessage, " Added Comment.");
 
             return this.View(input);
         }

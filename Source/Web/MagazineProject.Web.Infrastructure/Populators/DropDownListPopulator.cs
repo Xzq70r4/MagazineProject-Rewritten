@@ -1,12 +1,14 @@
 ﻿namespace MagazineProject.Web.Infrastructure.Populators
 {
-    using System;
     using System.Collections.Generic;
     using System.Linq;
     using System.Web.Mvc;
 
     using MagazineProject.Data.UnitOfWork;
     using MagazineProject.Web.Infrastructure.Caching;
+
+    using Microsoft.AspNet.Identity;
+    using Microsoft.AspNet.Identity.EntityFramework;
 
     public class DropDownListPopulator : IDropDownListPopulator
     {
@@ -32,6 +34,32 @@
                            Text = c.Name
                        })
                        .ToList();
+                });
+
+            return categories;
+        }
+
+        public IEnumerable<SelectListItem> GetRoles()
+        {
+            var roleManager = new RoleManager<IdentityRole>(new RoleStore<IdentityRole>());
+            var roles = roleManager.Roles.ToList();
+            IList<SelectListItem> roleList = new List<SelectListItem>();
+
+            foreach (var role in roles)
+            {
+                var item = new SelectListItem
+                {
+                    Value = role.Name,
+                    Text = role.Name
+                };
+                
+                roleList.Add(item);
+            }
+
+            var categories = this.cache.Get<IEnumerable<SelectListItem>>("Roles",
+                () =>
+                {
+                    return roleList.ToList();
                 });
 
             return categories;

@@ -8,6 +8,7 @@
     public class AdminUserEditViewModel : BaseUserEditViewModel
     {
         public string Id { get; set; }
+
         [MinLength(3)]
         [MaxLength(15)]
         [Display(Name = "UserName")]

@@ -1,6 +1,5 @@
 ﻿namespace MagazineProject.Web.Areas.Users.Controllers
 {
-    using System;
     using System.Linq;
     using System.Web.Mvc;
 

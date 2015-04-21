@@ -5,11 +5,11 @@
 
     using AutoMapper.QueryableExtensions;
 
+    using MagazineProject.Common;
     using MagazineProject.Services.Common.Writer;
     using MagazineProject.Web.Infrastructure.Populators;
     using MagazineProject.Web.Models.Area.Grid;
     using MagazineProject.Web.Models.Area.Writer.InputViewModels;
-    using MagazineProject.Web.Models.Posts;
 
     using Microsoft.AspNet.Identity;
 
@@ -59,12 +59,12 @@
 
                 this.writerPosts.AddDbPost(viewModel, userId);
 
-                TempData["Message"] = "<div class='alert alert-success'><a href='#' class='close' data-dismiss='alert'>&times;</a><strong>Success!</strong> Successfully Added Post.</div> ";
+                this.TempData["Message"] = string.Format(GlobalConstants.SuccessMessage, " Added Post.");
 
                 return this.RedirectToAction("Index", "WriterPosts", new { area = "Writer" });
             }
 
-            TempData["Message"] = "<div class='alert alert-danger'><a href='#' class='close' data-dismiss='alert'>&times;</a><strong>Fail!</strong> Not Successfully Added Post.</div>";
+            this.TempData["Message"] = string.Format(GlobalConstants.FailMessage, " Added Post.");
 
             viewModel.Categories = this.populator.GetCategories();
 
@@ -107,12 +107,12 @@
                     this.writerPosts.Edit(post, viewModel);
                 }
 
-                TempData["Message"] = "<div class='alert alert-success'><a href='#' class='close' data-dismiss='alert'>&times;</a><strong>Success!</strong> Successfully Edited Post.</div> ";
+                this.TempData["Message"] = string.Format(GlobalConstants.SuccessMessage, " Edited Post.");
 
                 return this.RedirectToAction("Index", "WriterPosts", new { area = "Writer" });
             }
 
-            TempData["Message"] = "<div class='alert alert-danger'><a href='#' class='close' data-dismiss='alert'>&times;</a><strong>Fail!</strong> Not Successfully Edited Post.</div>";
+            this.TempData["Message"] = string.Format(GlobalConstants.FailMessage, " Edited Post.");
 
             viewModel.Categories = this.populator.GetCategories();
 
