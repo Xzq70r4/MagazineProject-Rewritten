@@ -1,7 +1,10 @@
 ﻿@model IQueryable<MagazineProject.Web.Models.Area.Grid.GridPostViewModel>
-
-
 @using GridMvc.Html
+
+@{
+    ViewBag.Title = "Posts`s Grid";
+}
+
 @section Styles{
     @Styles.Render("~/Content/grid")
 }

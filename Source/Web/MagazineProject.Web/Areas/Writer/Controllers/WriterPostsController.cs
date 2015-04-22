@@ -15,7 +15,7 @@
 
     public class WriterPostsController : WriterController
     {
-        private IDropDownListPopulator populator;
+        private readonly IDropDownListPopulator populator;
         private readonly IWriterPostsService writerPosts;
 
 
@@ -80,18 +80,23 @@
                 .GetPostById(id)
                 .FirstOrDefault();
 
-            var editPostViewModel = new WriterEditPostViewModel
+            if (userId == post.AuthorId)
             {
-                Title = post.Title,
-                Content = post.Content,
-                CategoryId = post.CategoryId,
-                Categories = this.populator.GetCategories(),
-                UrlVideo = post.UrlVideo
-            };
+                var editPostViewModel = new WriterEditPostViewModel
+                {
+                    Title = post.Title,
+                    Content = post.Content,
+                    CategoryId = post.CategoryId,
+                    Categories = this.populator.GetCategories(),
+                    UrlVideo = post.UrlVideo
+                };
 
+                return View(editPostViewModel);
+            }
 
+            this.TempData["Message"] = string.Format(GlobalConstants.FailMessage, "! This not your post!");
 
-            return View(editPostViewModel);
+            return RedirectToAction("Index");
         }
 
         [HttpPost]
@@ -105,11 +110,15 @@
                 if (userId == post.AuthorId)
                 {
                     this.writerPosts.Edit(post, viewModel);
+
+                    this.TempData["Message"] = string.Format(GlobalConstants.SuccessMessage, " Edited Post.");
+
+                    return this.RedirectToAction("Index", "WriterPosts", new { area = "Writer" });
                 }
 
-                this.TempData["Message"] = string.Format(GlobalConstants.SuccessMessage, " Edited Post.");
+                this.TempData["Message"] = string.Format(GlobalConstants.FailMessage, "! This not your post!");
 
-                return this.RedirectToAction("Index", "WriterPosts", new { area = "Writer" });
+                return this.RedirectToAction("Index");
             }
 
             this.TempData["Message"] = string.Format(GlobalConstants.FailMessage, " Edited Post.");

@@ -1,4 +1,4 @@
-﻿namespace MagazineProject.Services.Common.Data
+﻿namespace MagazineProject.Services.Common
 {
     using System.Linq;
 

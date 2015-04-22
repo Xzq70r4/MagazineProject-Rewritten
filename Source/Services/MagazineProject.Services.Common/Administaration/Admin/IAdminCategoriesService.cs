@@ -1,4 +1,4 @@
-﻿namespace MagazineProject.Services.Common.Moderator
+﻿namespace MagazineProject.Services.Common.Administaration.Admin
 {
     using System.Linq;
 

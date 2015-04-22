@@ -4,10 +4,11 @@
 
     using MagazineProject.Data.Models;
     using MagazineProject.Data.UnitOfWork;
-    using MagazineProject.Services.Common;
+    using MagazineProject.Services.Common.Base;
     using MagazineProject.Services.Common.Moderator;
     using MagazineProject.Web.Models.InputModels.Base.Post;
 
+    //Common for Moderator and Admin Service
     public class AdministationPostsService : BaseAdministrationPostsService, IAdministrationPostsService
     {
         public AdministationPostsService(IUnitOfWorkData data)

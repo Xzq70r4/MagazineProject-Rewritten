@@ -4,6 +4,7 @@
 
     using MagazineProject.Data.Common.Model;
 
+    //Administration is common for Moderator and Admin
     public class BaseAdministrationPostsViewModels : BaseAutorizationPostViewModel
     {
         [UIHint("Enum")]

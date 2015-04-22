@@ -4,6 +4,12 @@
 @{
     ViewBag.Title = "Add Post";
 }
+
+@section styles
+{
+    @Styles.Render("~/Content/file-input")
+}
+
 @Html.Raw(TempData["Message"])
 
 @using (Html.BeginForm("Add", "AdminPosts", FormMethod.Post, new { @class = "form", enctype = "multipart/form-data" }))
@@ -28,7 +34,9 @@
         </div>
     </fieldset>
 }
-@section scripts {
-    @Scripts.Render("~/bundles/jqueryval"),
+@section Scripts{
+    @Scripts.Render("~/bundles/jqueryval")
+    @Scripts.Render("~/bundles/val-extensions")
+    @Scripts.Render("~/bundles/tinymce-client-val")
     @Scripts.Render("~/bundles/uploadImage")
 }

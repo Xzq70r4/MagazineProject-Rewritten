@@ -5,7 +5,7 @@
 
     using AutoMapper.QueryableExtensions;
 
-    using MagazineProject.Services.Common.Data;
+    using MagazineProject.Services.Common;
     using MagazineProject.Web.Controllers.Base;
     using MagazineProject.Web.Models.Home;
     using MagazineProject.Web.Models.Posts;

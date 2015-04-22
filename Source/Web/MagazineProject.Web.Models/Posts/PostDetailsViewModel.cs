@@ -15,9 +15,9 @@
 
         public string Content { get; set; }
 
-        //public Status Status { get; set; }
-
         public string AuthorName { get; set; }
+
+        public string AuthorId { get; set; }
 
         public string CategoryName { get; set; }
 
@@ -30,6 +30,7 @@
             configuration.CreateMap<Post, PostDetailsViewModel>()
                 .ForMember(m => m.CategoryName, opt => opt.MapFrom(p => p.Category.Name))
                 .ForMember(m => m.AuthorName, opt => opt.MapFrom(p => p.Author.UserName))
+                .ForMember(m => m.AuthorId, opt => opt.MapFrom(p => p.AuthorId))
                 .ForMember(m => m.TimeCreated, opt => opt.MapFrom(p => p.CreatedOn))
                 .ReverseMap();
         }

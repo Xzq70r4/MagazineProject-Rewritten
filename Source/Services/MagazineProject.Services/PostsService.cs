@@ -6,7 +6,7 @@
     using MagazineProject.Data.Models;
     using MagazineProject.Data.UnitOfWork;
     using MagazineProject.Services.Common;
-    using MagazineProject.Services.Common.Data;
+    using MagazineProject.Services.Common.Base;
 
     public class PostsService : BaseService, IPostsService
     {

@@ -1,11 +1,11 @@
 ﻿namespace MagazineProject.Web.Models.InputModels.Base.Category
 {
-    using System;
     using System.ComponentModel.DataAnnotations;
 
     using MagazineProject.Data.Models;
     using MagazineProject.Web.Infrastructure.Mapping;
 
+    //Administration is common for Moderator and Admin
     public class BaseAdministrationCategoryViewModel : IMapFrom<Category>
     {
         [Required]

@@ -2,6 +2,10 @@
 @using MagazineProject.Common
 @using PagedList.Mvc;
 
+@section Styles{
+    @Styles.Render("~/Content/PagedList")
+}
+
 @foreach (var comment in @Model)
 {
     @Html.DisplayFor(m => comment)

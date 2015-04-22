@@ -7,6 +7,7 @@
     using MagazineProject.Data.Models;
     using MagazineProject.Web.Infrastructure.Mapping;
 
+    //Administration is common for Moderator and Admin
     public class BaseAdministrationCommentsViewModel : IMapFrom<Comment>
     {
         [AllowHtml]

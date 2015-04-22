@@ -2,8 +2,6 @@
 {
     using System.ComponentModel.DataAnnotations;
 
-    using AutoMapper;
-
     using MagazineProject.Data.Models;
     using MagazineProject.Web.Infrastructure.Mapping;
 

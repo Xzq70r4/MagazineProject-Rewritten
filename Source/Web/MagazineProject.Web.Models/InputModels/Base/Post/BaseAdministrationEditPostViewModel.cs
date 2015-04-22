@@ -5,6 +5,7 @@
 
     using MagazineProject.Web.Infrastructure.ValidationAttribute;
 
+    //Administration is common for Moderator and Admin
     public class BaseAdministrationEditPostViewModel : BaseAdministrationPostsViewModels
     {
         [Display(Name = "Cover Image")]

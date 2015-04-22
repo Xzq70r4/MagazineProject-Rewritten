@@ -2,12 +2,12 @@
 {
     using System.Collections.Generic;
     using System.ComponentModel.DataAnnotations;
-    using System.Text.RegularExpressions;
     using System.Web.Mvc;
 
     using MagazineProject.Data.Models;
     using MagazineProject.Web.Infrastructure.Mapping;
 
+    //Administration is common for Moderator and Admin
     public class BaseAutorizationPostViewModel : IMapFrom<Post>
     {
         [Required]

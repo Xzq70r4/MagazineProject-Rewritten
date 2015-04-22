@@ -1,4 +1,4 @@
-﻿namespace MagazineProject.Services.Common
+﻿namespace MagazineProject.Services.Common.Base
 {
     using MagazineProject.Data.UnitOfWork;
 

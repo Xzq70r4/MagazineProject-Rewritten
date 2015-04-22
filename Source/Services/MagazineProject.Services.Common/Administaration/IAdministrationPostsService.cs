@@ -3,9 +3,6 @@
     using System.Linq;
 
     using MagazineProject.Data.Models;
-    using MagazineProject.Web.Models.Area.Moderator.InputViewModels;
-    using MagazineProject.Web.Models.Area.Moderator.InputViewModels.Post;
-    using MagazineProject.Web.Models.InputModels.Base;
     using MagazineProject.Web.Models.InputModels.Base.Post;
 
     public interface IAdministrationPostsService

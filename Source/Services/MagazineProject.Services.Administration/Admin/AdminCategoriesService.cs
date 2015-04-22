@@ -1,14 +1,13 @@
-﻿namespace MagazineProject.Services.Administration
+﻿namespace MagazineProject.Services.Administration.Admin
 {
-    using System;
     using System.Linq;
 
     using AutoMapper;
 
     using MagazineProject.Data.Models;
     using MagazineProject.Data.UnitOfWork;
-    using MagazineProject.Services.Common;
-    using MagazineProject.Services.Common.Moderator;
+    using MagazineProject.Services.Common.Administaration.Admin;
+    using MagazineProject.Services.Common.Base;
     using MagazineProject.Web.Models.InputModels.Base.Category;
 
     public class AdminCategoriesService : BaseService, IAdminCategoriesService
@@ -57,7 +56,7 @@
 
         public void Delete(int categoryId)
         {
-            var category = Data.Categories.GetById(categoryId);
+            var category = this.Data.Categories.GetById(categoryId);
             category.IsHidden = true;
 
             this.Data.Categories.Update(category);

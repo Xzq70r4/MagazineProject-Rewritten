@@ -1,27 +1,25 @@
-using MagazineProject.Data.Repository;
-using MagazineProject.Web.Infrastructure.Sanitizer;
+using MagazineProject.Web.App_Start;
 
-[assembly: WebActivatorEx.PreApplicationStartMethod(typeof(MagazineProject.Web.App_Start.NinjectWebCommon), "Start")]
-[assembly: WebActivatorEx.ApplicationShutdownMethodAttribute(typeof(MagazineProject.Web.App_Start.NinjectWebCommon), "Stop")]
+using WebActivatorEx;
+
+[assembly: PreApplicationStartMethod(typeof(NinjectWebCommon), "Start")]
+[assembly: ApplicationShutdownMethod(typeof(NinjectWebCommon), "Stop")]
 
 namespace MagazineProject.Web.App_Start
 {
     using System;
-    using System.Web;
     using System.Data.Entity;
-
-    using Microsoft.Web.Infrastructure.DynamicModuleHelper;
-
-    using Ninject;
-    using Ninject.Web.Common;
+    using System.Web;
 
     using MagazineProject.Data;
+    using MagazineProject.Data.Common;
+    using MagazineProject.Data.Repository;
     using MagazineProject.Data.UnitOfWork;
     using MagazineProject.Services;
     using MagazineProject.Services.Administration;
+    using MagazineProject.Services.Administration.Admin;
     using MagazineProject.Services.Common;
-    using MagazineProject.Services.Common.Administaration;
-    using MagazineProject.Services.Common.Data;
+    using MagazineProject.Services.Common.Administaration.Admin;
     using MagazineProject.Services.Common.Moderator;
     using MagazineProject.Services.Common.User;
     using MagazineProject.Services.Common.Writer;
@@ -30,6 +28,12 @@ namespace MagazineProject.Web.App_Start
     using MagazineProject.Services.Writer;
     using MagazineProject.Web.Infrastructure.Caching;
     using MagazineProject.Web.Infrastructure.Populators;
+    using MagazineProject.Web.Infrastructure.Sanitizer;
+
+    using Microsoft.Web.Infrastructure.DynamicModuleHelper;
+
+    using Ninject;
+    using Ninject.Web.Common;
 
     public static class NinjectWebCommon 
     {
@@ -81,30 +85,47 @@ namespace MagazineProject.Web.App_Start
         /// <param name="kernel">The kernel.</param>
         private static void RegisterServices(IKernel kernel)
         {
-            kernel.Bind<DbContext>().To<MagazineProjectDbContext>();
+            RegisterDatabaseServices(kernel);
 
-            kernel.Bind(typeof(IRepository<>)).To(typeof(GenericRepository<>));
-
-            kernel.Bind<IUnitOfWorkData>().To<UnitOfWorkData>();
-            //TODO:IAuditInfo !!!!
-            kernel.Bind<ISanitizer>().To<HtmlSanitazerAdapter>();
+            RegisterServicesLayerServices(kernel);
 
             kernel.Bind<ICacheService>().To<InMemoryCache>();
 
             kernel.Bind<IDropDownListPopulator>().To<DropDownListPopulator>();
 
+        }
 
+        private static void RegisterServicesLayerServices(IKernel kernel)
+        {
             kernel.Bind<ICategoriesService>().To<CategoriesService>();
-            kernel.Bind<IPostsService>().To<PostsService>();
-            kernel.Bind<ICommentsService>().To<CommentsService>();
-            kernel.Bind<IImagesService>().To<ImagesService>();
-            kernel.Bind<IProfilesService>().To<ProfilesService>();
-            kernel.Bind<IWriterPostsService>().To<WriterPostsService>();
-            kernel.Bind<IAdministrationPostsService>().To<AdministationPostsService>();
-            kernel.Bind<IAdministrationCommentsService>().To<AdministrationCommentsService>();
-            kernel.Bind<IAdminCategoriesService>().To<AdminCategoriesService>();
-            kernel.Bind<IAdminUsersService>().To<AdminUsersService>();
 
+            kernel.Bind<IPostsService>().To<PostsService>();
+
+            kernel.Bind<ICommentsService>().To<CommentsService>();
+
+            kernel.Bind<IImagesService>().To<ImagesService>();
+
+            kernel.Bind<IProfilesService>().To<ProfilesService>();
+
+            kernel.Bind<IWriterPostsService>().To<WriterPostsService>();
+
+            kernel.Bind<IAdministrationPostsService>().To<AdministationPostsService>();
+
+            kernel.Bind<IAdministrationCommentsService>().To<AdministrationCommentsService>();
+
+            kernel.Bind<IAdminCategoriesService>().To<AdminCategoriesService>();
+
+            kernel.Bind<IAdminUsersService>().To<AdminUsersService>();
+        }
+        private static void RegisterDatabaseServices(IKernel kernel)
+        {
+            kernel.Bind<DbContext>().To<MagazineProjectDbContext>();
+
+            kernel.Bind(typeof(IRepository<>)).To(typeof(GenericRepository<>));
+
+            kernel.Bind<IUnitOfWorkData>().To<UnitOfWorkData>();
+
+            kernel.Bind<ISanitizer>().To<HtmlSanitazerAdapter>();
         }
     }
 }

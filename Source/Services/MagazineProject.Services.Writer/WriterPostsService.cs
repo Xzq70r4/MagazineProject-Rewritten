@@ -8,10 +8,9 @@
     using MagazineProject.Data.Common.Model;
     using MagazineProject.Data.Models;
     using MagazineProject.Data.UnitOfWork;
-    using MagazineProject.Services.Common;
+    using MagazineProject.Services.Common.Base;
     using MagazineProject.Services.Common.Writer;
     using MagazineProject.Web.Models.Area.Writer.InputViewModels;
-    using MagazineProject.Web.Models.InputModels.Base;
 
     public class WriterPostsService : BaseAutorizePostsService, IWriterPostsService
     {

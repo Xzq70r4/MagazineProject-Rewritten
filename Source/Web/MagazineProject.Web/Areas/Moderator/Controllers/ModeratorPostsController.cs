@@ -15,7 +15,7 @@
 
     public class ModeratorPostsController : ModeratorController
     {
-        private IDropDownListPopulator populator;
+        private readonly IDropDownListPopulator populator;
         private readonly IAdministrationPostsService moderatorPosts;
 
 
@@ -26,7 +26,7 @@
         }
         public ActionResult Index()
         {
-            var posts = moderatorPosts
+            var posts = this.moderatorPosts
                 .GetPostsForGrid()
                 .Project()
                 .To<GridPostViewModel>();

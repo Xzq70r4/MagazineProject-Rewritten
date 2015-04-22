@@ -20,7 +20,7 @@
         }
         public ActionResult Index()
         {
-            var comments = moderatorComments
+            var comments = this.moderatorComments
                 .GetCommentsForGrid()
                 .Project()
                 .To<GridCommentViewModel>();

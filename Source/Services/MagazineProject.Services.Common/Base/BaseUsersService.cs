@@ -1,12 +1,10 @@
-﻿namespace MagazineProject.Services.Common
+﻿namespace MagazineProject.Services.Common.Base
 {
     using System.Linq;
     using System.Web.Helpers;
 
-    using MagazineProject.Data.Models;
     using MagazineProject.Data.UnitOfWork;
     using MagazineProject.Web.Infrastructure.Sanitizer;
-    using MagazineProject.Web.Models.Area.Users.InputViewModels.Settings;
     using MagazineProject.Web.Models.InputModels.Base.User;
 
     public class BaseUsersService : BaseService

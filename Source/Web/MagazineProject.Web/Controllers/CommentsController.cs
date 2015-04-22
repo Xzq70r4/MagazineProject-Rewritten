@@ -7,7 +7,6 @@
 
     using MagazineProject.Common;
     using MagazineProject.Services.Common;
-    using MagazineProject.Services.Common.Data;
     using MagazineProject.Web.Controllers.Base;
     using MagazineProject.Web.Models.Comments;
     using MagazineProject.Web.Models.InputModels.Comments;

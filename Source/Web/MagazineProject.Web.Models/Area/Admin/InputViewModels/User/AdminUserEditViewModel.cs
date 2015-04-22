@@ -2,7 +2,6 @@
 {
     using System.ComponentModel.DataAnnotations;
 
-    using MagazineProject.Web.Models.Area.Users.InputViewModels.Settings;
     using MagazineProject.Web.Models.InputModels.Base.User;
 
     public class AdminUserEditViewModel : BaseUserEditViewModel

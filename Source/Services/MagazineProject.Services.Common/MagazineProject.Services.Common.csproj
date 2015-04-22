@@ -84,13 +84,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Administaration\IAdminCategoriesService.cs" />
+    <Compile Include="Administaration\Admin\IAdminCategoriesService.cs" />
     <Compile Include="Administaration\IAdministrationCommentsService.cs" />
-    <Compile Include="Administaration\IAdminUsersService.cs" />
-    <Compile Include="BaseAdministrationPostsService.cs" />
-    <Compile Include="BaseAutorizePostsService.cs" />
-    <Compile Include="BaseService.cs" />
-    <Compile Include="BaseUsersService.cs" />
+    <Compile Include="Administaration\Admin\IAdminUsersService.cs" />
+    <Compile Include="Base\BaseAdministrationPostsService.cs" />
+    <Compile Include="Base\BaseAutorizePostsService.cs" />
+    <Compile Include="Base\BaseService.cs" />
+    <Compile Include="Base\BaseUsersService.cs" />
     <Compile Include="ICategoriesService.cs" />
     <Compile Include="ICommentsService.cs" />
     <Compile Include="IImagesService.cs" />

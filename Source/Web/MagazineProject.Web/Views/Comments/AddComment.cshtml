@@ -1,6 +1,9 @@
 ﻿@using MagazineProject.Web.Infrastructure.HtmlHelpers
-@using Recaptcha.Web.Mvc
 @model AddCommentViewModel
+
+@{
+    ViewBag.Title = "Add Comment";
+}
 
 @Html.Raw(TempData["Message"])
 
@@ -24,12 +27,5 @@
 
 @section Scripts {
    @Scripts.Render("~/bundles/jqueryval")
-    <script>
-        $('form input[type=submit]').click(function () {
-            tinyMCE.triggerSave();
-        });
-        $.validator.setDefaults({
-            ignore: ""
-        });
-    </script>
+   @Scripts.Render("~/bundles/tinymce-client-val")
 }

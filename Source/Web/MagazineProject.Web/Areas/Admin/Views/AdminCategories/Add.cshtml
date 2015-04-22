@@ -1,5 +1,10 @@
 ﻿@using MagazineProject.Web.Infrastructure.HtmlHelpers
 @model MagazineProject.Web.Models.Area.Admin.InputViewModels.Category.AdminCategoryAddViewModel
+
+@{
+    ViewBag.Title = "Add Category";
+}
+
 @Html.Raw(TempData["Message"])
 
 @using (Html.BeginForm("Add", "AdminCategories", FormMethod.Post, new { @class = "form", enctype = "multipart/form-data" }))
@@ -24,6 +29,7 @@
         </div>
     </fieldset>
 }
-@section scripts {
+@section Scripts{
     @Scripts.Render("~/bundles/jqueryval")
+    @Scripts.Render("~/bundles/val-extensions")
 }

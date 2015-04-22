@@ -150,9 +150,7 @@
     <Compile Include="Manage\ManageLoginsViewModel.cs" />
     <Compile Include="Manage\SetPasswordViewModel.cs" />
     <Compile Include="Manage\VerifyPhoneNumberViewModel.cs" />
-    <Compile Include="Posts\PostCoverViewModel.cs" />
     <Compile Include="Posts\PostDetailsViewModel.cs" />
-    <Compile Include="Posts\PostImageViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

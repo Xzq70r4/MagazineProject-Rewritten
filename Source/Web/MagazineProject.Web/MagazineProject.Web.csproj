@@ -271,12 +271,14 @@
     <Content Include="Content\bootstrap.cerulean.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
-    <Content Include="Content\fileinput.css" />
-    <Content Include="Content\fileinput.min.css" />
+    <Content Include="Content\comment.css" />
+    <Content Include="Content\file-input.css" />
+    <Content Include="Content\file-input.min.css" />
     <Content Include="Content\font-awesome.css" />
     <Content Include="Content\font-awesome.min.css" />
     <Content Include="Content\Gridmvc.css" />
     <Content Include="Content\PagedList.css" />
+    <Content Include="Content\post-video.css" />
     <Content Include="Content\themes\base\accordion.css" />
     <Content Include="Content\themes\base\all.css" />
     <Content Include="Content\themes\base\autocomplete.css" />
@@ -365,7 +367,7 @@
     <Content Include="Icon.png" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
-    <Content Include="Scripts\extensions.js" />
+    <Content Include="Scripts\validation-extensions.js" />
     <Content Include="Scripts\fileinput.js" />
     <Content Include="Scripts\fileinput.min.js" />
     <Content Include="Scripts\gridmvc.js" />
@@ -543,6 +545,7 @@
     <Content Include="Scripts\tinymce\tinymce-client-val.js" />
     <Content Include="Scripts\tinymce\tinymce.js" />
     <Content Include="Scripts\tinymce\tinymce.min.js" />
+    <Content Include="Scripts\to-top.js" />
     <Content Include="Scripts\_references.js" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
@@ -613,7 +616,6 @@
     <Content Include="Views\Shared\EditorTemplates\Boolean.cshtml" />
     <Content Include="Views\Shared\_UserEditParatial.cshtml" />
     <Content Include="Views\Shared\_ProfilePartial.cshtml" />
-    <Content Include="Views\Shared\EditorTemplates\View.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

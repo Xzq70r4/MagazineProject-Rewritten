@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@ViewBag.Title - Magazine Project</title>
     @Styles.Render("~/Content/css")
+    @Styles.Render("~/Content/font-awesome")
     @Scripts.Render("~/bundles/modernizr")
     @RenderSection("styles", required: false)
 </head>
@@ -42,12 +43,36 @@
     @RenderBody()
     <hr/>
     <footer>
-        <p>&copy; @DateTime.Now.Year - Magazine Project</p>
-    </footer>
+        <div class="row">
+            <div class="col-lg-10 col-lg-offset-1 text-center">
+                <h4>
+                    <strong>About the creator</strong>
+                </h4>
+                <ul class="list-unstyled">
+                    <li>
+                        <i class="fa fa-envelope-o fa-fw"></i>  <a href="mailto:vasil.dimov.work@gmail.com">vasil.dimov.work@gmail.com</a>
+                    </li>
+                </ul>
+                <br>
+                <ul class="list-inline">
+                    <li>
+                        <a href="https://github.com/Xzq70r4/MagazineProject-Rewritten"><i class="fa fa-github fa-fw fa-3x"></i></a>
+                    </li>
+                    <li>
+                        <a href="#"><i class="fa fa-linkedin fa-fw fa-3x"></i></a>
+                    </li>
+                </ul>
+                <hr class="small">
+                <p>&copy; @DateTime.Now.Year - Magazine Project</p>
+            </div>
+        </div>
+</footer>
 </div>
+
 
 @Scripts.Render("~/bundles/jquery")
 @Scripts.Render("~/bundles/bootstrap")
+@Scripts.Render("~/bundles/top")
 @RenderSection("scripts", required: false)
 </body>
 </html>

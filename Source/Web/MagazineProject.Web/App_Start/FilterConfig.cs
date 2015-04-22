@@ -1,6 +1,5 @@
 ﻿namespace MagazineProject.Web
 {
-    using System.Web;
     using System.Web.Mvc;
 
     public class FilterConfig

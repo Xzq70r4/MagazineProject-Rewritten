@@ -28,5 +28,6 @@
         {
             return string.Format("Invalid file type. Only the following types {0} are supported.", String.Join(", ", _types));
         }
+        //TODO: Client Validation
     }
 }

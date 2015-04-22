@@ -1,5 +1,14 @@
 ﻿@model MagazineProject.Web.Models.Area.Admin.InputViewModels.User.AdminUserEditViewModel
 
+@{
+    ViewBag.Title = "Post Grid";
+}
+
+@section styles
+{
+    @Styles.Render("~/Content/file-input")
+}
+
 @Html.Raw(TempData["Message"])
 
 <br />
@@ -24,6 +33,8 @@
 }
 
 @section Scripts{
-    @Scripts.Render("~/bundles/jqueryval"),
+    @Scripts.Render("~/bundles/jqueryval")
+    @Scripts.Render("~/bundles/val-extensions")
+    @Scripts.Render("~/bundles/tinymce-client-val")
     @Scripts.Render("~/bundles/uploadImage")
 }

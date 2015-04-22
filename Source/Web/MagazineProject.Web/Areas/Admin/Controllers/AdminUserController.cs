@@ -6,7 +6,7 @@
     using AutoMapper.QueryableExtensions;
 
     using MagazineProject.Common;
-    using MagazineProject.Services.Common.Administaration;
+    using MagazineProject.Services.Common.Administaration.Admin;
     using MagazineProject.Web.Infrastructure.Populators;
     using MagazineProject.Web.Models.Area.Admin.InputViewModels.User;
     using MagazineProject.Web.Models.Area.Grid;
@@ -34,7 +34,7 @@
         public ActionResult Edit(string id)
         {
             var user = this.users
-                .GetProfileById(id)
+                .GetUserById(id)
                 .Project()
                 .To<AdminUserEditViewModel>()
                 .FirstOrDefault();
@@ -49,13 +49,12 @@
             if (this.ModelState.IsValid)
             {
                 var user = this.users
-                    .GetProfileById(id)
+                    .GetUserById(id)
                     .FirstOrDefault();
 
                 this.users.Edit(user, settings);
 
                 this.TempData["Message"] = string.Format(GlobalConstants.SuccessMessage, " Save.");
-
 
                 return this.RedirectToAction("Index", new { controller = "AdminUser", area = "Admin" });
             }

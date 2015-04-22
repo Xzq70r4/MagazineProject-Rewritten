@@ -1,4 +1,4 @@
-﻿namespace MagazineProject.Services.Common
+﻿namespace MagazineProject.Services.Common.Base
 {
     using System.Linq;
     using System.Web.Helpers;
@@ -80,8 +80,8 @@
                 base.UpdatedThumbnailPostCoverImage(post, viewModel, thumbnailImage);
             }
 
-            Data.Posts.Update(post);
-            Data.SaveChanges();
+            this.Data.Posts.Update(post);
+            this.Data.SaveChanges();
         }
     }
 }

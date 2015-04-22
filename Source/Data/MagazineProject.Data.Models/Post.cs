@@ -1,8 +1,7 @@
 ﻿namespace MagazineProject.Data.Models
 {
-    using System.ComponentModel.DataAnnotations;
     using System.Collections.Generic;
-    using System.ComponentModel;
+    using System.ComponentModel.DataAnnotations;
 
     using MagazineProject.Data.Common;
     using MagazineProject.Data.Common.Model;

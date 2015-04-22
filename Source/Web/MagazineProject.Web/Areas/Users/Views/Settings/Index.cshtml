@@ -2,7 +2,11 @@
 @model UserProfileSettingsViewModel
 
 @{
-    ViewBag.Title = "title";
+    ViewBag.Title = "Settings";
+}
+@section styles
+{
+    @Styles.Render("~/Content/file-input")
 }
 
 @Html.Raw(TempData["Message"])
@@ -30,7 +34,9 @@
 }
 
 @section Scripts{
-    @Scripts.Render("~/bundles/jqueryval"),
+    @Scripts.Render("~/bundles/jqueryval")
+    @Scripts.Render("~/bundles/val-extensions")
+    @Scripts.Render("~/bundles/tinymce-client-val")
     @Scripts.Render("~/bundles/uploadImage")
 }
 

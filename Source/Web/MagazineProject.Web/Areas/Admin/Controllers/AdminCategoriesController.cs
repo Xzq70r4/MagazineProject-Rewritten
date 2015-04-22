@@ -6,7 +6,7 @@
     using AutoMapper.QueryableExtensions;
 
     using MagazineProject.Common;
-    using MagazineProject.Services.Common.Moderator;
+    using MagazineProject.Services.Common.Administaration.Admin;
     using MagazineProject.Web.Models.Area.Admin.InputViewModels.Category;
     using MagazineProject.Web.Models.Area.Grid;
 
@@ -100,7 +100,7 @@
 
         public ActionResult Delete(int id)
         {
-            categories.Delete(id);
+            this.categories.Delete(id);
 
             return this.RedirectToAction("Index");
         }

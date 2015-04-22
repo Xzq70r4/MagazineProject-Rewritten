@@ -143,7 +143,13 @@ namespace MagazineProject.Data.Migrations
         private void SeedPosts(MagazineProjectDbContext context, IList<Category> categories)
         {
             //TODO: Requeest only for writer
-            var users = context.Users.Take(10).ToList();
+            var users = context
+                .Users
+                .Where(u => u.UserName.StartsWith("Wrtiter") ||
+                    u.UserName.StartsWith("Moderator") ||
+                    u.UserName.StartsWith("Admin"))
+                .Take(10)
+                .ToList();
             //var users = context.Users.Take(80).ToList();
             //for (int i = 0; i < 500; i++)
             for (int i = 0; i < 30; i++)

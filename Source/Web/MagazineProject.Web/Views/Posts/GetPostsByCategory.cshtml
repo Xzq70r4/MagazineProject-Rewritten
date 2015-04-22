@@ -1,5 +1,14 @@
 ﻿@model PagedList.IPagedList<PostViewModel>
 
+@{
+    ViewBag.Title ="Posts by Category";
+}
+
+@section styles
+{
+    @Styles.Render("~/Content/PagedList")
+}
+
 <div id="posts">
     @Html.Partial("_PostsPartial", Model)
 </div>

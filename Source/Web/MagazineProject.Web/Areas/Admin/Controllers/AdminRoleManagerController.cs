@@ -7,7 +7,7 @@
     using MagazineProject.Common;
     using MagazineProject.Data;
     using MagazineProject.Data.Models;
-    using MagazineProject.Services.Common.Administaration;
+    using MagazineProject.Services.Common.Administaration.Admin;
     using MagazineProject.Web.Infrastructure.Populators;
 
     using Microsoft.AspNet.Identity;
@@ -15,6 +15,8 @@
 
     public class AdminRoleManagerController : AdminController
     {
+        //Source Code http://www.dotnetfunda.com/articles/show/2898/working-with-r
+
         private readonly IDropDownListPopulator populator;
 
         private readonly UserManager<User> userManager;
@@ -47,19 +49,19 @@
 
                 if (user == null)
                 {
-                    TempData["Message"] = string.Format(GlobalConstants.FailMessage, "! This User doesn't exist.");
+                    this.TempData["Message"] = string.Format(GlobalConstants.FailMessage, "! This User doesn't exist.");
 
                     return RedirectToAction("Index");
                 }
 
                 this.userManager.AddToRole(user.Id, RoleName);
 
-                TempData["Message"] = string.Format(GlobalConstants.SuccessMessage, "Added User`s Role");
+                this.TempData["Message"] = string.Format(GlobalConstants.SuccessMessage, "Added User`s Role");
 
                 return this.RedirectToAction("Index");
             }
 
-            TempData["Message"] = string.Format(GlobalConstants.FailMessage, "! User name have white space or empty.");
+            this.TempData["Message"] = string.Format(GlobalConstants.FailMessage, "! User name have white space or empty.");
 
             return RedirectToAction("Index");
         }
@@ -74,7 +76,7 @@
 
                 if (user == null)
                 {
-                    TempData["Message"] = string.Format(GlobalConstants.FailMessage, "! This User doesn't exist.");
+                    this.TempData["Message"] = string.Format(GlobalConstants.FailMessage, "! This User doesn't exist.");
 
                     return RedirectToAction("Index");
                 }
@@ -88,7 +90,7 @@
                 return this.View("Index");
             }
 
-            TempData["Message"] = string.Format(GlobalConstants.FailMessage, "! User name have white space or empty.");
+            this.TempData["Message"] = string.Format(GlobalConstants.FailMessage, "! User name have white space or empty.");
 
             return RedirectToAction("Index");
         }
@@ -104,23 +106,23 @@
 
                 if (user == null)
                 {
-                    TempData["Message"] = string.Format(GlobalConstants.FailMessage, "! This User doesn't exist.");
+                    this.TempData["Message"] = string.Format(GlobalConstants.FailMessage, "! This User doesn't exist.");
                     return this.RedirectToAction("Index");
                 }
                 if (this.userManager.IsInRole(user.Id, RoleName))
                 {
                     this.userManager.RemoveFromRole(user.Id, RoleName);
-                    TempData["Message"] = string.Format(GlobalConstants.SuccessMessage, "Deleted User Role");
+                    this.TempData["Message"] = string.Format(GlobalConstants.SuccessMessage, "Deleted User Role");
                 }
                 else
                 {
-                    TempData["Message"] = string.Format(GlobalConstants.FailMessage, "! This user doesn't belong to selected role.");
+                    this.TempData["Message"] = string.Format(GlobalConstants.FailMessage, "! This user doesn't belong to selected role.");
                 }
 
                 return this.RedirectToAction("Index");
             }
 
-            TempData["Message"] = string.Format(GlobalConstants.FailMessage, "! User not correct or Role not selected.");
+            this.TempData["Message"] = string.Format(GlobalConstants.FailMessage, "! User not correct or Role not selected.");
 
             return RedirectToAction("Index");
         }

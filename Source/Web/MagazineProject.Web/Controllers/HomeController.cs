@@ -5,7 +5,7 @@
 
     using AutoMapper.QueryableExtensions;
 
-    using MagazineProject.Services.Common.Data;
+    using MagazineProject.Services.Common;
     using MagazineProject.Web.Controllers.Base;
     using MagazineProject.Web.Models.Home;
 
@@ -48,7 +48,6 @@
             // If the user tries to access a page that is less than 0.
             pageNumber = pageNumber < 0 ? 1 : pageNumber;
 
-            this.ViewBag.Posts = allPost.ToPagedList(pageNumber, pageSize);
             if (Request.IsAjaxRequest())
             {
                 return this.PartialView("_PostsPartial", allPost.ToPagedList(pageNumber, pageSize));
