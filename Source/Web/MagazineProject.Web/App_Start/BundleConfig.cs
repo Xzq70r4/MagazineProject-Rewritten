@@ -10,14 +10,24 @@
             RegisterScriptBundles(bundles);
             RegisterContentBundles(bundles);
 
-            BundleTable.EnableOptimizations = true;
+            BundleTable.EnableOptimizations = false;
         }
 
         private static void RegisterContentBundles(BundleCollection bundles)
         {
-            bundles.Add(new StyleBundle("~/Content/css").Include(
+            bundles.Add(new StyleBundle("~/Content/basic").Include(
                 "~/Content/bootstrap.cerulean.css",
+                "~/Content/font-awesome.min.css",
                 "~/Content/Site.css"));
+
+            bundles.Add(new StyleBundle("~/Content/home-page").Include(
+                 "~/Content/post-video.css",
+                 "~/Content/PagedList.css",
+                 "~/Content/themes/base/all.css"));
+
+            bundles.Add(new StyleBundle("~/Content/post-details").Include(
+                 "~/Content/comment.css",
+                 "~/Content/PagedList.css"));
 
             bundles.Add(new StyleBundle("~/Content/Grid").Include(
                 "~/Content/Gridmvc.css"));
@@ -28,58 +38,60 @@
             bundles.Add(new StyleBundle("~/Content/PagedList").Include(
                "~/Content/PagedList.css"));
 
-            bundles.Add(new StyleBundle("~/Content/jquery-search").Include(
-               "~/Content/themes/base/all.css"));
-
-            bundles.Add(new StyleBundle("~/Content/font-awesome").Include(
-               "~/Content/font-awesome.min.css"));
-
             bundles.Add(new StyleBundle("~/Content/comment").Include(
                "~/Content/comment.css"));
-
-            bundles.Add(new StyleBundle("~/Content/post-video").Include(
-               "~/Content/post-video.css"));
-
         }
 
         private static void RegisterScriptBundles(BundleCollection bundles)
         {
-            bundles.Add(new ScriptBundle("~/bundles/jquery").Include(
+            bundles.Add(new ScriptBundle("~/bundles/basic").Include(
+
+                "~/Scripts/to-top.js",
+                "~/Scripts/bootstrap.min.js",
+                "~/Scripts/respond.min.js",
                 "~/Scripts/jquery-{version}.js"));
 
+            bundles.Add(new ScriptBundle("~/bundles/home-page").Include(
+                "~/Scripts/jquery-ui-{version}.js",
+                "~/Scripts/search.js",
+                "~/Scripts/jquery.unobtrusive-ajax.js"));
+
+            bundles.Add(new ScriptBundle("~/bundles/comment-add-edit").Include(
+                "~/Scripts/tinymce/tinymce-client-val.js",
+                "~/Scripts/jquery.validate*"));
+
+            bundles.Add(new ScriptBundle("~/bundles/category-add-edit").Include(
+                "~/Scripts/validation-extensions.js",
+                "~/Scripts/jquery.validate*"));
+
+            bundles.Add(new ScriptBundle("~/bundles/post-add-edit").Include(
+                "~/Scripts/validation-extensions.js",
+                "~/Scripts/tinymce/tinymce-client-val.js",
+                "~/Scripts/jquery.validate*",
+                "~/Scripts/fileinput.min.js"));
+
+            bundles.Add(new ScriptBundle("~/bundles/profile-settings").Include(
+                "~/Scripts/validation-extensions.js",
+                "~/Scripts/tinymce/tinymce-client-val.js",
+                "~/Scripts/jquery.validate*",
+                "~/Scripts/fileinput.min.js"));
+
             bundles.Add(new ScriptBundle("~/bundles/jqueryAjax").Include(
-            "~/Scripts/jquery.unobtrusive-ajax.js"));
+                "~/Scripts/jquery.unobtrusive-ajax.js"));
 
             bundles.Add(new ScriptBundle("~/bundles/jqueryval").Include(
                 "~/Scripts/jquery.validate*"));
-
-            bundles.Add(new ScriptBundle("~/bundles/search").Include(
-                "~/Scripts/jquery-ui-{version}.js",
-                "~/Scripts/search.js"));
-
-            bundles.Add(new ScriptBundle("~/bundles/val-extensions").Include(
-            "~/Scripts/validation-extensions.js"));
-
-            bundles.Add(new ScriptBundle("~/bundles/tinymce-client-val").Include(
-            "~/Scripts/tinymce/tinymce-client-val.js"));
-
-            bundles.Add(new ScriptBundle("~/bundles/uploadImage").Include(
-           "~/Scripts/fileinput.min.js"));
 
             bundles.Add(new ScriptBundle("~/bundles/gridmvc").Include(
                 "~/Scripts/gridmvc.min.js"));
 
             bundles.Add(new ScriptBundle("~/bundles/top").Include(
-           "~/Scripts/to-top.js"));
+                 "~/Scripts/to-top.js"));
 
             // Use the development version of Modernizr to develop with and learn from. Then, when you're
             // ready for production, use the build tool at http://modernizr.com to pick only the tests you need.
             bundles.Add(new ScriptBundle("~/bundles/modernizr").Include(
                 "~/Scripts/modernizr-*"));
-
-            bundles.Add(new ScriptBundle("~/bundles/bootstrap").Include(
-                "~/Scripts/bootstrap.min.js",
-                "~/Scripts/respond.min.js"));
         }
     }
 }

@@ -35,15 +35,6 @@
     <div class="row text-center">
         <ul class="pagination">
             <li>
-                @*@if (ViewContext.Controller.ValueProvider.GetValue("action").RawValue.ToString() == GlobalConstants.GetAllPostsAction)
-                {
-                    @Html.PagedListPager(Model, page => Url.Action("GetAllPosts", "Posts", new { page = page }),
-                PagedListRenderOptions.EnableUnobtrusiveAjaxReplacing(new AjaxOptions()
-                {
-                    HttpMethod = "GET",
-                    UpdateTargetId = "posts",
-                }))
-                }*@
                 @if (ViewContext.Controller.ValueProvider.GetValue("action").RawValue.ToString() == GlobalConstants.GetPostsByCategoryAction)
                 {
                     @Html.PagedListPager(Model, page => Url.Action("GetPostsByCategory", "Posts", new { page, id = ViewBag.CategoryId }),
@@ -63,7 +54,7 @@
                 }))
                 }
                 @if (ViewContext.Controller.ValueProvider.GetValue("action").RawValue.ToString() == "Index" &&
-                ViewContext.RouteData.Values["controller"].ToString() == "Home")
+                ViewContext.RouteData.Values["controller"].ToString() == GlobalConstants.HomeController)
                 {
                     @Html.PagedListPager(Model, page => Url.Action("Index", "Home", new { page = page }),
                 PagedListRenderOptions.EnableUnobtrusiveAjaxReplacing(new AjaxOptions()

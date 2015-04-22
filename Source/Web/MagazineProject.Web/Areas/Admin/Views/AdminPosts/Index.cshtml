@@ -10,7 +10,11 @@
 }
 
 @Html.Raw(TempData["Message"])
-
+<br />
+<br />
+@Html.ActionLink("Add", "Add", "AdminPosts", new { @class = "btn btn-primary", area = "Admin" })
+<br />
+<br/>
 <div>
     @(Html.Grid(Model).Columns(columns =>
           {
@@ -28,6 +32,5 @@
 
 @section scripts
 {
-    @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/gridmvc")
 }

@@ -13,12 +13,11 @@
 
         //Images
         public const string UserImagePath = "/Migrations/Imgs/user.jpg";
-        public const string PostImagePath = "/Migrations/Imgs/post.jpg";
         public const string SliderPostCoverImagePath = "/Migrations/Imgs/slider_cover.jpg";
         public const string ThumbnailPostCoverImagePath = "/Migrations/Imgs/thumbnail_cover.jpg";
 
         //Controllers
-        public const string SettingsController = "Settings";
+        public const string HomeController = "Home";
         public const string CommentsController = "Comments";
 
         public const string UserPostsController = "UserPosts";
