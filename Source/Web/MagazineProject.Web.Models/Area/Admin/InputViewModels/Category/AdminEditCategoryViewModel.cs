@@ -2,7 +2,7 @@
 {
     using MagazineProject.Web.Models.InputModels.Base.Category;
 
-    public class AdminCategoryAddViewModel : BaseAdministrationCategoryViewModel
+    public class AdminEditCategoryViewModel : BaseAdministrationCategoryViewModel
     {
     }
 }

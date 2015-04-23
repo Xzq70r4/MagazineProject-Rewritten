@@ -31,14 +31,14 @@
         [HttpGet]
         public ActionResult Add()
         {
-            var addCategoryViewMModel = new AdminCategoryAddViewModel();
+            var addCategoryViewMModel = new AdminAddCategoryViewModel();
 
             return this.View(addCategoryViewMModel);
         }
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Add(AdminCategoryAddViewModel viewModel)
+        public ActionResult Add(AdminAddCategoryViewModel viewModel)
         {
             if (viewModel != null && ModelState.IsValid)
             {
@@ -64,7 +64,7 @@
                 .GetCategoryById(id)
                 .FirstOrDefault();
 
-            var editPostViewModel = new AdminCategoryEditViewModel
+            var editPostViewModel = new AdminEditCategoryViewModel
             {
                 Name = category.Name,
                 IsHidden = category.IsHidden
@@ -75,7 +75,7 @@
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit(int id, AdminCategoryEditViewModel viewModel)
+        public ActionResult Edit(int id, AdminEditCategoryViewModel viewModel)
         {
             if (viewModel != null && ModelState.IsValid)
             {

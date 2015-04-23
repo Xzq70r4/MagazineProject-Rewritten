@@ -31,6 +31,9 @@
 
         public virtual IDbSet<SliderPostCoverImage> SliderPostCoverImages { get; set; }
 
+        public virtual IDbSet<SiteConstant> SiteConstants { get; set; }
+
+
 
 
         public static MagazineProjectDbContext Create()

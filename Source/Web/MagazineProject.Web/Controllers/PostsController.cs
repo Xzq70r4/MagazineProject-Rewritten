@@ -56,7 +56,7 @@
         public ActionResult GetFourPostsWithVideo()
         {
             var postWithVideo = this.posts
-                .GetPostsWithVideo(4)
+                .GetPostsWithVideo()
                 .Project()
                 .To<PostViewModel>()
                 .ToList();
@@ -67,7 +67,7 @@
         public ActionResult GetFivePostForSlider()
         {
             var sliderPost = this.posts
-                .GetNumberOfPosts(5)
+                .GetPostsForSlider()
                 .Project()
                 .To<PostViewModel>()
                 .ToList();

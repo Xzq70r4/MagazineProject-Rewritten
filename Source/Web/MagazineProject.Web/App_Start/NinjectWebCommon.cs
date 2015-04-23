@@ -116,6 +116,8 @@ namespace MagazineProject.Web.App_Start
             kernel.Bind<IAdminCategoriesService>().To<AdminCategoriesService>();
 
             kernel.Bind<IAdminUsersService>().To<AdminUsersService>();
+
+            kernel.Bind<IAdminSiteConstantsService>().To<AdminSiteConstantsService>();
         }
         private static void RegisterDatabaseServices(IKernel kernel)
         {

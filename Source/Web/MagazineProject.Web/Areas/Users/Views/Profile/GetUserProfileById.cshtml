@@ -23,7 +23,7 @@
 
 <div class="row">
     <div>
-        @Html.ActionLink("See" + @Model.UserName.ToString() + "`s Posts", "Index", "UserPosts", new { id = Model.Id }, new { @class = "btn btn-primary btn-block", area = "Users" })
-        @Html.ActionLink("See" + @Model.UserName.ToString() + "`s Comments", "Index", "UserComments", new { id = Model.Id }, new { @class = "btn btn-primary btn-block", area = "Users" })
+        @Html.ActionLink(@Model.UserName.ToString() + "`s Posts", "Index", "UserPosts", new { id = Model.Id }, new { @class = "btn btn-primary btn-block", area = "Users" })
+        @Html.ActionLink(@Model.UserName.ToString() + "`s Comments", "Index", "UserComments", new { id = Model.Id }, new { @class = "btn btn-primary btn-block", area = "Users" })
     </div>
 </div>

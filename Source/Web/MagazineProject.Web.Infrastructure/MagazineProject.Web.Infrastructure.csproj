@@ -103,6 +103,7 @@
   <ItemGroup>
     <Compile Include="Caching\ICacheService.cs" />
     <Compile Include="Caching\InMemoryCache.cs" />
+    <Compile Include="Extensions\ConvertImage.cs" />
     <Compile Include="Extensions\ExtensionMethods.cs" />
     <Compile Include="HtmlHelpers\Buttons.cs" />
     <Compile Include="HtmlHelpers\FontAwesome.cs" />
@@ -118,6 +119,10 @@
     <Compile Include="ValidationAttribute\FileTypeAttribute.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\Common\MagazineProject.Common\MagazineProject.Common.csproj">
+      <Project>{ACB59EF2-1FBA-4A5D-9201-D4F5D2B8ADA1}</Project>
+      <Name>MagazineProject.Common</Name>
+    </ProjectReference>
     <ProjectReference Include="..\..\Data\MagazineProject.Data.Common\MagazineProject.Data.Common.csproj">
       <Project>{12c1e4dc-de93-442d-8ffa-229c091beec3}</Project>
       <Name>MagazineProject.Data.Common</Name>
@@ -134,6 +139,11 @@
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Images\default-user-img.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\..\packages\AutoMapper.3.3.1\tools\AutoMapper.targets" Condition="Exists('..\..\packages\AutoMapper.3.3.1\tools\AutoMapper.targets')" />

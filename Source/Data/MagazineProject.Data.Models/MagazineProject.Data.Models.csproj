@@ -57,6 +57,7 @@
     <Compile Include="Post.cs" />
     <Compile Include="PostImage.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SiteConstant.cs" />
     <Compile Include="SliderPostCoverImage.cs" />
     <Compile Include="ThumbnailPostCoverImage.cs" />
     <Compile Include="User.cs" />

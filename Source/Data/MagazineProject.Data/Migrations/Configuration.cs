@@ -28,7 +28,7 @@ namespace MagazineProject.Data.Migrations
 
         protected override void Seed(MagazineProjectDbContext context)
         {
-            if (context.Users.Any())
+            if (context.Roles.Any())
             {
                 return;
             }
@@ -44,15 +44,11 @@ namespace MagazineProject.Data.Migrations
             this.SeedPosts(context, categories);
             this.SeedPostImages(context);
             this.SeedComments(context);
+            this.SeedSiteConstants(context);
         }
 
         private void SeedRoles(MagazineProjectDbContext context)
         {
-            if (context.Roles.Any())
-            {
-                return;
-            }
-
             context.Roles.AddOrUpdate(x => x.Name, new IdentityRole(GlobalConstants.Admin));
             context.Roles.AddOrUpdate(x => x.Name, new IdentityRole(GlobalConstants.Writer));
             context.Roles.AddOrUpdate(x => x.Name, new IdentityRole(GlobalConstants.Moderator));
@@ -215,6 +211,25 @@ namespace MagazineProject.Data.Migrations
                 context.Comments.Add(comment);
             }
 
+            context.SaveChanges();
+        }
+
+        private void SeedSiteConstants(MagazineProjectDbContext context)
+        {
+            var sliderPost = new SiteConstant
+            {
+                Value = 5,
+                Description = GlobalConstants.SiteConstSlider
+            };
+
+            var postWithVideo = new SiteConstant
+            {
+                Value = 4,
+                Description = GlobalConstants.SiteConstVideoPost
+            };
+
+            context.SiteConstants.Add(sliderPost);
+            context.SiteConstants.Add(postWithVideo);
             context.SaveChanges();
         }
 

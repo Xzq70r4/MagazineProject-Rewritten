@@ -59,6 +59,7 @@
     <Compile Include="Admin\AdminCategoriesService.cs" />
     <Compile Include="AdministationPostsService.cs" />
     <Compile Include="AdministrationCommentsService.cs" />
+    <Compile Include="Admin\AdminSiteConstantsService.cs" />
     <Compile Include="Admin\AdminUsersService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

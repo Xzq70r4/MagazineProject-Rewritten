@@ -2,6 +2,7 @@
 {
     using System.Linq;
 
+    using MagazineProject.Common;
     using MagazineProject.Data.Common.Model;
     using MagazineProject.Data.Models;
     using MagazineProject.Data.UnitOfWork;
@@ -64,9 +65,14 @@
             return post;
         }
 
-        public IQueryable<Post> GetPostsWithVideo(int takeNumber)
+        public IQueryable<Post> GetPostsWithVideo()
         {
-            // TODO: 4
+            var postVideo = Data
+                .SiteConstants
+                .All()
+                .FirstOrDefault(p => p.Description ==
+                    GlobalConstants.SiteConstVideoPost);
+
             var postWithVideo =this.Data
                 .Posts
                 .All()
@@ -74,21 +80,26 @@
                             p.Status == Status.Published &&
                             p.Category.IsHidden == false)
                 .OrderByDescending(p => p.CreatedOn)
-                .Take(takeNumber);
+                .Take(postVideo.Value);
 
             return postWithVideo;
         }
 
-        // TODO: Check this
-        public IQueryable<Post> GetNumberOfPosts(int takeNumber)
+        public IQueryable<Post> GetPostsForSlider()
         {
+            var sliderConst = this.Data
+                .SiteConstants
+                .All()
+                .FirstOrDefault(s => s.Description ==
+                    GlobalConstants.SiteConstSlider);
+
             var posts = this.Data
                 .Posts
                 .All()
                 .Where(p => p.Status == Status.Published &&
                             p.Category.IsHidden == false)
                 .OrderByDescending(p => p.CreatedOn )
-                .Take(takeNumber);
+                .Take(sliderConst.Value);
 
             return posts;
         }

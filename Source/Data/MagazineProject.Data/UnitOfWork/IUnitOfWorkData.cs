@@ -1,7 +1,7 @@
 ﻿namespace MagazineProject.Data.UnitOfWork
 {
-    using System;
     using System.Data.Entity;
+
     using MagazineProject.Data.Models;
     using MagazineProject.Data.Repository;
 
@@ -21,9 +21,10 @@
 
         IRepository<SliderPostCoverImage> SliderPostCoverImages { get; }
 
+        IRepository<UserImage> UserImages { get; }  
 
-        IRepository<UserImage> UserImages { get; }
-        
+        IRepository<SiteConstant> SiteConstants { get; }
+
         int SaveChanges();
     }
 }

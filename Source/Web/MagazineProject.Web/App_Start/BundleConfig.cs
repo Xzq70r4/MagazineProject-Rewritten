@@ -64,6 +64,10 @@
                 "~/Scripts/validation-extensions.js",
                 "~/Scripts/jquery.validate*"));
 
+            bundles.Add(new ScriptBundle("~/bundles/register-user").Include(
+                "~/Scripts/validation-extensions.js",
+                "~/Scripts/jquery.validate*"));
+
             bundles.Add(new ScriptBundle("~/bundles/post-add-edit").Include(
                 "~/Scripts/validation-extensions.js",
                 "~/Scripts/tinymce/tinymce-client-val.js",

@@ -109,12 +109,14 @@
     <Compile Include="Account\ResetPasswordViewModel.cs" />
     <Compile Include="Account\SendCodeViewModel.cs" />
     <Compile Include="Account\VerifyCodeViewModel.cs" />
-    <Compile Include="Area\Admin\InputViewModels\Category\AdminCategoryAddViewModel.cs" />
-    <Compile Include="Area\Admin\InputViewModels\Category\AdminCategoryEditViewModel.cs" />
+    <Compile Include="Area\Admin\InputViewModels\Category\AdminAddCategoryViewModel.cs" />
+    <Compile Include="Area\Admin\InputViewModels\Category\AdminEditCategoryViewModel.cs" />
     <Compile Include="Area\Admin\InputViewModels\Comment\AdminEditCommentViewModel.cs" />
     <Compile Include="Area\Admin\InputViewModels\Post\AdminAddPostViewModel.cs" />
     <Compile Include="Area\Admin\InputViewModels\Post\AdminEditPostViewModel.cs" />
+    <Compile Include="Area\Admin\InputViewModels\SiteConstant\AdminEditSiteConstantViewModel.cs" />
     <Compile Include="Area\Admin\InputViewModels\User\AdminUserEditViewModel.cs" />
+    <Compile Include="Area\Grid\GridSiteConstantViewModel.cs" />
     <Compile Include="Area\Grid\GridCategoryViewModel.cs" />
     <Compile Include="Area\Grid\GridUserViewModel.cs" />
     <Compile Include="Area\Moderator\InputViewModels\Post\ModeratorAddPostViewModel.cs" />

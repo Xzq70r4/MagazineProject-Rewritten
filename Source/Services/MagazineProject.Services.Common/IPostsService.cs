@@ -14,8 +14,8 @@
 
         IQueryable<Post> GetPostsByCategoryId(int categoryId);
 
-        IQueryable<Post> GetPostsWithVideo(int takeNumber);
+        IQueryable<Post> GetPostsWithVideo();
 
-        IQueryable<Post> GetNumberOfPosts(int takeNumber);
+        IQueryable<Post> GetPostsForSlider();
     }
 }

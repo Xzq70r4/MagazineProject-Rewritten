@@ -236,6 +236,7 @@
     <Compile Include="Areas\Admin\Controllers\AdminPostsController.cs" />
     <Compile Include="Areas\Admin\Controllers\AdminCategoriesController.cs" />
     <Compile Include="Areas\Admin\Controllers\AdminRoleManagerController.cs" />
+    <Compile Include="Areas\Admin\Controllers\AdminSiteConstantsController.cs" />
     <Compile Include="Areas\Admin\Controllers\AdminUserController.cs" />
     <Compile Include="Areas\Moderator\Controllers\ModeratorCommentsController.cs" />
     <Compile Include="Areas\Moderator\Controllers\ModeratorController.cs" />
@@ -312,7 +313,6 @@
     <Content Include="Content\themes\base\tabs.css" />
     <Content Include="Content\themes\base\theme.css" />
     <Content Include="Content\themes\base\tooltip.css" />
-    <Content Include="favicon.ico" />
     <Content Include="fonts\fontawesome-webfont.svg" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
@@ -327,6 +327,7 @@
     <Content Include="fonts\fontawesome-webfont.ttf" />
     <Content Include="fonts\fontawesome-webfont.eot" />
     <Content Include="fonts\FontAwesome.otf" />
+    <Content Include="favicon.ico" />
     <Content Include="Scripts\fileinput.min.js.map" />
     <Content Include="Areas\Admin\Views\web.config" />
     <Content Include="Areas\Users\Views\web.config" />
@@ -361,6 +362,8 @@
     <None Include="Areas\Admin\Views\AdminPosts\Index.cshtml" />
     <Content Include="Areas\Admin\Views\AdminRoleManager\Index.cshtml" />
     <Content Include="Areas\Admin\Views\AdminRoleManager\_IntputUserAndRolePartial.cshtml" />
+    <None Include="Areas\Admin\Views\AdminSiteConstants\Edit.cshtml" />
+    <None Include="Areas\Admin\Views\AdminSiteConstants\Index.cshtml" />
     <None Include="Areas\Admin\Views\AdminUser\Edit.cshtml" />
     <None Include="Areas\Admin\Views\AdminUser\Index.cshtml" />
     <None Include="Scripts\jquery-2.1.3.intellisense.js" />
@@ -616,6 +619,7 @@
     <Content Include="Views\Shared\EditorTemplates\Boolean.cshtml" />
     <Content Include="Views\Shared\_UserEditParatial.cshtml" />
     <Content Include="Views\Shared\_ProfilePartial.cshtml" />
+    <Content Include="Views\Shared\EditorTemplates\Integer.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

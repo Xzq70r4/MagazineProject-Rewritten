@@ -1,0 +1,11 @@
+@model int?
+
+<div class="row form-group">
+    <div class="col-md-2">
+        @Html.LabelFor(m => m, new { @class = "text-primary" })
+    </div>
+    <div class="col-md-5">
+        @Html.TextBoxFor(m => m, new { @class = "form-control " })
+    </div>
+</div>
+<br />

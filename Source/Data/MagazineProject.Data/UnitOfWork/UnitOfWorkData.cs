@@ -86,6 +86,14 @@
             }
         }
 
+        public IRepository<SiteConstant> SiteConstants
+        {
+            get
+            {
+                return this.GetRepository<SiteConstant>();
+            }
+        }
+
         public int SaveChanges()
         {
             return this.context.SaveChanges();

@@ -1,10 +1,13 @@
 ﻿namespace MagazineProject.Web.Controllers
 {
+    using System.Reflection;
     using System.Web;
     using System.Web.Mvc;
 
+    using MagazineProject.Common;
     using MagazineProject.Services.Common;
     using MagazineProject.Web.Controllers.Base;
+    using MagazineProject.Web.Infrastructure.Extensions;
 
     public class ImagesController : BaseController
     {
@@ -37,13 +40,14 @@
             return this.File(image.Content, "image/" + image.FileExtension);
         }
 
-        //TODO:check post image 
         public ActionResult UserImage(string id)
         {
             var image = this.images.GetUserImageById(id);
             if (image == null)
             {
-                throw new HttpException(404, "Image not found");
+                var file = ConvertImage.ToBytes("/Images/default-user-img.jpg");
+
+                return this.File(file, "image/jpg");
             }
 
             return this.File(image.Content, "image/" + image.FileExtension);

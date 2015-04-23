@@ -4,7 +4,10 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="@Url.Content("~/favicon.ico")"
+          rel="shortcut icon" />
     <title>@ViewBag.Title - Magazine Project</title>
+
     @Styles.Render("~/Content/basic")
     @Scripts.Render("~/bundles/modernizr")
     @RenderSection("styles", required: false)
@@ -45,11 +48,13 @@
         <div class="row">
             <div class="col-lg-10 col-lg-offset-1 text-center">
                 <h4>
+                    <link href="~/favicon.ico"
+                          rel="shortcut icon" type="image/x-icon" />
                     <strong>About the creator</strong>
                 </h4>
                 <ul class="list-unstyled">
                     <li>
-                        <i class="fa fa-envelope-o fa-fw"></i>  <a href="mailto:vasil.dimov.work@gmail.com">vasil.dimov.work@gmail.com</a>
+                        <i class="fa fa-envelope-o fa-fw"></i> <a href="mailto:vasil.dimov.work@gmail.com">vasil.dimov.work@gmail.com</a>
                     </li>
                 </ul>
                 <br>
@@ -65,7 +70,7 @@
                 <p>&copy; @DateTime.Now.Year - Magazine Project</p>
             </div>
         </div>
-</footer>
+    </footer>
 </div>
 
 
