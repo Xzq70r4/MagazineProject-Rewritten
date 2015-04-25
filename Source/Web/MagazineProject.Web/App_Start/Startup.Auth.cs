@@ -12,6 +12,8 @@
     using MagazineProject.Data;
     using MagazineProject.Data.Models;
 
+    using Microsoft.Owin.Security.Google;
+
     public partial class Startup
     {
         // For more information on configuring authentication, please visit http://go.microsoft.com/fwlink/?LinkId=301864
@@ -57,15 +59,15 @@
             //   consumerKey: "",
             //   consumerSecret: "");
 
-            //app.UseFacebookAuthentication(
-            //   appId: "",
-            //   appSecret: "");
+            app.UseFacebookAuthentication(
+               appId: "1446070992352290",
+               appSecret: "710be8c18509febfbbd9e2771d16ff5f");
 
-            //app.UseGoogleAuthentication(new GoogleOAuth2AuthenticationOptions()
-            //{
-            //    ClientId = "",
-            //    ClientSecret = ""
-            //});
+            app.UseGoogleAuthentication(new GoogleOAuth2AuthenticationOptions()
+            {
+                ClientId = "414682601877-n24vk5p73857dhnvdn58s09qvs7aaqvn.apps.googleusercontent.com",
+                ClientSecret = "eFC8U9QuURRhG558H9YNgZZm"
+            });
         }
     }
 }
