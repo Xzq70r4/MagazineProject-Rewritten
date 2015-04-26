@@ -15,7 +15,6 @@
     [Authorize]
     public class SettingsController : BaseController
     {
-
         private readonly IProfilesService profiles;
 
         public SettingsController(IProfilesService profiles)

@@ -73,7 +73,7 @@
                 .FirstOrDefault(p => p.Description ==
                     GlobalConstants.SiteConstVideoPost);
 
-            var postWithVideo =this.Data
+            var postWithVideo = this.Data
                 .Posts
                 .All()
                 .Where(p => p.UrlVideo != null &&
@@ -98,7 +98,7 @@
                 .All()
                 .Where(p => p.Status == Status.Published &&
                             p.Category.IsHidden == false)
-                .OrderByDescending(p => p.CreatedOn )
+                .OrderByDescending(p => p.CreatedOn)
                 .Take(sliderConst.Value);
 
             return posts;

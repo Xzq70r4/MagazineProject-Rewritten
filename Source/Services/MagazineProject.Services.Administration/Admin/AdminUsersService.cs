@@ -15,6 +15,7 @@
             : base(data, sanitizer)
         {
         }
+
         public IQueryable<User> GetUsersForGrid()
         {
             var users = this.Data

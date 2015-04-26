@@ -1,7 +1,7 @@
-﻿using System.Web.Mvc;
-
-namespace MagazineProject.Web.Areas.Users
+﻿namespace MagazineProject.Web.Areas.Users
 {
+    using System.Web.Mvc;
+
     public class UsersAreaRegistration : AreaRegistration 
     {
         public override string AreaName 
@@ -15,10 +15,12 @@ namespace MagazineProject.Web.Areas.Users
         public override void RegisterArea(AreaRegistrationContext context) 
         {
             context.MapRoute(
-                "Users_default",
-                "Users/{controller}/{action}/{id}",
-                new { action = "Index", id = UrlParameter.Optional }
-            );
+                name:"Users_default",
+                url:"Users/{controller}/{action}/{id}",
+                defaults:new
+                    {
+                        action = "Index", id = UrlParameter.Optional
+                    });
         }
     }
 }

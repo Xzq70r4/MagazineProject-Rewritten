@@ -26,12 +26,8 @@
             }
         }
 
-        protected void UpdatedThumbnailPostCoverImage(
-            Post model,
-            BaseAutorizationPostViewModel viewModel,
-            WebImage image)
+        protected void UpdatedThumbnailPostCoverImage(Post model, BaseAutorizationPostViewModel viewModel, WebImage image)
         {
-
             if (image != null)
             {
                 image.Resize(width: 350, height: 200, preserveAspectRatio: false, preventEnlarge: false);
@@ -40,9 +36,7 @@
                 model.ThumbnailCoverImage.PostId = model.Id;
                 model.ThumbnailCoverImage.Content = data;
                 model.ThumbnailCoverImage.FileExtension = image.ImageFormat;
-
             }
         }
-
     }
 }

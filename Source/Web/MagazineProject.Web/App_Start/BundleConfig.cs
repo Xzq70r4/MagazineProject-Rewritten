@@ -45,7 +45,6 @@
         private static void RegisterScriptBundles(BundleCollection bundles)
         {
             bundles.Add(new ScriptBundle("~/bundles/basic").Include(
-
                 "~/Scripts/to-top.js",
                 "~/Scripts/bootstrap.min.js",
                 "~/Scripts/respond.min.js",

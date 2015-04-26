@@ -7,6 +7,7 @@
     public interface ICommentsService
     {
         void AddComment(string userId, int postId, string content);
+
         IQueryable<Comment> GetPostComments(int id);
     }
 }

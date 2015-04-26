@@ -6,6 +6,7 @@
     using System.Web;
     using System.Web.Mvc;
 
+    using MagazineProject.Common;
     using MagazineProject.Data.Models;
     using MagazineProject.Web.Models.Account;
 
@@ -162,12 +163,12 @@
                     // string code = await UserManager.GenerateEmailConfirmationTokenAsync(user.Id);
                     // var callbackUrl = Url.Action("ConfirmEmail", "Account", new { userId = user.Id, code = code }, protocol: Request.Url.Scheme);
                     // await UserManager.SendEmailAsync(user.Id, "Confirm your account", "Please confirm your account by clicking <a href=\"" + callbackUrl + "\">here</a>");
-                    this.TempData["Message"] = "<div class='alert alert-success'><a href='#' class='close' data-dismiss='alert'>&times;</a><strong>Success!</strong> Successfully Register Account.</div> ";
+                    this.TempData["Message"] = string.Format(GlobalConstants.SuccessMessage, " Register Account.");
 
                     return this.RedirectToAction("Index", "Home", new { area = string.Empty });
                 }
 
-                this.TempData["Message"] = "<div class='alert alert-danger'><a href='#' class='close' data-dismiss='alert'>&times;</a><strong>Fail!</strong> Not Successfully Register.</div>";
+                this.TempData["Message"] = string.Format(GlobalConstants.FailMessage, " Register.");
 
                 this.AddErrors(result);
             }

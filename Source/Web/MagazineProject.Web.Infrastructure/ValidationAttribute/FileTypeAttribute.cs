@@ -9,11 +9,11 @@
     [AttributeUsage(AttributeTargets.Property)]
     public class FileTypesAttribute : ValidationAttribute
     {
-        private readonly List<string> _types;
+        private readonly List<string> types;
 
         public FileTypesAttribute(string types)
         {
-            _types = types.Split(',').ToList();
+            this.types = types.Split(',').ToList();
         }
 
         public override bool IsValid(object value)
@@ -21,12 +21,12 @@
             if (value == null) return true;
 
             var fileExt = System.IO.Path.GetExtension((value as HttpPostedFileBase).FileName).Substring(1);
-            return _types.Contains(fileExt, StringComparer.OrdinalIgnoreCase);
+            return this.types.Contains(fileExt, StringComparer.OrdinalIgnoreCase);
         }
 
         public override string FormatErrorMessage(string name)
         {
-            return string.Format("Invalid file type. Only the following types {0} are supported.", String.Join(", ", _types));
+            return string.Format("Invalid file type. Only the following types {0} are supported.", String.Join(", ", this.types));
         }
         //TODO: Client Validation
     }

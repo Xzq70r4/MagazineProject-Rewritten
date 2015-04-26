@@ -53,7 +53,7 @@
                 : this.View(post.ToPagedList(pageNumber, pageSize));
         }
 
-        public ActionResult GetFourPostsWithVideo()
+        public ActionResult GetPostsWithVideo()
         {
             var postWithVideo = this.posts
                 .GetPostsWithVideo()
@@ -64,7 +64,7 @@
             return this.PartialView("_FourPostWithVideoPartial", postWithVideo);
         }
 
-        public ActionResult GetFivePostForSlider()
+        public ActionResult GetPostsForSlider()
         {
             var sliderPost = this.posts
                 .GetPostsForSlider()

@@ -50,7 +50,7 @@
                 where typeof(IHaveCustomMappings).IsAssignableFrom(t) &&
                       !t.IsAbstract &&
                       !t.IsInterface
-                select (IHaveCustomMappings) Activator.CreateInstance(t)).ToArray();
+                select (IHaveCustomMappings)Activator.CreateInstance(t)).ToArray();
 
             foreach (var map in maps)
             {

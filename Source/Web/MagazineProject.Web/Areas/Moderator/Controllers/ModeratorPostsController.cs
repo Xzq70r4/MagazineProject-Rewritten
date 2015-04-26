@@ -18,12 +18,12 @@
         private readonly IDropDownListPopulator populator;
         private readonly IAdministrationPostsService moderatorPosts;
 
-
         public ModeratorPostsController(IDropDownListPopulator populator, IAdministrationPostsService moderatorPosts)
         {
             this.populator = populator;
             this.moderatorPosts = moderatorPosts;
         }
+
         public ActionResult Index()
         {
             var posts = this.moderatorPosts

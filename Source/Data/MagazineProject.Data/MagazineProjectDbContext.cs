@@ -33,9 +33,6 @@
 
         public virtual IDbSet<SiteConstant> SiteConstants { get; set; }
 
-
-
-
         public static MagazineProjectDbContext Create()
         {
             return new MagazineProjectDbContext();
@@ -63,7 +60,7 @@
                             e.Entity is IAuditInfo && ((e.State == EntityState.Added) || (e.State == EntityState.Modified))))
 
             {
-                var entity = (IAuditInfo) entry.Entity;
+                var entity = (IAuditInfo)entry.Entity;
                 if (entry.State == EntityState.Added)
                 {
                     if (!entity.PreserveCreatedOn)

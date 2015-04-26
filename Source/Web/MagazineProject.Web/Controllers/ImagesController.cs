@@ -1,10 +1,8 @@
 ﻿namespace MagazineProject.Web.Controllers
 {
-    using System.Reflection;
     using System.Web;
     using System.Web.Mvc;
 
-    using MagazineProject.Common;
     using MagazineProject.Services.Common;
     using MagazineProject.Web.Controllers.Base;
     using MagazineProject.Web.Infrastructure.Extensions;
@@ -18,7 +16,7 @@
             this.images = images;
         }
 
-        public ActionResult SliderPostCoverImage(int id)
+        public FileContentResult SliderPostCoverImage(int id)
         {
             var image = this.images.GetSliderPostCoverImageById(id);
             if (image == null)
@@ -29,7 +27,7 @@
             return this.File(image.Content, "image/" + image.FileExtension);
         }
 
-        public ActionResult ThumbnailPostCoverImage(int id)
+        public FileContentResult ThumbnailPostCoverImage(int id)
         {
             var image = this.images.GetThumbnailPostCoverImageById(id);
             if (image == null)
@@ -40,7 +38,7 @@
             return this.File(image.Content, "image/" + image.FileExtension);
         }
 
-        public ActionResult UserImage(string id)
+        public FileContentResult UserImage(string id)
         {
             var image = this.images.GetUserImageById(id);
             if (image == null)

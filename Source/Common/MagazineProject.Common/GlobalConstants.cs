@@ -35,6 +35,5 @@
         public const string SuccessMessage = "<div class='alert alert-success'><a href='#' class='close' data-dismiss='alert'>&times;</a><strong>Success!</strong> Successfully {0}.</div> ";
 
         public const string FailMessage = "<div class='alert alert-danger'><a href='#' class='close' data-dismiss='alert'>&times;</a><strong>Fail!</strong> Not Successfully{0}</div>";
-
     }
 }

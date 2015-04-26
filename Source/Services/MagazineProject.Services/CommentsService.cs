@@ -11,7 +11,6 @@
 
     public class CommentsService : BaseService, ICommentsService
     {
-     
         private readonly ISanitizer sanitizer;
 
         public CommentsService(IUnitOfWorkData data, ISanitizer sanitizer)

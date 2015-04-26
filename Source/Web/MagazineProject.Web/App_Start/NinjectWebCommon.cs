@@ -92,7 +92,6 @@ namespace MagazineProject.Web.App_Start
             kernel.Bind<ICacheService>().To<InMemoryCache>();
 
             kernel.Bind<IDropDownListPopulator>().To<DropDownListPopulator>();
-
         }
 
         private static void RegisterServicesLayerServices(IKernel kernel)
@@ -119,6 +118,7 @@ namespace MagazineProject.Web.App_Start
 
             kernel.Bind<IAdminSiteConstantsService>().To<AdminSiteConstantsService>();
         }
+
         private static void RegisterDatabaseServices(IKernel kernel)
         {
             kernel.Bind<DbContext>().To<MagazineProjectDbContext>();

@@ -34,17 +34,20 @@ namespace MagazineProject.Data.Migrations
             }
 
             this.userManager = new UserManager<User>(new UserStore<User>(context));
-            var categories = this.SeedCategories(context);
 
             this.SeedRoles(context);
+            this.SeedSiteConstants(context);
+
             this.SeedUsers(context, GlobalConstants.Admin);
             this.SeedUsers(context, GlobalConstants.Moderator);
             this.SeedUsers(context, GlobalConstants.Writer);
             this.SeedUsers(context, GlobalConstants.User);
+
+            var categories = this.SeedCategories(context);
             this.SeedPosts(context, categories);
             this.SeedPostImages(context);
+
             this.SeedComments(context);
-            this.SeedSiteConstants(context);
         }
 
         private void SeedRoles(MagazineProjectDbContext context)
@@ -165,6 +168,7 @@ namespace MagazineProject.Data.Migrations
 
             context.SaveChanges();
         }
+
         private void SeedPostImages(MagazineProjectDbContext context)
         {
             var posts = context.Posts.ToList();
@@ -189,7 +193,6 @@ namespace MagazineProject.Data.Migrations
                     PostId = post.Id
                 };
             }
-
         }
 
         private void SeedComments(MagazineProjectDbContext context)

@@ -11,6 +11,7 @@
 
     using PagedList;
 
+
     public class HomeController : BaseController
     {
         private readonly IPostsService posts;

@@ -3,7 +3,6 @@
     using System.Linq;
 
     using MagazineProject.Data.Models;
-    using MagazineProject.Web.Models.InputModels.Base;
     using MagazineProject.Web.Models.InputModels.Base.Comment;
 
     public interface IAdministrationCommentsService
@@ -14,5 +13,4 @@
 
         void Edit(Comment comment, BaseAdministrationCommentsViewModel viewModel);
     }
-
 }

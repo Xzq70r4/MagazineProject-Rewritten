@@ -57,16 +57,12 @@
                     .FirstOrDefault();
 
                 this.siteConstants.Edit(viewModel, constant);
-
                 this.TempData["Message"] = string.Format(GlobalConstants.SuccessMessage, " Edited Site Constant.");
 
-
                 return this.RedirectToAction("Index", "AdminSiteConstants", new { area = "Admin" });
-
             }
 
             this.TempData["Message"] = string.Format(GlobalConstants.FailMessage, " Edited Site Constant.");
-
 
             return this.View(viewModel);
         }

@@ -15,10 +15,12 @@ namespace MagazineProject.Web.Areas.Writer
         public override void RegisterArea(AreaRegistrationContext context) 
         {
             context.MapRoute(
-                "Writer_default",
-                "Writer/{controller}/{action}/{id}",
-                new { action = "Index", id = UrlParameter.Optional }
-            );
+                name:"Writer_default",
+                url:"Writer/{controller}/{action}/{id}",
+                defaults:new
+                    {
+                        action = "Index", id = UrlParameter.Optional
+                    });
         }
     }
 }

@@ -4,6 +4,5 @@
 
     public class PostViewModel : BasePostViewModel
     {
-
     }
 }

@@ -3,6 +3,7 @@
     using System.Linq;
     using System.Web.Helpers;
 
+    using MagazineProject.Data.Models;
     using MagazineProject.Data.UnitOfWork;
     using MagazineProject.Web.Infrastructure.Sanitizer;
     using MagazineProject.Web.Models.InputModels.Base.User;
@@ -17,7 +18,7 @@
             this.sanitizer = sanitizer;
         }
 
-        public IQueryable<MagazineProject.Data.Models.User> GetProfileById(string userId)
+        public IQueryable<User> GetProfileById(string userId)
         {
             var user = this.Data
                 .Users
@@ -27,7 +28,7 @@
             return user;
         }
 
-        public void Edit(MagazineProject.Data.Models.User model, BaseUserEditViewModel viewModel)
+        public void Edit(User model, BaseUserEditViewModel viewModel)
         {
             if (viewModel.InfoContent == null)
             {
@@ -37,6 +38,7 @@
             {
                 model.InfoContent = this.sanitizer.Sanitize(viewModel.InfoContent);
             }
+
             model.Email = viewModel.Email;
             model.FirstName = viewModel.FirstName;
             model.LastName = viewModel.LastName;
@@ -45,7 +47,7 @@
             this.Data.SaveChanges();
         }
 
-        private void UpdateUserImage(MagazineProject.Data.Models.User model)
+        private void UpdateUserImage(User model)
         {
             var photo = WebImage.GetImageFromRequest();
             if (photo != null)

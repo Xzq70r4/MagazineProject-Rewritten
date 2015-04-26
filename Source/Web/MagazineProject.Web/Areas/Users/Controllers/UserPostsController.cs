@@ -28,7 +28,6 @@
             if (id == null)
             {
                 userId = this.User.Identity.GetUserId();
-
             }
             else
             {

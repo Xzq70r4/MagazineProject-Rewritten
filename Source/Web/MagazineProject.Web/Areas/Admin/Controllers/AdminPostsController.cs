@@ -18,7 +18,6 @@
         private readonly IDropDownListPopulator populator;
         private readonly IAdministrationPostsService adminPosts;
 
-
         public AdminPostsController(IDropDownListPopulator populator, IAdministrationPostsService adminPosts)
         {
             this.populator = populator;
@@ -99,11 +98,9 @@
                     .FirstOrDefault();
 
                 this.adminPosts.Edit(post, viewModel);
-
                 this.TempData["Message"] = string.Format(GlobalConstants.SuccessMessage, " Edited Post.");
 
                 return this.RedirectToAction("Index", "AdminPosts", new { area = "Admin" });
-
             }
 
             this.TempData["Message"] = string.Format(GlobalConstants.FailMessage, " Edited Post.");

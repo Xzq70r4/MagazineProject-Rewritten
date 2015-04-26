@@ -10,13 +10,17 @@
     using MagazineProject.Data.UnitOfWork;
     using MagazineProject.Services.Common.Base;
     using MagazineProject.Services.Common.Writer;
+    using MagazineProject.Web.Infrastructure.Sanitizer;
     using MagazineProject.Web.Models.Area.Writer.InputViewModels;
 
     public class WriterPostsService : BaseAutorizePostsService, IWriterPostsService
     {
-        public WriterPostsService(IUnitOfWorkData data)
+        private readonly ISanitizer sanitizer;
+
+        public WriterPostsService(IUnitOfWorkData data, ISanitizer sanitizer)
             : base(data)
         {
+            this.sanitizer = sanitizer;
         }
 
         public IQueryable<Post> GetPostsForGrid(string userId)
@@ -30,6 +34,7 @@
 
             return post;
         }
+
         public IQueryable<Post> GetPostById(int postId)
         {
             var post = this.Data
@@ -40,8 +45,11 @@
 
             return post;
         }
+
         public void AddDbPost(WriterAddPostViewModel viewModel, string userId)
         {
+            viewModel.Content = this.sanitizer.Sanitize(viewModel.Content);
+
             var dbPost = Mapper.Map<Post>(viewModel);
             dbPost.AuthorId = userId;
             this.Data.Posts.Add(dbPost);
@@ -65,7 +73,7 @@
         public void Edit(Post post, WriterEditPostViewModel viewModel)
         {
             post.Title = viewModel.Title;
-            post.Content = viewModel.Content;
+            post.Content = this.sanitizer.Sanitize(viewModel.Content);
             post.CategoryId = viewModel.CategoryId;
 
             var image = WebImage.GetImageFromRequest();

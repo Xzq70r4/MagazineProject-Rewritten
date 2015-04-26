@@ -42,10 +42,10 @@
         public IEnumerable<SelectListItem> GetRoles()
         {
             var roleManager = new RoleManager<IdentityRole>(new RoleStore<IdentityRole>());
-            var roles = roleManager.Roles.ToList();
+            var allRoles = roleManager.Roles.ToList();
             IList<SelectListItem> roleList = new List<SelectListItem>();
 
-            foreach (var role in roles)
+            foreach (var role in allRoles)
             {
                 var item = new SelectListItem
                 {
@@ -56,13 +56,13 @@
                 roleList.Add(item);
             }
 
-            var categories = this.cache.Get<IEnumerable<SelectListItem>>("Roles",
+            var roles = this.cache.Get<IEnumerable<SelectListItem>>("Roles",
                 () =>
                 {
                     return roleList.ToList();
                 });
 
-            return categories;
+            return roles;
         }
     }
 }

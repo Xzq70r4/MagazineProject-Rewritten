@@ -13,31 +13,34 @@
 
 <br/>
 <br/>
-<div class="well">
-    @Html.Action("GetFivePostForSlider", "Posts")
-    <br/>
+@if (Model.Any())
+{
+    <div class="well">
+        @Html.Action("GetPostsForSlider", "Posts")
+        <br />
 
-    <div class="row">
-        @using (Ajax.BeginForm("Index", "Home", new AjaxOptions { HttpMethod = "GET", InsertionMode = InsertionMode.Replace, UpdateTargetId = "searchResults" }))
-        {
-            <div class="col-md-12">
-                <div class="input-group">
-                    <input name="searchTerm" type="text" class="form-control" placeholder="Search" data-search-autocomplete="@Url.Action("Autocomplete", "Home")"/>
-                    <span class="input-group-btn">
-                        @Html.Submit("Search")
-                    </span>
+        <div class="row">
+            @using (Ajax.BeginForm("Index", "Home", new AjaxOptions { HttpMethod = "GET", InsertionMode = InsertionMode.Replace, UpdateTargetId = "searchResults" }))
+            {
+                <div class="col-md-12">
+                    <div class="input-group">
+                        <input name="searchTerm" type="text" class="form-control" placeholder="Search" data-search-autocomplete="@Url.Action("Autocomplete", "Home")" />
+                        <span class="input-group-btn">
+                            @Html.Submit("Search")
+                        </span>
+                    </div>
                 </div>
-            </div>
-        }
-    </div>
-    <br/>
+            }
+        </div>
+        <br />
 
-    <div id="posts">
-        @Html.Partial("_PostsPartial", Model)
+        <div id="posts">
+            @Html.Partial("_PostsPartial", Model)
+        </div>
+        @Html.Action("GetPostsWithVideo", "Posts")
     </div>
-    @Html.Action("GetFourPostsWithVideo", "Posts")
-</div>
-<br/>
+    <br />
+}
 
 @section Scripts{
     @Scripts.Render("~/bundles/home-page")

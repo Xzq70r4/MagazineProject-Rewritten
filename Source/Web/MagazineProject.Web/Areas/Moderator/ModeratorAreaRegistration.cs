@@ -1,7 +1,7 @@
-﻿using System.Web.Mvc;
-
-namespace MagazineProject.Web.Areas.Moderator
+﻿namespace MagazineProject.Web.Areas.Moderator
 {
+    using System.Web.Mvc;
+
     public class ModeratorAreaRegistration : AreaRegistration 
     {
         public override string AreaName 
@@ -15,10 +15,12 @@ namespace MagazineProject.Web.Areas.Moderator
         public override void RegisterArea(AreaRegistrationContext context) 
         {
             context.MapRoute(
-                "Moderator_default",
-                "Moderator/{controller}/{action}/{id}",
-                new { action = "Index", id = UrlParameter.Optional }
-            );
+                name:"Moderator_default",
+                url:"Moderator/{controller}/{action}/{id}",
+                defaults:new
+                    {
+                        action = "Index", id = UrlParameter.Optional
+                    });
         }
     }
 }

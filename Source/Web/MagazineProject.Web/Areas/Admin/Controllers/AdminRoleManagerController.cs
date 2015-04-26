@@ -7,7 +7,6 @@
     using MagazineProject.Common;
     using MagazineProject.Data;
     using MagazineProject.Data.Models;
-    using MagazineProject.Services.Common.Administaration.Admin;
     using MagazineProject.Web.Infrastructure.Populators;
 
     using Microsoft.AspNet.Identity;
@@ -18,10 +17,9 @@
         //Source Code http://www.dotnetfunda.com/articles/show/2898/working-with-r
 
         private readonly IDropDownListPopulator populator;
-
         private readonly UserManager<User> userManager;
-
-        public AdminRoleManagerController(IDropDownListPopulator populator, IAdminUsersService users, MagazineProjectDbContext context)
+        
+        public AdminRoleManagerController(IDropDownListPopulator populator, MagazineProjectDbContext context)
         {
             this.populator = populator;
             this.Context = context;
@@ -41,11 +39,11 @@
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult RoleAddToUser(string UserName, string RoleName)
+        public ActionResult RoleAddToUser(string userName, string roleName)
         {
-            if (!string.IsNullOrWhiteSpace(UserName))
+            if (!string.IsNullOrWhiteSpace(userName))
             {
-                var user = this.Context.Users.FirstOrDefault(u => u.UserName.Equals(UserName, StringComparison.CurrentCultureIgnoreCase));
+                var user = this.Context.Users.FirstOrDefault(u => u.UserName.Equals(userName, StringComparison.CurrentCultureIgnoreCase));
 
                 if (user == null)
                 {
@@ -54,8 +52,7 @@
                     return RedirectToAction("Index");
                 }
 
-                this.userManager.AddToRole(user.Id, RoleName);
-
+                this.userManager.AddToRole(user.Id, roleName);
                 this.TempData["Message"] = string.Format(GlobalConstants.SuccessMessage, "Added User`s Role");
 
                 return this.RedirectToAction("Index");
@@ -68,11 +65,11 @@
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult GetRoles(string UserName)
+        public ActionResult GetRoles(string userName)
         {
-            if (!string.IsNullOrWhiteSpace(UserName))
+            if (!string.IsNullOrWhiteSpace(userName))
             {
-                var user = this.Context.Users.FirstOrDefault(u => u.UserName.Equals(UserName, StringComparison.CurrentCultureIgnoreCase));
+                var user = this.Context.Users.FirstOrDefault(u => u.UserName.Equals(userName, StringComparison.CurrentCultureIgnoreCase));
 
                 if (user == null)
                 {
@@ -97,21 +94,22 @@
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult DeleteRoleForUser(string UserName, string RoleName)
+        public ActionResult DeleteRoleForUser(string userName, string roleName)
         {
-            if (!string.IsNullOrWhiteSpace(UserName) &&
-                !string.IsNullOrWhiteSpace(RoleName))
+            if (!string.IsNullOrWhiteSpace(userName) &&
+                !string.IsNullOrWhiteSpace(roleName))
             {
-                var user = this.Context.Users.FirstOrDefault(u => u.UserName.Equals(UserName, StringComparison.CurrentCultureIgnoreCase));
+                var user = this.Context.Users.FirstOrDefault(u => u.UserName.Equals(userName, StringComparison.CurrentCultureIgnoreCase));
 
                 if (user == null)
                 {
                     this.TempData["Message"] = string.Format(GlobalConstants.FailMessage, "! This User doesn't exist.");
                     return this.RedirectToAction("Index");
                 }
-                if (this.userManager.IsInRole(user.Id, RoleName))
+
+                if (this.userManager.IsInRole(user.Id, roleName))
                 {
-                    this.userManager.RemoveFromRole(user.Id, RoleName);
+                    this.userManager.RemoveFromRole(user.Id, roleName);
                     this.TempData["Message"] = string.Format(GlobalConstants.SuccessMessage, "Deleted User Role");
                 }
                 else

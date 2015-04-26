@@ -18,6 +18,7 @@
         {
             this.moderatorComments = moderatorComments;
         }
+
         public ActionResult Index()
         {
             var comments = this.moderatorComments

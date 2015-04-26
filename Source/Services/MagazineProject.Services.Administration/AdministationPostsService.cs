@@ -20,18 +20,20 @@
         {
             return base.GetPostsForGrid();
         }
+
         public IQueryable<Post> GetPostById(int postId)
         {
             return base.GetPostById(postId);
         }
+
         public void AddDbPost(BaseAdministrationPostsViewModels viewModel, string userId)
         {
-            base.AddDbPost(viewModel,userId);
+            base.AddDbPost(viewModel, userId);
         }
 
         public void Edit(Post post, BaseAdministrationPostsViewModels viewModel)
         {
-            base.Edit(post,viewModel);
+            base.Edit(post, viewModel);
         }
     }
 }

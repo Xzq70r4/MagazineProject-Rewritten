@@ -18,6 +18,7 @@
         {
             this.adminComments = adminComments;
         }
+
         public ActionResult Index()
         {
             var comments = this.adminComments
@@ -55,15 +56,12 @@
                .FirstOrDefault();
 
                 this.adminComments.Edit(comment, viewModel);
-
                 this.TempData["Message"] = string.Format(GlobalConstants.SuccessMessage, " Edited Comment.");
-
 
                 return this.RedirectToAction("Index", "AdminComments", new { area = "Admin" });
             }
 
             this.TempData["Message"] = string.Format(GlobalConstants.FailMessage, " Edited Comment.");
-
 
             return this.View(viewModel);
         }

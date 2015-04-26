@@ -13,6 +13,7 @@
             //default value
             Status = Status.Published;
         }
+
         [Key]
         public int Id { get; set; }
 

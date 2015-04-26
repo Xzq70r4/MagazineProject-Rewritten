@@ -15,7 +15,7 @@
     {
         private readonly IAdminUsersService users;
 
-        public AdminUserController(IDropDownListPopulator populator,IAdminUsersService users)
+        public AdminUserController(IAdminUsersService users)
         {
             this.users = users;
         }
