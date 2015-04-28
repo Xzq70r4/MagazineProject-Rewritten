@@ -1,6 +1,7 @@
-﻿@model MagazineProject.Web.Models.InputModels.Base.Post.BaseAutorizationPostViewModel
+﻿@using MagazineProject.Common
+@model MagazineProject.Web.Models.InputModels.Base.Post.BaseAutorizationPostViewModel
 
-@if (ViewContext.Controller.ValueProvider.GetValue("action").RawValue.ToString() != "Edit")
+@if (ViewContext.Controller.ValueProvider.GetValue("action").RawValue.ToString() != GlobalConstants.EditAction)
 {
     @Html.EditorFor(m => m.CategoryId, new { ListItem = Model.Categories })
 }

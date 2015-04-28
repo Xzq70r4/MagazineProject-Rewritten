@@ -2,6 +2,7 @@
 {
     using System.Web.Helpers;
 
+    using MagazineProject.Common;
     using MagazineProject.Data.Models;
     using MagazineProject.Data.UnitOfWork;
     using MagazineProject.Web.Models.InputModels.Base.Post;
@@ -13,12 +14,12 @@
         {
         }
 
-        //TODO: Magic Number ?
         protected void UpdatedSliderPostCoverImage(Post model, BaseAutorizationPostViewModel viewModel, WebImage image)
         {
             if (image != null)
             {
-                image.Resize(width: 1200, height: 500, preserveAspectRatio: false, preventEnlarge: false);
+                image.Resize(width: GlobalConstants.SliderPostCoverImageWidth, height: GlobalConstants.SliderPostCoverImageHigth,
+                    preserveAspectRatio: false, preventEnlarge: false);
                 byte[] data = image.GetBytes();
                 model.SliderCoverImage.PostId = model.Id;
                 model.SliderCoverImage.Content = data;
@@ -30,7 +31,8 @@
         {
             if (image != null)
             {
-                image.Resize(width: 350, height: 200, preserveAspectRatio: false, preventEnlarge: false);
+                image.Resize(width: GlobalConstants.ThumbnailPostCoverImageWidth, height: GlobalConstants.ThumbnailPostCoverImageHeight,
+                    preserveAspectRatio: false, preventEnlarge: false);
                 byte[] data = image.GetBytes();
 
                 model.ThumbnailCoverImage.PostId = model.Id;

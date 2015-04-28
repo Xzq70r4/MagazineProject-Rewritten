@@ -53,6 +53,8 @@
                 : this.View(post.ToPagedList(pageNumber, pageSize));
         }
 
+        [OutputCache(Duration = 10 * 60, VaryByParam = "none")]
+        [ChildActionOnly]
         public ActionResult GetPostsWithVideo()
         {
             var postWithVideo = this.posts
@@ -64,6 +66,8 @@
             return this.PartialView("_FourPostWithVideoPartial", postWithVideo);
         }
 
+        [OutputCache(Duration = 10 * 60, VaryByParam = "none")]
+        [ChildActionOnly]
         public ActionResult GetPostsForSlider()
         {
             var sliderPost = this.posts

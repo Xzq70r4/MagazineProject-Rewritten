@@ -3,9 +3,6 @@
     using System.Web;
     using System.Web.Mvc;
 
-    using MagazineProject.Data;
-    using MagazineProject.Data.Models;
-    using MagazineProject.Data.UnitOfWork;
     using MagazineProject.Services.Common;
     using MagazineProject.Web.Controllers.Base;
     using MagazineProject.Web.Infrastructure.Extensions;
@@ -19,6 +16,7 @@
             this.images = images;
         }
 
+        [OutputCache(CacheProfile = "LongLived")]
         public FileContentResult SliderPostCoverImage(int id)
         {
             var image = this.images.GetSliderPostCoverImageById(id);
@@ -30,6 +28,7 @@
             return this.File(image.Content, "image/" + image.FileExtension);
         }
 
+        [OutputCache(CacheProfile = "LongLived")]
         public FileContentResult ThumbnailPostCoverImage(int id)
         {
             var image = this.images.GetThumbnailPostCoverImageById(id);
@@ -42,6 +41,20 @@
         }
 
         public FileContentResult UserImage(string id)
+        {
+            var image = this.images.GetUserImageById(id);
+            if (image == null)
+            {
+                var file = ConvertImage.ToBytes("/Images/default-user-img.jpg");
+
+                return this.File(file, "image/jpg");
+            }
+
+            return this.File(image.Content, "image/" + image.FileExtension);
+        }
+
+       [OutputCache(CacheProfile = "ShortLived")]
+        public FileContentResult CommentUserImage(string id)
         {
             var image = this.images.GetUserImageById(id);
             if (image == null)

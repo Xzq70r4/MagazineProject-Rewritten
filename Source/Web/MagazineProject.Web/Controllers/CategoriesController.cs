@@ -18,6 +18,9 @@
             this.categories = categories;
         }
 
+
+        [OutputCache(Duration = 10*60, VaryByParam = "none")]
+        [ChildActionOnly]
         public ActionResult CategoryNavigation()
         {
             var categories = this.categories

@@ -141,7 +141,6 @@ namespace MagazineProject.Data.Migrations
 
         private void SeedPosts(MagazineProjectDbContext context, IList<Category> categories)
         {
-            //TODO: Requeest only for writer
             var users = context
                 .Users
                 .Where(u => u.UserName.StartsWith(GlobalConstants.Writer) ||
@@ -152,6 +151,20 @@ namespace MagazineProject.Data.Migrations
             //var users = context.Users.Take(80).ToList();
             //for (int i = 0; i < 500; i++)
             for (int i = 0; i < 30; i++)
+            {
+                var post = new Post
+                {
+                    Title = this.random.RandomString(11, 149),
+                    Content = this.random.RandomString(1600, 25000),
+                    AuthorId = users[this.random.RandomNumber(0, users.Count - 1)].Id,
+                    CategoryId = categories[this.random.RandomNumber(0, categories.Count - 1)].Id,
+                    Status = Status.Published
+                };
+
+                context.Posts.Add(post);
+            }
+
+            for (int i = 0; i < 10; i++)
             {
                 var post = new Post
                 {

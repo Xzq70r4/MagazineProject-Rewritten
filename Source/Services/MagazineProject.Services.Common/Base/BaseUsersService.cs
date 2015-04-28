@@ -3,6 +3,7 @@
     using System.Linq;
     using System.Web.Helpers;
 
+    using MagazineProject.Common;
     using MagazineProject.Data.Models;
     using MagazineProject.Data.UnitOfWork;
     using MagazineProject.Web.Infrastructure.Sanitizer;
@@ -52,7 +53,8 @@
             var photo = WebImage.GetImageFromRequest();
             if (photo != null)
             {
-                photo.Resize(300, 200, false, false);
+                photo.Resize(width: GlobalConstants.UserImageWidth, height: GlobalConstants.UserImageHeight,
+                    preserveAspectRatio: false, preventEnlarge: false);
                 var data = photo.GetBytes();
 
                 if (model.UserImage != null)

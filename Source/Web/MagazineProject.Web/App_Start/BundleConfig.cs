@@ -10,7 +10,7 @@
             RegisterScriptBundles(bundles);
             RegisterContentBundles(bundles);
 
-            BundleTable.EnableOptimizations = false;
+            BundleTable.EnableOptimizations = true;
         }
 
         private static void RegisterContentBundles(BundleCollection bundles)
@@ -23,7 +23,10 @@
             bundles.Add(new StyleBundle("~/Content/home-page").Include(
                  "~/Content/post-video.css",
                  "~/Content/PagedList.css",
-                 "~/Content/themes/base/all.css"));
+                 "~/Content/themes/base/autocomplete.css",
+                 "~/Content/themes/base/menu.css",
+                 "~/Content/themes/base/theme.css"
+                 ));
 
             bundles.Add(new StyleBundle("~/Content/post-details").Include(
                  "~/Content/comment.css",
