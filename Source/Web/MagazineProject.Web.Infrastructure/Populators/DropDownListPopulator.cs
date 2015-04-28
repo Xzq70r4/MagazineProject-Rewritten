@@ -39,6 +39,13 @@
             return categories;
         }
 
+        public IEnumerable<SelectListItem> GetSelectedCategories()
+        {
+            var categories = this.GetCategories().Select(x => new SelectListItem { Text = x.Text, Value = x.Value.ToString() });
+
+            return categories;
+        }
+
         public IEnumerable<SelectListItem> GetRoles()
         {
             var roleManager = new RoleManager<IdentityRole>(new RoleStore<IdentityRole>());

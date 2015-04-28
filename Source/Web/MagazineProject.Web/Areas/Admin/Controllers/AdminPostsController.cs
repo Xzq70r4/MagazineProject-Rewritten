@@ -79,10 +79,11 @@
                 Title = post.Title,
                 Content = post.Content,
                 CategoryId = post.CategoryId,
-                Categories = this.populator.GetCategories(),
                 Status = post.Status,
                 UrlVideo = post.UrlVideo
             };
+
+            ViewBag.SelectedItem = populator.GetSelectedCategories();
 
             return View(editPostViewModel);
         }
@@ -105,7 +106,7 @@
 
             this.TempData["Message"] = string.Format(GlobalConstants.FailMessage, " Edited Post.");
 
-            viewModel.Categories = this.populator.GetCategories();
+            ViewBag.SelectedItem = populator.GetSelectedCategories();
 
             return this.View(viewModel);
         }

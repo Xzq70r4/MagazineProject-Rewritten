@@ -7,6 +7,8 @@
     {
         IEnumerable<SelectListItem> GetCategories();
 
+        IEnumerable<SelectListItem> GetSelectedCategories();
+
         IEnumerable<SelectListItem> GetRoles();
     }
 }

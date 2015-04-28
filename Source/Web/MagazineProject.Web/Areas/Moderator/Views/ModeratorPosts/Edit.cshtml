@@ -18,13 +18,24 @@
     @Html.AntiForgeryToken()
 
     <fieldset>
+
         <div class="well">
             <legend>
                 <h2>Edit Post</h2>
             </legend>
             @Html.EditorFor(m => m.UploadedImage)
+            <div class="row">
+                <div class="col-md-2 text-primary">
+                    @Html.LabelFor(model => model.CategoryId)
+                </div>
+                <div class="col-md-3">
+                    @Html.DropDownListFor(model => model.CategoryId, (IEnumerable<SelectListItem>)ViewBag.SelectedItem, new { @class = "form-control" })
+                </div>
+            </div>
+            <br />
             @Html.Partial("_AdministrationPostPartial", Model)
         </div>
+
         <div class="row">
             <div class="col-xs-4 text-right">
                 @Html.ActionLink("Cancel", "Index", "ModeratorPosts", new { area = "Moderator" }, new { @class = "btn btn-default", type = "reset" })
@@ -33,6 +44,7 @@
                 @Html.Submit("Save")
             </div>
         </div>
+
     </fieldset>
 }
 

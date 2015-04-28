@@ -20,8 +20,6 @@
         public void CreateMappings(IConfiguration configuration)
         {
             configuration.CreateMap<User, GridUserViewModel>()
-               .ForMember(m => m.Email, opt => opt.MapFrom(u => u.Email))
-               .ForMember(m => m.UserName, opt => opt.MapFrom(u => u.UserName))
                .ForMember(m => m.TimeCreated, opt => opt.MapFrom(u => u.CreatedOn))
                .ReverseMap();
         }

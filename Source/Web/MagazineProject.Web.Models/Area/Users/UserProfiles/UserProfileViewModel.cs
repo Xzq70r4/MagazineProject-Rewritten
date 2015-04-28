@@ -29,11 +29,6 @@
         public void CreateMappings(IConfiguration configuration)
         {
             configuration.CreateMap<User, UserProfileViewModel>()
-                .ForMember(m => m.Email, opt => opt.MapFrom(u => u.Email))
-                .ForMember(m => m.UserName, opt => opt.MapFrom(u => u.UserName))
-                .ForMember(m => m.FirstName, opt => opt.MapFrom(u => u.FirstName))
-                .ForMember(m => m.LastName, opt => opt.MapFrom(u => u.LastName))
-                .ForMember(m => m.InfoContent, opt => opt.MapFrom(u => u.InfoContent))
                 .ForMember(m => m.TimeCreated, opt => opt.MapFrom(u => u.CreatedOn))
                 .ReverseMap();
         }

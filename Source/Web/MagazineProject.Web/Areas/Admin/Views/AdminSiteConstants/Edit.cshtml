@@ -2,11 +2,12 @@
 @model MagazineProject.Web.Models.Area.Admin.InputViewModels.SiteConstant.AdminEditSiteConstantViewModel
 
 @{
-    ViewBag.Title = "Edit Category";
+    ViewBag.Title = "Edit Site Constants";
 }
 
 @Html.Raw(TempData["Message"])
-
+<br/>
+<br />
 
 @using (Html.BeginForm("Edit", "AdminSiteConstants", FormMethod.Post, new { @class = "form", enctype = "multipart/form-data" }))
 {
@@ -15,7 +16,7 @@
     <fieldset>
         <div class="well">
             <legend>
-                <h2>Edit Category</h2>
+                <h2>Edit Site Constants</h2>
             </legend>
             @Html.EditorFor(m => m.Value)
             <div class="row form-group">

@@ -1,38 +1,44 @@
 ﻿@model System.Collections.Generic.IList<PostViewModel>
 
-<div class="row">
-    <div class="col-md-12">
-        <div id="carousel-generic" class="carousel slide" data-ride="carousel">
-            <ol class="carousel-indicators">
-                @for (int j = 1; j < Model.Count; j++)
-                {
-                    <li data-target="#carousel-generic" data-slide-to="@j" @if (j == 0) { <text> class="active" </text>    }></li>
-                }
-            </ol>
-            <div class="carousel-inner">
-                @for (int i = 0; i < Model.Count; i++)
-                {
-                    <div class="item  @if (i == 0)
-                                      {
-                                          <text>active</text>
-                                      }">
+@if (Model.Any())
+{
+    <div class="row">
+        <div class="col-md-12">
+            <div id="carousel-generic" class="carousel slide" data-ride="carousel">
+                <ol class="carousel-indicators">
+                    @for (int j = 1; j < Model.Count; j++)
+                    {
+                        <li data-target="#carousel-generic" data-slide-to="@j" @if (j == 0)
+                                                                               {
+                                                                                   <text> class="active" </text>
+                                                                               }></li>
+                    }
+                </ol>
+                <div class="carousel-inner">
+                    @for (int i = 0; i < Model.Count; i++)
+                    {
+                        <div class="item  @if (i == 0)
+                                          {
+                                              <text>active</text>
+                                          }">
 
-                        <img src="@Url.Action("SliderPostCoverImage", "Images", new { id = @Model[i].Id })" class="img-responsive carousel-image"/>
-                        <div class="carousel-caption">
-                            <h1><a href="/Posts/Details/@Model[i].Id">@Model[i].PostTitle.Chop(25)</a>
-                            </h1>
+                            <img src="@Url.Action("SliderPostCoverImage", "Images", new { id = @Model[i].Id })" class="img-responsive carousel-image"/>
+                            <div class="carousel-caption">
+                                <h1><a href="/Posts/Details/@Model[i].Id">@Model[i].PostTitle.Chop(25)</a>
+                                </h1>
+                            </div>
                         </div>
-                    </div>
-                }
-            </div>
+                    }
+                </div>
 
-            <a class="left carousel-control" href="#carousel-generic" data-slide="prev">
-                <span class="glyphicon glyphicon-chevron-left"></span>
-            </a><a class="right carousel-control"
-                   href="#carousel-generic" data-slide="next">
-                <span class="glyphicon glyphicon-chevron-right">
+                <a class="left carousel-control" href="#carousel-generic" data-slide="prev">
+                    <span class="glyphicon glyphicon-chevron-left"></span>
+                </a><a class="right carousel-control"
+                       href="#carousel-generic" data-slide="next">
+                    <span class="glyphicon glyphicon-chevron-right">
                 </span>
-            </a>
+                </a>
+            </div>
         </div>
     </div>
-</div>
+}

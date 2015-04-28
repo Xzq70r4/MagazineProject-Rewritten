@@ -22,8 +22,7 @@
         public virtual void CreateMappings(IConfiguration configuration)
         {
             configuration.CreateMap<Comment, AddCommentViewModel>()
-                .ForMember(c => c.PostId, opt => opt.MapFrom(c => c.PostId))
-                .ForMember(c => c.Content, opt => opt.MapFrom(c => c.Content));
+                .ForMember(c => c.PostId, opt => opt.MapFrom(c => c.PostId));
         }
     }
 }

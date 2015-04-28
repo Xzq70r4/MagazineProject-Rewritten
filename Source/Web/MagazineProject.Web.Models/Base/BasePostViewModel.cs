@@ -12,13 +12,12 @@
 
         public string PostTitle { get; set; }
 
-        public int CategoryId { get; set; }
+        //public int CategoryId { get; set; }
 
         public void CreateMappings(IConfiguration configuration)
         {
             configuration.CreateMap<Post, PostViewModel>()
                 .ForMember(m => m.PostTitle, opt => opt.MapFrom(p => p.Title))
-                .ForMember(m => m.CategoryId, opt => opt.MapFrom(p => p.CategoryId))
                 .ReverseMap();
         }
     }

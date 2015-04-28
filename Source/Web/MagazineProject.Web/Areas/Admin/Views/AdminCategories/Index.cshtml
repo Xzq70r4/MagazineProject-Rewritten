@@ -11,10 +11,12 @@
 
 @Html.Raw(TempData["Message"])
 <br />
-<br />
+<br/>
+
 @Html.ActionLink("Add", "Add", "AdminCategories", new { @class = "btn btn-primary", area = "Admin" })
 <br/>
-<br />
+<br/>
+
 <div>
     @(Html.Grid(Model).Columns(columns =>
           {

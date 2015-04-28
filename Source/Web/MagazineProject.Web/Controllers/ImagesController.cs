@@ -3,6 +3,9 @@
     using System.Web;
     using System.Web.Mvc;
 
+    using MagazineProject.Data;
+    using MagazineProject.Data.Models;
+    using MagazineProject.Data.UnitOfWork;
     using MagazineProject.Services.Common;
     using MagazineProject.Web.Controllers.Base;
     using MagazineProject.Web.Infrastructure.Extensions;

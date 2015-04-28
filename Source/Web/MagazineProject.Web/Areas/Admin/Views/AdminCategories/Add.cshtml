@@ -6,6 +6,8 @@
 }
 
 @Html.Raw(TempData["Message"])
+<br/>
+<br />
 
 @using (Html.BeginForm("Add", "AdminCategories", FormMethod.Post, new { @class = "form", enctype = "multipart/form-data" }))
 {

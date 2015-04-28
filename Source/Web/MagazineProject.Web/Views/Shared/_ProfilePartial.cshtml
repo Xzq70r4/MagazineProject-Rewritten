@@ -3,11 +3,12 @@
 
 <div class="panel-body">
     <div class="row">
+        
         <div class="col-md-3 col-lg-3 col-sm-6 col-xs-12" align="center">
             <img src="@Url.Action("UserImage", "Images", new { area = "", id = @Model.Id })" class="img-responsive"/>
         </div>
-        <div class=" col-md-9 col-lg-9 col-sm-12 col-xs-12">
 
+        <div class=" col-md-9 col-lg-9 col-sm-12 col-xs-12">
             <ul class="list-group">
                 <li class="list-group-item">
                     First Name: <strong>@Model.FirstName</strong>
@@ -33,8 +34,8 @@
                     </div>
                 </li>
             </ul>
-
         </div>
+
     </div>
 </div>
 

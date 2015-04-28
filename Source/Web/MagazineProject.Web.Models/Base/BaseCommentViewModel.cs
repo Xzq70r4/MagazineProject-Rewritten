@@ -24,7 +24,6 @@
         {
             configuration.CreateMap<Comment, CommentViewModel>()
                 .ForMember(c => c.AuthorName, opt => opt.MapFrom(c => c.Author.UserName))
-                .ForMember(c => c.AuthorId, opt => opt.MapFrom(c => c.AuthorId))
                 .ForMember(c => c.TimeCreated, opt => opt.MapFrom(c => c.CreatedOn));
         }
     }

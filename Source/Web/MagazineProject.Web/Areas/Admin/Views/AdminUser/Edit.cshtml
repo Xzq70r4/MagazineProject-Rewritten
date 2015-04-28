@@ -10,9 +10,9 @@
 }
 
 @Html.Raw(TempData["Message"])
+<br />
+<br/>
 
-<br />
-<br />
 @using (Html.BeginForm("Edit", "AdminUser", FormMethod.Post, new { id = Model.Id, @class = "form-horizontal", enctype = "multipart/form-data" }))
 {
     @Html.AntiForgeryToken()

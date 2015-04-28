@@ -21,8 +21,10 @@
     </div>
 }
 
-<hr />
+<hr/>
+
 <h3>Get Roles for a User</h3>
+
 @using (Html.BeginForm("GetRoles", "AdminRoleManager"))
 {
     @Html.AntiForgeryToken()
@@ -53,7 +55,8 @@
     </div>
 }
 
-<hr />
+<hr/>
+
 <h3>Delete A User from a Role</h3>
 
 @using (Html.BeginForm("DeleteRoleForUser", "AdminRoleManager"))

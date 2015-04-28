@@ -55,8 +55,20 @@
                 photo.Resize(300, 200, false, false);
                 var data = photo.GetBytes();
 
-                model.UserImage.Content = data;
-                model.UserImage.FileExtension = photo.ImageFormat;
+                if (model.UserImage != null)
+                {
+                    model.UserImage.Content = data;
+                    model.UserImage.FileExtension = photo.ImageFormat;
+                }
+                else
+                {
+                    model.UserImage = new UserImage
+                    {
+                        UserId = model.Id,
+                        Content = data,
+                        FileExtension = "jpg"
+                    };
+                }
             }
         }
     }

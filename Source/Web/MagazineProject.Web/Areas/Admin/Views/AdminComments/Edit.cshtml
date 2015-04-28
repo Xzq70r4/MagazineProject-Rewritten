@@ -2,17 +2,21 @@
 @model MagazineProject.Web.Models.Area.Admin.InputViewModels.Comment.AdminEditCommentViewModel
 
 @Html.Raw(TempData["Message"])
+<br/>
+<br />
 
 @using (Html.BeginForm("Edit", "AdminComments", FormMethod.Post, new { @class = "form", enctype = "multipart/form-data" }))
 {
     @Html.AntiForgeryToken()
 
     <fieldset>
+
         <div class="well">
             <legend>
                 <h2>Edit Comment</h2>
             </legend>
             @Html.Partial("_AdministrationCommentPartial", Model)
+
             <div class="row">
                 <div class="col-xs-4 text-right">
                     @Html.ActionLink("Cancel", "Index", "AdminComments", new { area = "Admin" }, new { @class = "btn btn-default", type = "reset" })
@@ -22,6 +26,7 @@
                 </div>
             </div>
         </div>
+
     </fieldset>
 }
 @section Scripts{

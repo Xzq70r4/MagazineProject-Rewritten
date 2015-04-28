@@ -17,6 +17,7 @@
     @Html.AntiForgeryToken()
 
     <fieldset>
+
         <div class="well">
             <legend>
                 <h2>Add Post</h2>
@@ -24,6 +25,7 @@
             @Html.EditorFor(m => m.UploadedImage)
             @Html.Partial("_AdministrationPostPartial", Model)
         </div>
+
         <div class="row">
             <div class="col-xs-4 text-right">
                 @Html.ActionLink("Cancel", "Index", "ModeratorPosts", new { area = "Moderator" }, new { @class = "btn btn-default", type = "reset" })
@@ -32,6 +34,7 @@
                 @Html.Submit("Save")
             </div>
         </div>
+
     </fieldset>
 }
 

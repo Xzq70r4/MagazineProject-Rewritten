@@ -10,6 +10,7 @@
         public int Id { get; set; }
 
         [UIHint("Integer")]
+        [Range(0, 16)]
         public int Value { get; set; }
 
         public string Description { get; set; }

@@ -144,9 +144,9 @@ namespace MagazineProject.Data.Migrations
             //TODO: Requeest only for writer
             var users = context
                 .Users
-                .Where(u => u.UserName.StartsWith("Wrtiter") ||
-                    u.UserName.StartsWith("Moderator") ||
-                    u.UserName.StartsWith("Admin"))
+                .Where(u => u.UserName.StartsWith(GlobalConstants.Writer) ||
+                    u.UserName.StartsWith(GlobalConstants.Moderator) ||
+                    u.UserName.StartsWith(GlobalConstants.Admin))
                 .Take(10)
                 .ToList();
             //var users = context.Users.Take(80).ToList();

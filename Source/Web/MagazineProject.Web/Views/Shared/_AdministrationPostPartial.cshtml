@@ -1,5 +1,9 @@
 ﻿@model MagazineProject.Web.Models.InputModels.Base.Post.BaseAdministrationPostsViewModels
-@Html.EditorFor(m => m.CategoryId, new { ListItem = Model.Categories })
+
+@if (ViewContext.Controller.ValueProvider.GetValue("action").RawValue.ToString() != "Edit")
+{
+    @Html.EditorFor(m => m.CategoryId, new { ListItem = Model.Categories })
+}
 @Html.EditorFor(m => m.Status)
 @Html.EditorFor(m => m.Title)
 @Html.EditorFor(m => m.UrlVideo)

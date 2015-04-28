@@ -20,7 +20,7 @@
             { title: 'Test template 1', content: 'Test 1' },
             { title: 'Test template 2', content: 'Test 2' }
         ],
-        save_onsavecallback: 'onSavePluginCallback',
+        save_onsavecallback: 'onSavePluginCallback'
     });
 
     function onSavePluginCallback(ed) {
@@ -33,32 +33,18 @@
 </script>
 
 
-@if (ViewContext.RouteData.Values["controller"].ToString() == MagazineProject.Common.GlobalConstants.CommentsController)
-{
-    <br />
-    <div class="row">
-        <div class="col-md-12">
-            @Html.TextArea(string.Empty, /* Name suffix */
-            ViewData.TemplateInfo.FormattedModelValue /* Initial value */)
-        </div>
+<div class="row">
+    <div class="col-md-2">
+        @Html.LabelFor(m => m, new { @class = "text-primary" })
     </div>
-}
-else
-{
-    <div class="row">
-        <div class="col-md-2">
-            @Html.LabelFor(m => m, new { @class = "text-primary" })
-        </div>
+</div>
+<br />
+<div class="row">
+    <div class="col-md-12">
+        @Html.TextArea(string.Empty, /* Name suffix */
+        ViewData.TemplateInfo.FormattedModelValue /* Initial value */)
     </div>
-    <br />
-    <div class="row">
-        <div class="col-md-12">
-            @Html.TextArea(string.Empty, /* Name suffix */
-            ViewData.TemplateInfo.FormattedModelValue /* Initial value */)
-        </div>
-    </div>
-    <br />
-
-}
+</div>
+<br />
 
 
