@@ -24,7 +24,8 @@
 
                             <img src="@Url.Action("SliderPostCoverImage", "Images", new { id = @Model[i].Id })" class="img-responsive carousel-image"/>
                             <div class="carousel-caption">
-                                <h1><a href="/Posts/Details/@Model[i].Id">@Model[i].PostTitle.Chop(25)</a>
+                                <h1>
+                                    @Html.ActionLink(Model[i].Title.Chop(25), "Details", "Posts", new { id =  Model[i].Id, postTitle = Model[i].Title.Replace(" ","-")}, null)
                                 </h1>
                             </div>
                         </div>

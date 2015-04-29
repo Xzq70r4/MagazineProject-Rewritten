@@ -22,7 +22,7 @@
 
         public virtual void CreateMappings(IConfiguration configuration)
         {
-            configuration.CreateMap<Comment, CommentViewModel>()
+            configuration.CreateMap<Comment, BaseCommentViewModel>()
                 .ForMember(c => c.AuthorName, opt => opt.MapFrom(c => c.Author.UserName))
                 .ForMember(c => c.TimeCreated, opt => opt.MapFrom(c => c.CreatedOn));
         }

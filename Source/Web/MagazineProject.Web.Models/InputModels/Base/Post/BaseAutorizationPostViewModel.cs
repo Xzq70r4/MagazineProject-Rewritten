@@ -6,6 +6,7 @@
 
     using MagazineProject.Data.Models;
     using MagazineProject.Web.Infrastructure.Mapping;
+    using MagazineProject.Web.Infrastructure.ValidationAttribute;
 
     //Administration is common for Moderator and Admin
     public class BaseAutorizationPostViewModel : IMapFrom<Post>
@@ -14,6 +15,8 @@
         [MinLength(10)]
         [MaxLength(150)]
         [UIHint("SingleLineText")]
+        [DoesNotContain("&")]
+
         public string Title { get; set; }
 
         [Required]

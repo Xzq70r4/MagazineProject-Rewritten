@@ -32,15 +32,16 @@
             return this.View(post);
         }
 
-        public ActionResult GetPostsByCategory(int id, int? page)
+        [HttpGet]
+        public ActionResult PostsByCategory(string categoryName, int? page)
         {
             var post = this.posts
-                .GetPostsByCategoryId(id)
+                .GetPostsByCategoryName(categoryName)
                 .Project()
                 .To<PostViewModel>()
                 .ToList();
 
-            this.ViewBag.CategoryId = id;
+            //this.ViewBag.CategoryId = id;
 
             int pageSize = 12;
             int pageNumber = page ?? 1;
@@ -49,11 +50,11 @@
             pageNumber = pageNumber < 0 ? 1 : pageNumber;
 
             return this.Request.IsAjaxRequest()
-                ? (ActionResult)this.PartialView("_PostsPartial", post.ToPagedList(pageNumber, pageSize)) 
+                ? (ActionResult)this.PartialView("_PostsPartial", post.ToPagedList(pageNumber, pageSize))
                 : this.View(post.ToPagedList(pageNumber, pageSize));
         }
 
-        [OutputCache(Duration = 10 * 60, VaryByParam = "none")]
+        [OutputCache(Duration = 60 * 60, VaryByParam = "none")]
         [ChildActionOnly]
         public ActionResult GetPostsWithVideo()
         {
@@ -66,7 +67,7 @@
             return this.PartialView("_FourPostWithVideoPartial", postWithVideo);
         }
 
-        [OutputCache(Duration = 10 * 60, VaryByParam = "none")]
+        [OutputCache(Duration = 60 * 60, VaryByParam = "none")]
         [ChildActionOnly]
         public ActionResult GetPostsForSlider()
         {

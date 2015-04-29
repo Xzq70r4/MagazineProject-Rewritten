@@ -22,20 +22,10 @@
             this.profiles = profiles;
         }
 
-        public ActionResult Index(int? page, string id)
+        public ActionResult Index(int? page, string userName)
         {
-            string userId;
-            if (id == null)
-            {
-                userId = this.User.Identity.GetUserId();
-            }
-            else
-            {
-                userId = id;
-            }
-
             var comments = this.profiles
-                .GetProfileComments(userId)
+                .GetProfileComments(userName)
                 .Project()
                 .To<UserCommentViewModel>()
                 .ToList();

@@ -115,6 +115,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Sanitizer\HtmlSanitazerAdapter.cs" />
     <Compile Include="Sanitizer\ISanitizer.cs" />
+    <Compile Include="ValidationAttribute\DoesNotContainAttribute.cs" />
     <Compile Include="ValidationAttribute\FileSizeAttribute.cs" />
     <Compile Include="ValidationAttribute\FileTypeAttribute.cs" />
   </ItemGroup>

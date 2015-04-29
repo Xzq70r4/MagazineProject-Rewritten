@@ -22,28 +22,38 @@
             return base.GetProfileById(userId);
         }
 
+        public IQueryable<User> GetProfileByName(string userName)
+        {
+            var user = Data
+                .Users
+                .All()
+                .Where(u => u.UserName == userName);
+
+            return user;
+        }
+
         public void Edit(User model, UserProfileSettingsViewModel viewModel)
         {
             base.Edit(model, viewModel);
         }
 
-        public IQueryable<Comment> GetProfileComments(string userId)
+        public IQueryable<Comment> GetProfileComments(string userName)
         {
             var userComments = this.Data
                 .Comments
                 .All()
-                .Where(c => c.AuthorId == userId &&
+                .Where(c => c.Author.UserName == userName &&
                             c.Status == Status.Published);
 
             return userComments;
         }
 
-        public IQueryable<Post> GetProfilePosts(string userId)
+        public IQueryable<Post> GetProfilePosts(string userName)
         {
             var userPosts = this.Data
                 .Posts
                 .All()
-                .Where(p => p.AuthorId == userId &&
+                .Where(p => p.Author.UserName == userName &&
                             p.Status == Status.Published);
 
             return userPosts;

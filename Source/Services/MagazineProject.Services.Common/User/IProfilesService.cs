@@ -9,10 +9,12 @@
     {
         IQueryable<User> GetProfileById(string userId);
 
+        IQueryable<User> GetProfileByName(string userName);
+
         void Edit(User model, UserProfileSettingsViewModel viewModel);
 
-        IQueryable<Comment> GetProfileComments(string userId);
+        IQueryable<Comment> GetProfileComments(string userName);
 
-        IQueryable<Post> GetProfilePosts(string userId);
+        IQueryable<Post> GetProfilePosts(string userName);
     }
 }

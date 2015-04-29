@@ -334,7 +334,7 @@
     <Content Include="Areas\Users\Views\web.config" />
     <Content Include="Areas\Writer\Views\web.config" />
     <Content Include="Areas\Moderator\Views\web.config" />
-    <Content Include="Areas\Users\Views\Profile\GetUserProfileById.cshtml" />
+    <Content Include="Areas\Users\Views\Profile\GetUserProfileByName.cshtml" />
     <Content Include="Areas\Users\Views\Profile\Index.cshtml" />
     <Content Include="Areas\Users\Views\Settings\Index.cshtml" />
     <Content Include="Areas\Users\Views\Settings\_UserNameSettingsPartial.cshtml" />
@@ -576,7 +576,7 @@
     <Content Include="Views\Account\SendCode.cshtml" />
     <Content Include="Views\Account\VerifyCode.cshtml" />
     <Content Include="Views\Account\_ExternalLoginsListPartial.cshtml" />
-    <Content Include="Views\Comments\AddComment.cshtml" />
+    <Content Include="Views\Comments\Add.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Manage\AddPhoneNumber.cshtml" />
     <Content Include="Views\Manage\ChangePassword.cshtml" />
@@ -585,7 +585,7 @@
     <Content Include="Views\Manage\SetPassword.cshtml" />
     <Content Include="Views\Manage\VerifyPhoneNumber.cshtml" />
     <Content Include="Views\Posts\Details.cshtml" />
-    <Content Include="Views\Posts\GetPostsByCategory.cshtml" />
+    <Content Include="Views\Posts\PostsByCategory.cshtml" />
     <Content Include="Views\Posts\_FourPostWithVideoPartial.cshtml" />
     <Content Include="Views\Posts\_SliderPostPartial.cshtml" />
     <Content Include="Views\Shared\DisplayTemplates\CommentViewModel.cshtml" />

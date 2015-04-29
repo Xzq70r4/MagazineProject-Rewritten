@@ -22,20 +22,10 @@
             this.profiles = profiles;
         }
 
-        public ActionResult Index(int? page, string id)
+        public ActionResult Index(int? page, string userName)
         {
-            string userId;
-            if (id == null)
-            {
-                userId = this.User.Identity.GetUserId();
-            }
-            else
-            {
-                userId = id;
-            }
-
             var posts = this.profiles
-                .GetProfilePosts(userId)
+                .GetProfilePosts(userName)
                 .Project()
                 .To<UserPostViewModel>()
                 .ToList();

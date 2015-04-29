@@ -1,5 +1,6 @@
 ﻿@model IQueryable<MagazineProject.Web.Models.Area.Grid.GridPostViewModel>
 @using GridMvc.Html
+@using MagazineProject.Web.Infrastructure.Extensions
 
 @{
     ViewBag.Title = "Posts`s Grid";
@@ -21,6 +22,8 @@
     @(Html.Grid(Model).Columns(columns =>
           {
               columns.Add(c => c.Title).Titled("Title").Filterable(true);
+
+              columns.Add(c => c.AuthorName).Titled("Author").Filterable(true);
 
               columns.Add(c => c.Status).Titled("Status").Filterable(true);
 

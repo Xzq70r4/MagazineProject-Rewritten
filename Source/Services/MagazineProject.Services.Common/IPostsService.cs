@@ -12,7 +12,7 @@
 
         IQueryable<Post> GetPostById(int id);
 
-        IQueryable<Post> GetPostsByCategoryId(int categoryId);
+        IQueryable<Post> GetPostsByCategoryName(string categoryName);
 
         IQueryable<Post> GetPostsWithVideo();
 

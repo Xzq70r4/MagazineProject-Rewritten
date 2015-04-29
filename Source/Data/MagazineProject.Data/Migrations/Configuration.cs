@@ -124,7 +124,7 @@ namespace MagazineProject.Data.Migrations
             var categories = new List<Category>();
             var categoryNames = new List<string>
             {
-                "LIFESTYLE", "WEB&SOFT", "SOCIAL", "BUSINESS", "MOTIVATION"
+                "LIFESTYLE", "WEB-SOFT", "SOCIAL", "BUSINESS", "MOTIVATION"
             };
 
             foreach (var categoryName in categoryNames)

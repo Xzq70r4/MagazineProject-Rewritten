@@ -7,11 +7,10 @@
 
     using MagazineProject.Common;
     using MagazineProject.Services.Common.Administaration.Admin;
-    using MagazineProject.Web.Controllers.Base;
     using MagazineProject.Web.Models.Area.Admin.InputViewModels.SiteConstant;
     using MagazineProject.Web.Models.Area.Grid;
 
-    public class AdminSiteConstantsController : BaseController
+    public class AdminSiteConstantsController : AdminController
     {
         private readonly IAdminSiteConstantsService siteConstants;
 

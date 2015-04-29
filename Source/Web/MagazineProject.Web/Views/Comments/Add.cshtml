@@ -9,7 +9,7 @@
 
 <h1>Add Comment</h1>
 <br />
-@using (Html.BeginForm("AddComment", "Comments", FormMethod.Post, new {postId = Model.PostId, @class = "form-horizontal",  enctype = "multipart/form-data"  }))
+@using (Html.BeginForm("Add", "Comments", FormMethod.Post, new {postId = Model.PostId, @class = "form-horizontal",  enctype = "multipart/form-data"  }))
 {
     @Html.AntiForgeryToken()
     

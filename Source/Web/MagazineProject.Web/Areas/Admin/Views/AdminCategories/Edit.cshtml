@@ -21,6 +21,8 @@
             </legend>
             @Html.EditorFor(m => m.Name)
             @Html.EditorFor(m => m.IsHidden)
+            <br />
+            @Html.ValidationSummary("", new { @class = "text-danger" })
         </div>
 
         <div class="row">

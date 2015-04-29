@@ -14,7 +14,7 @@
                 <header class="text-left">
                     <div>
                         <i class="fa fa-user"></i> @Model.AuthorName
-                        <a href="/Posts/Details/@Model.PostId" class="btn btn-default btn-sm pull-right"><i class="fa fa-link"></i> See Post</a>
+                        <a href="/Posts/@Model.PostId/@Model.PostTitle.Replace(" ", " -")" class="btn btn-default btn-sm pull-right"><i class="fa fa-link"></i> See Post</a>
                     </div>
                     <time class="comment-date">
                         <i class="fa fa-clock-o"></i>

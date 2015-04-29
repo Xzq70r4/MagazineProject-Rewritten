@@ -18,6 +18,8 @@
           {
               columns.Add(c => c.Title).Titled("Title").Filterable(true);
 
+              columns.Add(c => c.AuthorName).Titled("Author").Filterable(true);
+
               columns.Add(c => c.Status).Titled("Status").Filterable(true);
 
               columns.Add(c => c.CreatedOn).Titled("Posted on").Filterable(true);

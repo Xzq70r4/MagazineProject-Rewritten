@@ -25,7 +25,7 @@
         }
 
         [HttpGet]
-        public ActionResult AddComment(int id)
+        public ActionResult Add(int id, string postTitle)
         {
             var model = new AddCommentViewModel
             {
@@ -36,7 +36,7 @@
         }
 
         [HttpPost]
-        public ActionResult AddComment(AddCommentViewModel input, int id)
+        public ActionResult Add(AddCommentViewModel input, int id, string postTitle)
         {
             if (this.ModelState.IsValid)
             {
@@ -47,7 +47,7 @@
 
                 this.TempData["Message"] = string.Format(GlobalConstants.SuccessMessage, " Added Comment.");
 
-                return this.RedirectToAction("Details", "Posts", new { id = id});
+                return this.RedirectToAction("Details", "Posts", new { area = string.Empty, id = id, postTitle = postTitle.Replace(" ", "-")});
             }
 
             this.TempData["Message"] = string.Format(GlobalConstants.FailMessage, " Added Comment.");

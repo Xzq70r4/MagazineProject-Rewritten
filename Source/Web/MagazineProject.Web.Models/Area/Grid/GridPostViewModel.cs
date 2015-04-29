@@ -1,6 +1,7 @@
 ﻿namespace MagazineProject.Web.Models.Area.Grid
 {
     using System;
+    using System.ComponentModel.DataAnnotations;
 
     using AutoMapper;
 
@@ -20,10 +21,14 @@
 
         public Status Status { get; set; }
 
+        public string AuthorName { get; set; }
+
         public void CreateMappings(IConfiguration configuration)
         {
             configuration.CreateMap<Post, GridPostViewModel>()
-                .ForMember(p => p.Category, opts => opts.MapFrom(p => p.Category.Name));
+                .ForMember(p => p.Category, opts => opts.MapFrom(p => p.Category.Name))
+                .ForMember(p => p.AuthorName, opts => opts.MapFrom(p => p.Author.UserName));
+
         }
     }
 }

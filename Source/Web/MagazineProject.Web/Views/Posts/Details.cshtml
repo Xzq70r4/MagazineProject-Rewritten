@@ -16,7 +16,7 @@
 <div class="row">
     <div class="col-md-12">
         <div>
-            <b>Author: </b> <i class="fa fa-user"></i> @Html.ActionLink(@Model.AuthorName, "GetUserProfileById", "Profile", new { area = "Users", id = @Model.AuthorId }, null)
+            <b>Author: </b> <i class="fa fa-user"></i> @Html.ActionLink(@Model.AuthorName, "GetUserProfileByName", "Profile", new { area = "Users", userName = @Model.AuthorName }, null)
             <p class="pull-right"><i class="fa fa-clock-o"></i><b>Posted on </b>@Model.TimeCreated</p>
         </div>
     </div>
@@ -58,7 +58,7 @@
     <div class="row">
         <div class="col-md-12 text-right">
             <i class="fa fa-plus-circle"></i>
-            @Html.ActionLink("Add Comment", "AddComment", "Comments", new { id = Model.Id }, new { area = string.Empty })
+            @Html.ActionLink("Add Comment", "Add", "Comments", new { id = Model.Id, postTitle = Model.Title.Replace(" ", "-") }, new { area = string.Empty })
         </div>
     </div>
     <hr />
@@ -67,7 +67,7 @@
 <div id="comments" class="row">
     <div class="col-md-12">
         <section class="comment-list">
-            @Html.Action("GetPostComments", "Comments", new {id = Model.Id})
+            @Html.Action("GetPostComments", "Comments", new { id = Model.Id })
         </section>
     </div>
 </div>

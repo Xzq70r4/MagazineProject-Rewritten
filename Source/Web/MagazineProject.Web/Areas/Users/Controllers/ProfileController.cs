@@ -36,10 +36,10 @@
         }
 
         [HttpGet]
-        public ActionResult GetUserProfileById(string id)
+        public ActionResult GetUserProfileByName(string userName)
         {
             var user = this.users
-                .GetProfileById(id)
+                .GetProfileByName(userName)
                 .Project()
                 .To<UserProfileViewModel>()
                 .FirstOrDefault();

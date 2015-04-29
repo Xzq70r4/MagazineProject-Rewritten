@@ -28,8 +28,8 @@
 
 <div class="row">
     <div>
-        @Html.ActionLink(@Model.UserName + "`s Posts", "Index", "UserPosts", new { id = Model.Id }, new { @class = "btn btn-primary btn-block", area = "Users" })
-        @Html.ActionLink(@Model.UserName + "`s Comments", "Index", "UserComments", new { id = Model.Id }, new { @class = "btn btn-primary btn-block", area = "Users" })
+        @Html.ActionLink(@Model.UserName + "`s Posts", "Index", "UserPosts", new { userName = Model.UserName }, new { @class = "btn btn-primary btn-block", area = "Users" })
+        @Html.ActionLink(@Model.UserName + "`s Comments", "Index", "UserComments", new { userName = Model.UserName }, new { @class = "btn btn-primary btn-block", area = "Users" })
     </div>
 </div>
 

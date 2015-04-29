@@ -53,11 +53,11 @@
             return post;
         }
 
-        public IQueryable<Post> GetPostsByCategoryId(int categoryId)
+        public IQueryable<Post> GetPostsByCategoryName(string categoryName)
         {
             var post = this.Data
                 .Posts.All()
-                .Where(p => p.CategoryId == categoryId &&
+                .Where(p => p.Category.Name == categoryName &&
                             p.Status == Status.Published &&
                             p.Category.IsHidden == false)
                 .OrderByDescending(p => p.CreatedOn);
