@@ -1,6 +1,8 @@
 ﻿namespace MagazineProject.Web.Controllers
 {
+    using System;
     using System.Linq;
+    using System.Net;
     using System.Web.Mvc;
 
     using AutoMapper.QueryableExtensions;
@@ -25,24 +27,34 @@
         }
 
         [HttpGet]
-        public ActionResult Add(int id, string postTitle)
+        public ActionResult Add(int? id, string postTitle)
         {
+            if (id == null || (postTitle == String.Empty))
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+
             var model = new AddCommentViewModel
             {
-                PostId = id
+                PostId = id.Value
             };
 
             return this.View(model);
         }
 
         [HttpPost]
-        public ActionResult Add(AddCommentViewModel input, int id, string postTitle)
+        public ActionResult Add(AddCommentViewModel input, int? id, string postTitle)
         {
+            if (id == null || (postTitle == String.Empty))
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+
             if (this.ModelState.IsValid)
             {
                 var userId = this.User.Identity.GetUserId();
 
-                this.comments.AddComment(userId, id, input.Content);
+                this.comments.AddComment(userId, id.Value, input.Content);
 
 
                 this.TempData["Message"] = string.Format(GlobalConstants.SuccessMessage, " Added Comment.");

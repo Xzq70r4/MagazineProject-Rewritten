@@ -1,6 +1,8 @@
 ﻿namespace MagazineProject.Web.Controllers
 {
+    using System;
     using System.Linq;
+    using System.Net;
     using System.Web.Mvc;
 
     using AutoMapper.QueryableExtensions;
@@ -21,10 +23,15 @@
             this.posts = posts;
         }
 
-        public ActionResult Details(int id)
+        public ActionResult Details(int? id)
         {
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+
             var post = this.posts
-                .GetPostById(id)
+                .GetPostById(id.Value)
                 .Project()
                 .To<PostDetailsViewModel>()
                 .FirstOrDefault();
@@ -35,6 +42,11 @@
         [HttpGet]
         public ActionResult PostsByCategory(string categoryName, int? page)
         {
+            if (categoryName == String.Empty)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+
             var post = this.posts
                 .GetPostsByCategoryName(categoryName)
                 .Project()
