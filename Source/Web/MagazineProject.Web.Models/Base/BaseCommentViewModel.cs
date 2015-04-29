@@ -22,8 +22,12 @@
 
         public virtual void CreateMappings(IConfiguration configuration)
         {
-            configuration.CreateMap<Comment, BaseCommentViewModel>()
+            //This is workaround(mapping Commnet with CommentViewModel)
+            //When mapping wiht BaseCommentViewModel don`t want to maping AuthorName(null) in CommentViewModel.
+            //This is wrong but work.
+            configuration.CreateMap<Comment, CommentViewModel>()
                 .ForMember(c => c.AuthorName, opt => opt.MapFrom(c => c.Author.UserName))
+                .ForMember(c => c.AuthorId, opt => opt.MapFrom(c => c.AuthorId))
                 .ForMember(c => c.TimeCreated, opt => opt.MapFrom(c => c.CreatedOn));
         }
     }

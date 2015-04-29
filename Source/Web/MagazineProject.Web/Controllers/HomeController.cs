@@ -56,5 +56,10 @@
 
             return this.View(allPost.ToPagedList(pageNumber, pageSize));
         }
+
+        public ActionResult Error()
+        {
+            return this.View();
+        }
     }
 }

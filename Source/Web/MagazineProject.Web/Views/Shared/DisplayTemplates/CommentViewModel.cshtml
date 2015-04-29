@@ -13,9 +13,8 @@
             <div class="panel-body">
                 <header class="text-left">
                     <div>
-                        @*<i class="fa fa-user"></i> @Html.ActionLink(@Model.AuthorName, "GetUserProfileByName", "Profile", new { area = "Users", userName = @Model.AuthorName }, null)*@
+                        <i class="fa fa-user"></i> @Html.ActionLink(@Model.AuthorName, "GetUserProfileByName", "Profile", new { userName = @Model.AuthorName }, new { area = "Users" })
                     </div>
-
                     <time class="comment-date"><i class="fa fa-clock-o"></i> @Model.TimeCreated</time>
                 </header>
                 <div class="comment-post word-break">
