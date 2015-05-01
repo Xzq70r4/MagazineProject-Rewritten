@@ -8,11 +8,11 @@
 
     public class WriterAddPostViewModel : BaseAutorizationPostViewModel
     {
-        [Required]
-        [Display(Name = "Cover Image")]
-        [UIHint("RequiredUploadImage")]
-        [FileTypes("jpg,jpeg,png")]
-        [FileSize(4194304)]
-        public HttpPostedFileBase UploadedImage { get; set; }
+        //[Required]
+        //[Display(Name = "Cover Image")]
+        //[UIHint("RequiredUploadImage")]
+        //[FileTypes("jpg,jpeg,png")]
+        //[FileSize(4194304)]
+        //public HttpPostedFileBase UploadedImage { get; set; }
     }
 }

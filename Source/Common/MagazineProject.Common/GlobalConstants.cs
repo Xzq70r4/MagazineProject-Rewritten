@@ -37,7 +37,7 @@
         //Controler Action
         public const string GetPostsByCategoryAction = "GetPostsByCategory";
         public const string EditAction = "Edit";
-
+        public const string AddAction = "Add";
 
         //Message
         public const string SuccessMessage = "<div class='alert alert-success'><a href='#' class='close' data-dismiss='alert'>&times;</a><strong>Success!</strong> Successfully {0}.</div> ";

@@ -14,14 +14,16 @@
     @Html.AntiForgeryToken()
 
     <fieldset>
-        
+
         <div class="well">
+
             <legend>
                 <h2>Edit Category</h2>
             </legend>
+
             @Html.EditorFor(m => m.Name)
             @Html.EditorFor(m => m.IsHidden)
-            <br />
+            <br/>
             @Html.ValidationSummary("", new { @class = "text-danger" })
         </div>
 

@@ -15,10 +15,13 @@
 
     <fieldset>
         <div class="well">
+
             <legend>
                 <h2>Edit Site Constants</h2>
             </legend>
+
             @Html.EditorFor(m => m.Value)
+
             <div class="row form-group">
                 <div class="col-md-2">
                     @Html.LabelFor(m => m.Description, new { @class = "text-primary" })
@@ -27,7 +30,9 @@
                     <b>@Model.Description</b>
                 </div>
             </div>
+
         </div>
+
         <div class="row">
             <div class="col-xs-4 text-right">
                 @Html.ActionLink("Cancel", "Index", "AdminSiteConstants", new { area = "Admin" }, new { @class = "btn btn-default", type = "reset" })
@@ -36,6 +41,7 @@
                 @Html.Submit("Save")
             </div>
         </div>
+
     </fieldset>
 }
 

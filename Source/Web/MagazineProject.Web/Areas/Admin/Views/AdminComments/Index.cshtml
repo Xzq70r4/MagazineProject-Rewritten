@@ -25,6 +25,7 @@
               columns.Add(c => c.AuthorName).Titled("Comment` Author").Filterable(false);
 
               columns.Add().Titled("Actions").Sanitized(false).Encoded(false).RenderValueAs(o => Html.ActionLink("Edit", "Edit", new { id = o.Id }).ToHtmlString());
+              
           }).WithPaging(10).Sortable(true))
 </div>
 

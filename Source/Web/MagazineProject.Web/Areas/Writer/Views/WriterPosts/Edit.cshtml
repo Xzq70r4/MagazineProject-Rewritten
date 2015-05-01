@@ -22,7 +22,7 @@
             <legend>
                 <h2>Edit Post</h2>
             </legend>
-            @Html.EditorFor(m => m.UploadedImage)
+
             <div class="row">
                 <div class="col-md-2 text-primary">
                     @Html.LabelFor(model => model.CategoryId)
@@ -33,6 +33,7 @@
             </div>
             <br />
             @Html.Partial("_WriterPostPartial", Model)
+
         </div>
         <div class="row">
             <div class="col-xs-4 text-right">

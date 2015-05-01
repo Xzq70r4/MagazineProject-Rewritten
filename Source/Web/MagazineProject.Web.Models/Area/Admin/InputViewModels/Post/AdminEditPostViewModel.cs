@@ -2,7 +2,7 @@
 {
     using MagazineProject.Web.Models.InputModels.Base.Post;
 
-    public class AdminEditPostViewModel : BaseAdministrationEditPostViewModel
+    public class AdminEditPostViewModel : BaseAdministrationPostsViewModels
     {
     }
 }

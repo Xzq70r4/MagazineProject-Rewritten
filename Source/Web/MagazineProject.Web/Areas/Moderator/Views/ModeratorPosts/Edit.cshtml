@@ -20,10 +20,11 @@
     <fieldset>
 
         <div class="well">
+
             <legend>
                 <h2>Edit Post</h2>
             </legend>
-            @Html.EditorFor(m => m.UploadedImage)
+
             <div class="row">
                 <div class="col-md-2 text-primary">
                     @Html.LabelFor(model => model.CategoryId)
@@ -32,8 +33,9 @@
                     @Html.DropDownListFor(model => model.CategoryId, (IEnumerable<SelectListItem>)ViewBag.SelectedItem, new { @class = "form-control" })
                 </div>
             </div>
-            <br />
+            <br/>
             @Html.Partial("_AdministrationPostPartial", Model)
+
         </div>
 
         <div class="row">

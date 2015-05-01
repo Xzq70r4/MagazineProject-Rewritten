@@ -15,14 +15,17 @@
 
     <fieldset>
         <div class="well">
+
             <legend>
                 <h2>Add Category</h2>
             </legend>
+
             @Html.EditorFor(m => m.Name)
             @Html.EditorFor(m => m.IsHidden)
-            <br />
+            <br/>
             @Html.ValidationSummary("", new { @class = "text-danger" })
         </div>
+
         <div class="row">
             <div class="col-xs-4 text-right">
                 @Html.ActionLink("Cancel", "Index", "AdminCategories", new { area = "Admin" }, new { @class = "btn btn-default", type = "reset" })
@@ -31,6 +34,7 @@
                 @Html.Submit("Save")
             </div>
         </div>
+
     </fieldset>
 }
 @section Scripts{

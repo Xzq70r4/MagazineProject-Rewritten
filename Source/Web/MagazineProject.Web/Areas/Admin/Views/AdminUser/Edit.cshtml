@@ -19,15 +19,16 @@
 
     <fieldset>
         <div class="well">
-
             <legend>
                 <h2>Edit @Model.UserName</h2>
             </legend>
-            <br />
+            <br/>
+
             <div class="row center-block">
                 @Html.EditorFor(m => m.UserName)
                 @Html.Partial("_UserEditParatial", @Model)
             </div>
+
         </div>
     </fieldset>
 }

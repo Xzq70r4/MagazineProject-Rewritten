@@ -27,6 +27,7 @@
               columns.Add(c => c.Category).Titled("Category").Filterable(true);
 
               columns.Add().Titled("Actions").Sanitized(false).Encoded(false).RenderValueAs(o => Html.ActionLink("Edit", "Edit", new { id = o.Id }).ToHtmlString());
+              
           }).WithPaging(10).Sortable(true))
 </div>
 

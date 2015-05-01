@@ -8,10 +8,10 @@
 
     public class WriterEditPostViewModel : BaseAutorizationPostViewModel
     {
-        [Display(Name = "Cover Image")]
-        [UIHint("UploadImage")]
-        [FileTypes("jpg,jpeg,png")]
-        [FileSize(4194304)]
-        public HttpPostedFileBase UploadedImage { get; set; }
+        //[Display(Name = "Cover Image")]
+        //[UIHint("UploadImage")]
+        //[FileTypes("jpg,jpeg,png")]
+        //[FileSize(4194304)]
+        //public HttpPostedFileBase UploadedImage { get; set; }
     }
 }

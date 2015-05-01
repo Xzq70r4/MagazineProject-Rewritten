@@ -1,11 +1,27 @@
-﻿@model HttpPostedFileBase
+﻿@using MagazineProject.Common
+@model HttpPostedFileBase
+@if (ViewContext.Controller.ValueProvider.GetValue("action").RawValue.ToString() == GlobalConstants.AddAction)
+{
+    <div class="row">
+        <div class="col-md-2">
+            @Html.LabelFor(m => m, new { @class = "text-primary" })
+        </div>
+        <div class="col-md-5">
+            <input class="file" type="file" data-max-file-count="1" data-min-file-count="1" data-show-upload="false" data-show-caption="true" name="UploadedImage">
+        </div>
+    </div>
+    <br />
+}
+else
+{
+    <div class="row">
+        <div class="col-md-2">
+            @Html.LabelFor(m => m, new { @class = "text-primary" })
+        </div>
+        <div class="col-md-5">
+            <input class="file" type="file" data-max-file-count="1" data-show-upload="false" data-show-caption="true" name="UploadedImage">
+        </div>
+    </div>
+    <br />
+}
 
-<div class="row">
-    <div class="col-md-2">
-        @Html.LabelFor(m => m, new { @class = "text-primary" })
-    </div>
-    <div class="col-md-5">
-        <input class="file" type="file" data-max-file-count="1" data-show-upload="false" data-show-caption="true" name="UploadedImage">
-    </div>
-</div>
-<br />

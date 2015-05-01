@@ -617,7 +617,6 @@
     <Content Include="Scripts\tinymce\langs\readme.md" />
     <Content Include="Views\Shared\_AdministrationPostPartial.cshtml" />
     <Content Include="Views\Shared\_AdministrationCommentPartial.cshtml" />
-    <Content Include="Views\Shared\EditorTemplates\RequiredUploadImage.cshtml" />
     <Content Include="Views\Shared\EditorTemplates\Boolean.cshtml" />
     <Content Include="Views\Shared\_UserEditParatial.cshtml" />
     <Content Include="Views\Shared\_ProfilePartial.cshtml" />

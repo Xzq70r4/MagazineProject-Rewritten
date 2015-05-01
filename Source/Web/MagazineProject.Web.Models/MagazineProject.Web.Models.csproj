@@ -131,7 +131,6 @@
     <Compile Include="Area\Writer\InputViewModels\WriterEditPostViewModel.cs" />
     <Compile Include="Area\Grid\GridCommentViewModel.cs" />
     <Compile Include="InputModels\Base\Category\BaseAdministrationCategoryViewModel.cs" />
-    <Compile Include="InputModels\Base\Post\BaseAdministrationEditPostViewModel.cs" />
     <Compile Include="InputModels\Base\Comment\BaseAdministrationCommentsViewModel.cs" />
     <Compile Include="Area\Grid\GridPostViewModel.cs" />
     <Compile Include="Base\BaseCommentViewModel.cs" />
@@ -139,7 +138,6 @@
     <Compile Include="Categories\CategoryViewModel.cs" />
     <Compile Include="Comments\CommentViewModel.cs" />
     <Compile Include="Home\PostViewModel.cs" />
-    <Compile Include="InputModels\Base\Post\BaseAdministrationAddPostViewModel.cs" />
     <Compile Include="InputModels\Base\Post\BaseAdministrationPostsViewModels.cs" />
     <Compile Include="InputModels\Base\Post\BaseAutorizationPostViewModel.cs" />
     <Compile Include="InputModels\Base\User\BaseUserEditViewModel.cs" />

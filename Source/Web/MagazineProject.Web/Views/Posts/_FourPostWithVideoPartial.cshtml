@@ -5,7 +5,7 @@
     @for (int i = 0; i < Model.Count; i++)
     {
         <li class="col-lg-3 col-sm-4 col-xs-6">
-        <a href="/Posts/@Model[i].Id/@Model[i].Title.Replace(" ", "-")">
+            <a href="/Posts/@Model[i].Id/@Model[i].Title.Replace(" ", "-")">
                 <img src="@Url.Action("ThumbnailPostCoverImage", "Images", new { id = @Model[i].Id })" class="img-responsive"/>
                 <h2 class="text-center">@Model[i].Title.Chop(20)</h2>
                 <span class="glyphicon glyphicon-play-circle"></span>
