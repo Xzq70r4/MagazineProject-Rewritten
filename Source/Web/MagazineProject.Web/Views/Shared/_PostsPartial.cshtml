@@ -35,9 +35,9 @@
     <div class="row text-center">
         <ul class="pagination">
             <li>
-                @if (ViewContext.Controller.ValueProvider.GetValue("action").RawValue.ToString() == GlobalConstants.GetPostsByCategoryAction)
+                @if (ViewContext.Controller.ValueProvider.GetValue("action").RawValue.ToString() == GlobalConstants.PostsByCategoryAction)
                 {
-                    @Html.PagedListPager(Model, page => Url.Action("PostsByCategory", "Posts", new { page, id = ViewBag.CategoryId }),
+                    @Html.PagedListPager(Model, page => Url.Action("PostsByCategory", "Posts", new { page}),
                 PagedListRenderOptions.EnableUnobtrusiveAjaxReplacing(new AjaxOptions()
                 {
                     HttpMethod = "GET",

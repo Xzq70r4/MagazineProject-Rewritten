@@ -40,7 +40,7 @@
         }
 
         [HttpGet]
-        public ActionResult PostsByCategory(string categoryName, int? page)
+        public ActionResult PostsByCategory(int? page, string categoryName)
         {
             if (categoryName == String.Empty)
             {
@@ -52,8 +52,6 @@
                 .Project()
                 .To<PostViewModel>()
                 .ToList();
-
-            //this.ViewBag.CategoryId = id;
 
             int pageSize = 12;
             int pageNumber = page ?? 1;

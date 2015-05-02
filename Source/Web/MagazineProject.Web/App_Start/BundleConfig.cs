@@ -16,7 +16,7 @@
         private static void RegisterContentBundles(BundleCollection bundles)
         {
             bundles.Add(new StyleBundle("~/Content/basic").Include(
-                "~/Content/bootstrap.cerulean.css",
+                "~/Content/bootstrap.cerulean.min.css",
                 "~/Content/font-awesome.min.css",
                 "~/Content/Site.css"));
 
@@ -55,7 +55,7 @@
             bundles.Add(new ScriptBundle("~/bundles/home-page").Include(
                 "~/Scripts/jquery-ui-{version}.js",
                 "~/Scripts/search.js",
-                "~/Scripts/jquery.unobtrusive-ajax.js"));
+                "~/Scripts/jquery.unobtrusive-ajax.min.js"));
 
             bundles.Add(new ScriptBundle("~/bundles/comment-add-edit").Include(
                 "~/Scripts/tinymce/tinymce-client-val.js",
@@ -82,7 +82,7 @@
                 "~/Scripts/fileinput.min.js"));
 
             bundles.Add(new ScriptBundle("~/bundles/jqueryAjax").Include(
-                "~/Scripts/jquery.unobtrusive-ajax.js"));
+                "~/Scripts/jquery.unobtrusive-ajax.min.js"));
 
             bundles.Add(new ScriptBundle("~/bundles/jqueryval").Include(
                 "~/Scripts/jquery.validate*"));

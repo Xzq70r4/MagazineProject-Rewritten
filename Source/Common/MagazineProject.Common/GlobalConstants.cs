@@ -35,7 +35,7 @@
         public const string UserCommentsController = "UserComments";
 
         //Controler Action
-        public const string GetPostsByCategoryAction = "GetPostsByCategory";
+        public const string PostsByCategoryAction = "PostsByCategory";
         public const string EditAction = "Edit";
         public const string AddAction = "Add";
 

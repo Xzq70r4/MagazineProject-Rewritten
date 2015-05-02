@@ -2,13 +2,7 @@
 {
     using System;
 
-    using AutoMapper;
-
-    using MagazineProject.Data.Models;
-    using MagazineProject.Web.Infrastructure.Mapping;
-    using MagazineProject.Web.Models.Comments;
-
-    public class BaseCommentViewModel : IMapFrom<Comment>, IHaveCustomMappings
+    public class BaseCommentViewModel
     {
         public int Id { get; set; }
 
@@ -19,16 +13,5 @@
         public string Content { get; set; }
 
         public DateTime TimeCreated { get; set; }
-
-        public virtual void CreateMappings(IConfiguration configuration)
-        {
-            //This is workaround(mapping Commnet with CommentViewModel)
-            //When mapping wiht BaseCommentViewModel don`t want to maping AuthorName(null) in CommentViewModel.
-            //This is wrong but work.
-            configuration.CreateMap<Comment, CommentViewModel>()
-                .ForMember(c => c.AuthorName, opt => opt.MapFrom(c => c.Author.UserName))
-                .ForMember(c => c.AuthorId, opt => opt.MapFrom(c => c.AuthorId))
-                .ForMember(c => c.TimeCreated, opt => opt.MapFrom(c => c.CreatedOn));
-        }
     }
 }

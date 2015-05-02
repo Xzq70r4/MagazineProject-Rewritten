@@ -150,11 +150,11 @@ namespace MagazineProject.Data.Migrations
                 .ToList();
             //var users = context.Users.Take(80).ToList();
             //for (int i = 0; i < 500; i++)
-            for (int i = 0; i < 30; i++)
+            for (int i = 0; i < 100; i++)
             {
                 var post = new Post
                 {
-                    Title = this.random.RandomString(11, 149),
+                    Title = this.random.RandomString(11, 45) + " " + this.random.RandomString(1, 45) + " " + this.random.RandomString(1, 50),
                     Content = this.random.RandomString(1600, 25000),
                     AuthorId = users[this.random.RandomNumber(0, users.Count - 1)].Id,
                     CategoryId = categories[this.random.RandomNumber(0, categories.Count - 1)].Id,
