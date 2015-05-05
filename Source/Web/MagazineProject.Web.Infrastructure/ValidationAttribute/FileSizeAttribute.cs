@@ -23,7 +23,7 @@
 
         public override string FormatErrorMessage(string name)
         {
-            return string.Format("The file size should not exceed {0}", this.maxSize);
+            return string.Format("The file size should not exceed {0}MB", (this.maxSize/(1024*1024)));
         }
         //TODO:Client Validation
     }

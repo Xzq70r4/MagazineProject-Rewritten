@@ -21,7 +21,12 @@
             var valueAsString = value as string;
             if (valueAsString == null)
             {
-                throw new ArgumentException("Does not contain attribute not set on string property");
+                //have another attribute like:
+                //[MinLength()],
+                //[MaxLength()]
+                //This attribute check only is word contein in property
+
+                return true;
             }
 
             if (!valueAsString.Contains(this.word))
