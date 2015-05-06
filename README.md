@@ -6,7 +6,7 @@ Everyone can free read magazine`s posts without log in. Every post have category
 
 Easy Logging. Have facebook and google login or regular.
 
-Have search for post with autocomplete.
+Have search for posts with autocomplete.
 
 **Regular Users** can free read posts, comments and see another profiles. After logging they can add comments and change their profile settings.
 
@@ -23,7 +23,7 @@ Have search for post with autocomplete.
 - [Microsoft SQL Server](http://www.microsoft.com/en-us/server-cloud/products/sql-server/)
 - [Entity Framework]( https://entityframework.codeplex.com) – ORM framework - Code First
 - [Ninject](http://www.ninject.org/) - Dependency injector for .NET
-- [Automapper](http://automapper.org/) - A convention-based object-object mapper
+- [Automapper](http://automapper.org/) - A convention - based object - object mapper
 - [Twitter Bootstrap](http://getbootstrap.com/)
 - [jQuery](http://jquery.com/)
 - [Grid.Mvc](http://gridmvc.codeplex.com/)
@@ -63,4 +63,4 @@ Have search for post with autocomplete.
 
 **Role Manager**
 
-<p align="center"><img src="https://raw.githubusercontent.com/Xzq70r4/MagazineProject-Rewritten/master/Images/role-manger.jpg" /></p>
+<p align="center"><img src="https://raw.githubusercontent.com/Xzq70r4/MagazineProject-Rewritten/master/Images/role-manager.jpg" /></p>
