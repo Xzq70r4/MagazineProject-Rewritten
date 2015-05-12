@@ -30,7 +30,7 @@
 
             routes.MapRoute(
             name: "Categories",
-            url: "PostsByCategory/{categoryName}",
+            url: "{categoryName}",
             defaults: new
             {
                 controller = "Posts",

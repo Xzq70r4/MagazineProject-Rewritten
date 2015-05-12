@@ -21,7 +21,7 @@
         public const int SliderPostCoverImageWidth = 1200;
         public const int SliderPostCoverImageHigth = 500;
         public const int UserImageWidth = 350;
-        public const int UserImageHeight = 200;
+        public const int UserImageHeight = 230;
 
         //Site Constant
         public const string SiteConstSlider = "Post Slider";
