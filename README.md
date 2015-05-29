@@ -8,6 +8,8 @@ Easy Logging. Have facebook and google login or regular.
 
 Have search for posts with autocomplete.
 
+Create example database. When start app for first time. 
+
 **Regular Users** can free read posts, comments and see another profiles. After logging they can add comments and change their profile settings.
 
 ## Roles ##
