@@ -31,6 +31,12 @@ Create example database. When start app for first time.
 - [Grid.Mvc](http://gridmvc.codeplex.com/)
 - [PagedList](https://github.com/TroyGoode/PagedList)
 
+##Accounts
+- Username: Admin , Password: 123456, Role: Admin
+- Username: Moderator , Password: 123456, Role: Moderator
+- Username: Writer , Password: 123456, Role: Writer
+- Username: User, Password: 123456, Role: No role (normal user)
+
 ## Screenshots ##
 
 [Magazine Project - Image Gallery](https://www.dropbox.com/sh/ub1qi31r65cbjnl/AACD-W_NCgexSHoL6PdSQQwia?dl=0)
