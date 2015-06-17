@@ -31,6 +31,7 @@ Create example database. When start app for first time.
 - [Grid.Mvc](http://gridmvc.codeplex.com/)
 - [PagedList](https://github.com/TroyGoode/PagedList)
 
+Development Environment: Microsoft Visual Studio 2013
 ##Accounts
 - Username: Admin , Password: 123456, Role: Admin
 - Username: Moderator , Password: 123456, Role: Moderator
