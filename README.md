@@ -2,7 +2,7 @@
 ========
 MagazineProject is simple Web Magazine application.
 
-Everyone can free read magazine`s posts without log in. Every post have category, author and comments. Post and comment list are with ajax paging.
+Everyone is free read magazine`s posts without the need to log in. Every post have category, author and comments. Post and comment lists are with ajax paging.
 
 Easy Logging. Have facebook and google login or regular.
 
