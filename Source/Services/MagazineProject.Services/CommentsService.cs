@@ -38,7 +38,8 @@
                 .Comments
                 .All()
                 .Where(c => c.PostId == id &&
-                            c.Status == Status.Published);
+                            c.Status == Status.Published)
+                .OrderBy(p => p.CreatedOn);
 
             return comments;
         }
