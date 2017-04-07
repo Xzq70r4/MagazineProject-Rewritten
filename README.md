@@ -1,5 +1,5 @@
-#MagazineProject  -  ASP.NET MVC 5 Application
-========
+# MagazineProject  -  ASP.NET MVC 5 Application #
+
 MagazineProject is simple Web Magazine application.
 
 Everyone is free read magazine`s posts without the need to log in. Every post have category, author and comments. Post and comment lists are with ajax paging.
@@ -20,7 +20,7 @@ Create example database. When start app for first time.
 
 **Admins** have all rights like Writers. They can editing users, add or delete from Role. Admin adding category or hide with them posts and post`s comments. Admin can editing number of posts on slider(home page) and number of showing post with video url (on home page).
 
-##ASP NET MVC 5 application powered by:##
+## ASP NET MVC 5 application powered by: ##
 - [ASP.NET MVC]( http://www.asp.net/mvc/mvc5) - Repository Pattern + Unit of work + Services layer
 - [Microsoft SQL Server](http://www.microsoft.com/en-us/server-cloud/products/sql-server/)
 - [Entity Framework]( https://entityframework.codeplex.com) – ORM framework - Code First
@@ -32,7 +32,8 @@ Create example database. When start app for first time.
 - [PagedList](https://github.com/TroyGoode/PagedList)
 
 Development Environment: Microsoft Visual Studio 2013
-##Accounts
+
+## Accounts ##
 - Username: Admin , Password: 123456, Role: Admin
 - Username: Moderator , Password: 123456, Role: Moderator
 - Username: Writer , Password: 123456, Role: Writer
